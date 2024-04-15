@@ -1,30 +1,28 @@
-# Mintlify Starter Kit
+# Seam docs
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+## Set up
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+Install the [Github desktop app](https://desktop.github.com/).
 
-### Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify). This only needs to be done once. To install, use the following command:
 
 ```
 npm i -g mintlify
 ```
 
-Run the following command at the root of your documentation (where mint.json is)
+## Development
+
+Run the following command at the root of your documentation (where mint.json is) to preview the documentation changes locally in the browser at `http://localhost:3000`. When any changes are made and saved, the preview will rerender immediately to show the changes.
 
 ```
 mintlify dev
 ```
 
-### Publishing Changes
+To stop
 
-Install our Github App to autopropagate changes from youre repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
+## Publishing Changes
+
+Install our Github App to autopropagate changes from youre repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard.
 
 #### Troubleshooting
 
