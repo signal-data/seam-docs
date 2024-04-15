@@ -17,23 +17,18 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
+      "name": "Try our demo",
       "url": "mailto:hi@mintlify.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Sign in",
+    "url": "https://app.getseam.ai"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "tabs": [],
   "anchors": [
     {
-      "name": "Documentation",
+      "name": "Changelog",
       "icon": "book-open-cover",
       "url": "https://mintlify.com/docs"
     },
@@ -58,28 +53,40 @@
       ]
     },
     {
-      "group": "Essentials",
+      "group": "About Seam",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "about-seam-ai/Conversational-AI",
+        "about-seam-ai/syncs",
+        "about-seam-ai/models",
+        "about-seam-ai/catalog"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Sources",
       "pages": [
-        "api-reference/introduction"
+        "sources/salesforce",
+        "sources/hubspot",
+        "sources/snowflake",
+        "sources/bigquery",
+        "sources/redshift",
+        "sources/azure-synapse",
+        "sources/postgres",
+        "sources/CSV",
+        "sources/google-sheets",
+        "sources/google-ads",
+        "sources/linkedin-ads",
+        "sources/marketo",
+        "sources/slack"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Destinations",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "destinations/salesforce",
+        "destinations/hubspot",
+        "destinations/google-sheets",
+        "destinations/google-ads",
+        "destinations/marketo"
       ]
     }
   ],
