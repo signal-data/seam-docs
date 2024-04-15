@@ -30,7 +30,7 @@ mintlify dev
 
 When you are ready to publish your changes, use the Github desktop app to commit and push the changes you have made. Changes will be deployed to production automatically after pushing to the `main` branch. 
 
-#### Troubleshooting
+### Troubleshooting
 
 - Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
 - Page loads as a 404 - Make sure you are running in a folder with `mint.json`
