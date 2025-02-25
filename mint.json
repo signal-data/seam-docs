@@ -1,24 +1,24 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Seam AI",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/assets/logo-dark.png",
+    "light": "/assets/logo-light.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/assets/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#4c810a",
+    "light": "#bbf859",
+    "dark": "#bbf859",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#4c810a",
+      "to": "#4c810a"
     }
   },
   "topbarLinks": [
     {
-      "name": "Try our demo",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Schedule a POC",
+      "url": "mailto:mikhiel@getseam.ai"
     }
   ],
   "topbarCtaButton": {
@@ -28,70 +28,50 @@
   "tabs": [],
   "anchors": [
     {
-      "name": "Changelog",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://www.getseam.ai/blog"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        {
+          "group": "Connections",
+          "icon": "diagram-project",
+          "pages": [
+            "docs/connections/salesforce",
+            "docs/connections/hubspot",
+            "docs/connections/snowflake",
+            "docs/connections/bigquery",
+            "docs/connections/redshift",
+            "docs/connections/azure-synapse",
+            "docs/connections/postgres",
+            "docs/connections/CSV",
+            "docs/connections/google-sheets",
+            "docs/connections/google-ads",
+            "docs/connections/linkedin-ads",
+            "docs/connections/marketo",
+            "docs/connections/slack"
+          ]
+        },
+        "docs/about/datasets",
+        "docs/about/models",
+        "docs/about/syncs"
       ]
     },
     {
-      "group": "About Seam",
+      "group": "Agents",
       "pages": [
-        "about-seam-ai/Conversational-AI",
-        "about-seam-ai/syncs",
-        "about-seam-ai/models",
-        "about-seam-ai/catalog"
-      ]
-    },
-    {
-      "group": "Sources",
-      "pages": [
-        "sources/salesforce",
-        "sources/hubspot",
-        "sources/snowflake",
-        "sources/bigquery",
-        "sources/redshift",
-        "sources/azure-synapse",
-        "sources/postgres",
-        "sources/CSV",
-        "sources/google-sheets",
-        "sources/google-ads",
-        "sources/linkedin-ads",
-        "sources/marketo",
-        "sources/slack"
-      ]
-    },
-    {
-      "group": "Destinations",
-      "pages": [
-        "destinations/salesforce",
-        "destinations/hubspot",
-        "destinations/google-sheets",
-        "destinations/google-ads",
-        "destinations/marketo"
+        "docs/agents/prospector",
+        "docs/agents/tam-builder",
+        "docs/agents/researcher"
       ]
     }
   ],
   "footerSocials": {
-    "X": "https://X.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/Seam_AI",
+    "linkedin": "https://www.linkedin.com/company/seamai"
   }
 }
