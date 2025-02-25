@@ -1,0 +1,106 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Seam AI",
+  "colors": {
+    "primary": "#4c810a",
+    "light": "#bbf859",
+    "dark": "#4c810a"
+  },
+  "favicon": "/assets/favicon.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "docs/welcome",
+              "docs/setup",
+              "docs/use-cases",
+              "docs/faq",
+              "docs/security"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              {
+                "group": "Data connections",
+                "icon": "diagram-project",
+                "pages": [
+                  "docs/connections/salesforce",
+                  "docs/connections/hubspot",
+                  "docs/connections/snowflake",
+                  "docs/connections/bigquery",
+                  "docs/connections/redshift",
+                  "docs/connections/azure-synapse",
+                  "docs/connections/postgres",
+                  "docs/connections/csv",
+                  "docs/connections/google-sheets",
+                  "docs/connections/google-ads",
+                  "docs/connections/linkedin-ads",
+                  "docs/connections/marketo",
+                  "docs/connections/slack"
+                ]
+              },
+              "docs/datasets",
+              "docs/models",
+              "docs/syncs"
+            ]
+          },
+          {
+            "group": "Agents",
+            "pages": [
+              "docs/agents/prospector",
+              "docs/agents/tam-builder",
+              "docs/agents/researcher"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": "https://enricher.seam.dev/openapi.json"
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Blog",
+          "href": "https://www.getseam.ai/blog",
+          "icon": "newspaper"
+        },
+        {
+          "anchor": "Support",
+          "href": "https://www.getseam.ai/blog",
+          "icon": "message-question"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/assets/logo-light.png",
+    "dark": "/assets/logo-dark.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Schedule a POC",
+        "href": "mailto:mikhiel@getseam.ai"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Sign in",
+      "href": "https://app.getseam.ai"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/Seam_AI",
+      "linkedin": "https://www.linkedin.com/company/seamai"
+    }
+  }
+}
