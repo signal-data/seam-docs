@@ -1,6 +1,6 @@
 # Seam docs
 
-## Set up
+## Installation
 
 Install the [Github desktop app](https://desktop.github.com/). This will enable you to push the changes you make locally to the Github repo. Any changes pushed to the repo will be picked up by the Mintlify Github app and published to the site.
 
@@ -16,7 +16,7 @@ Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify). This only ne
 npm i -g mintlify
 ```
 
-## Development
+## Local development
 
 Run the following command at the root of your documentation (where mint.json is) to preview the documentation changes locally in the browser at `http://localhost:3000`. When any changes are made and saved, the preview will rerender immediately to show the changes.
 
@@ -26,6 +26,50 @@ mintlify dev
 
 <img width="2372" alt="Screenshot 2024-04-15 at 10 14 31 AM" src="https://github.com/signal-data/signal-docs/assets/13254616/1fe71cb8-60b6-4980-9619-38963b06d79a">
 
+## Creating pages
+
+The folder structure inside the project dictates the pathing of the pages in the url. For example:
+
+The `researcher.mdx` page is saved inside the folder path /guides/agents/researcher.mdx.
+
+```
+- guides
+  - agents
+    - researcher.mdx
+```
+
+The page will now appear in the url as:
+
+```
+https://docs.getseam.ai/guides/agents/researcher
+```
+
+After creating a new page, to ensure that the page shows up as a navigation option in the left sidebar, go to the `docs.json` and add the page in the `navigation` property.
+
+```
+{
+    "navigation": {
+        "tabs": [
+            {
+                "tab": "Guides",
+                "groups": [
+                    // ...
+                    {
+                        "group": "Agents",
+                        "pages": [
+                            // ...
+                            "guides/agents/researcher"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+Make sure the page follows the folder structure path.
+
 ## Publishing Changes
 
-When you are ready to publish your changes, use the Github desktop app to commit and push the changes you have made. Changes will be deployed to production automatically after pushing to the `main` branch.
+When you are ready to publish your changes, use the Github desktop app to commit and push the changes you have made directly to the `main` branch. Changes will be deployed to production automatically.
