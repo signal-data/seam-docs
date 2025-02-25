@@ -16,46 +16,46 @@
           {
             "group": "Get started",
             "pages": [
-              "docs/welcome",
-              "docs/setup",
-              "docs/use-cases",
-              "docs/faq",
-              "docs/security"
+              "guides/welcome",
+              "guides/setup",
+              "guides/use-cases",
+              "guides/faq",
+              "guides/security"
             ]
           },
           {
-            "group": "Configuration",
+            "group": "Data",
             "pages": [
               {
-                "group": "Data connections",
+                "group": "Connections",
                 "icon": "diagram-project",
                 "pages": [
-                  "docs/connections/salesforce",
-                  "docs/connections/hubspot",
-                  "docs/connections/snowflake",
-                  "docs/connections/bigquery",
-                  "docs/connections/redshift",
-                  "docs/connections/azure-synapse",
-                  "docs/connections/postgres",
-                  "docs/connections/csv",
-                  "docs/connections/google-sheets",
-                  "docs/connections/google-ads",
-                  "docs/connections/linkedin-ads",
-                  "docs/connections/marketo",
-                  "docs/connections/slack"
+                  "guides/data/connections/salesforce",
+                  "guides/data/connections/hubspot",
+                  "guides/data/connections/snowflake",
+                  "guides/data/connections/bigquery",
+                  "guides/data/connections/redshift",
+                  "guides/data/connections/azure-synapse",
+                  "guides/data/connections/postgres",
+                  "guides/data/connections/csv",
+                  "guides/data/connections/google-sheets",
+                  "guides/data/connections/google-ads",
+                  "guides/data/connections/linkedin-ads",
+                  "guides/data/connections/marketo",
+                  "guides/data/connections/slack"
                 ]
               },
-              "docs/datasets",
-              "docs/models",
-              "docs/syncs"
+              "guides/data/datasets",
+              "guides/data/models",
+              "guides/data/syncs"
             ]
           },
           {
             "group": "Agents",
             "pages": [
-              "docs/agents/prospector",
-              "docs/agents/tam-builder",
-              "docs/agents/researcher"
+              "guides/agents/prospector",
+              "guides/agents/tam-builder",
+              "guides/agents/researcher"
             ]
           }
         ]
