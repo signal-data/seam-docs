@@ -45,17 +45,14 @@
                   "guides/data/connections/slack"
                 ]
               },
-              "guides/data/datasets",
-              "guides/data/models",
-              "guides/data/syncs"
+              "guides/data/datasets"
             ]
           },
           {
             "group": "Agents",
             "pages": [
               "guides/agents/prospector",
-              "guides/agents/tam-builder",
-              "guides/agents/researcher"
+              "guides/agents/tam-builder"
             ]
           }
         ]
@@ -74,7 +71,7 @@
         },
         {
           "anchor": "Support",
-          "href": "https://www.getseam.ai/blog",
+          "href": "mailto:support@getseam.ai",
           "icon": "message-question"
         }
       ]
@@ -87,8 +84,8 @@
   "navbar": {
     "links": [
       {
-        "label": "Schedule a POC",
-        "href": "mailto:mikhiel@getseam.ai"
+        "label": "Book a demo",
+        "href": "https://www.getseam.ai/get-started"
       }
     ],
     "primary": {
