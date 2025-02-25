@@ -56,9 +56,9 @@
             "docs/connections/slack"
           ]
         },
-        "docs/about/datasets",
-        "docs/about/models",
-        "docs/about/syncs"
+        "docs/datasets",
+        "docs/models",
+        "docs/syncs"
       ]
     },
     {
