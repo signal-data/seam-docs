@@ -59,7 +59,20 @@
       },
       {
         "tab": "API Reference",
-        "openapi": "https://enricher.seam.dev/openapi.json"
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "api-reference/overview",
+              "api-reference/authentication",
+              "api-reference/rate-limit"
+            ]
+          },
+          {
+            "group": "REST API",
+            "openapi": "https://enricher.seam.dev/openapi.json"
+          }
+        ]
       }
     ],
     "global": {
