@@ -69,7 +69,7 @@
             ]
           },
           {
-            "group": "REST API",
+            "group": "API - Research Agent",
             "openapi": "https://enricher.seam.dev/openapi.json"
           }
         ]
