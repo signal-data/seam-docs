@@ -50,10 +50,7 @@
           },
           {
             "group": "Agents",
-            "pages": [
-              "guides/agents/prospector",
-              "guides/agents/tam-builder"
-            ]
+            "pages": ["guides/agents/prospector", "guides/agents/tam-builder"]
           }
         ]
       },
@@ -71,7 +68,7 @@
           },
           {
             "group": "API - Research Agent (beta)",
-            "openapi": "https://enricher.seam.dev/openapi.json"
+            "pages": ["api-reference/completions/completions-request"]
           }
         ]
       }
