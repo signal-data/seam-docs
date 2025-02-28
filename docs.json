@@ -65,11 +65,12 @@
             "pages": [
               "api-reference/overview",
               "api-reference/authentication",
+              "api-reference/credits",
               "api-reference/rate-limit"
             ]
           },
           {
-            "group": "API - Research Agent",
+            "group": "API - Research Agent (beta)",
             "openapi": "https://enricher.seam.dev/openapi.json"
           }
         ]
