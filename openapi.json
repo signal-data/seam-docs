@@ -5,6 +5,11 @@
     "description": "API for enriching customer data with Generative AI & traditional third party providers.",
     "version": "0.1.0-beta.1"
   },
+  "servers": [
+    {
+      "url": "https://enricher.getseam.ai"
+    }
+  ],
   "paths": {
     "/v1/chat/completions": {
       "post": {
