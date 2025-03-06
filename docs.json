@@ -24,33 +24,30 @@
             ]
           },
           {
-            "group": "Data",
-            "pages": [
-              {
-                "group": "Connections",
-                "icon": "diagram-project",
-                "pages": [
-                  "guides/data/connections/salesforce",
-                  "guides/data/connections/hubspot",
-                  "guides/data/connections/snowflake",
-                  "guides/data/connections/bigquery",
-                  "guides/data/connections/redshift",
-                  "guides/data/connections/azure-synapse",
-                  "guides/data/connections/postgres",
-                  "guides/data/connections/csv",
-                  "guides/data/connections/google-sheets",
-                  "guides/data/connections/google-ads",
-                  "guides/data/connections/linkedin-ads",
-                  "guides/data/connections/marketo",
-                  "guides/data/connections/slack"
-                ]
-              },
-              "guides/data/datasets"
-            ]
-          },
-          {
             "group": "Agents",
             "pages": ["guides/agents/prospector", "guides/agents/tam-builder"]
+          },
+          {
+            "group": "Data manager",
+            "pages": ["guides/data/personas", "guides/data/datasets"]
+          },
+          {
+            "group": "Connections",
+            "pages": [
+              "guides/connections/salesforce",
+              "guides/connections/hubspot",
+              "guides/connections/snowflake",
+              "guides/connections/bigquery",
+              "guides/connections/redshift",
+              "guides/connections/azure-synapse",
+              "guides/connections/postgres",
+              "guides/connections/csv",
+              "guides/connections/google-sheets",
+              "guides/connections/google-ads",
+              "guides/connections/linkedin-ads",
+              "guides/connections/marketo",
+              "guides/connections/slack"
+            ]
           }
         ]
       },
