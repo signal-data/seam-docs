@@ -46,7 +46,13 @@
               "guides/connections/google-ads",
               "guides/connections/linkedin-ads",
               "guides/connections/marketo",
-              "guides/connections/slack"
+              "guides/connections/slack",
+              "guides/connections/amplitude",
+              "guides/connections/github",
+              "guides/connections/netsuite",
+              "guides/connections/salesloft",
+              "guides/connections/smartlead",
+              "guides/connections/outreach"
             ]
           }
         ]
