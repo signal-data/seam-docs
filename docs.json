@@ -34,8 +34,22 @@
           {
             "group": "Connections",
             "pages": [
-              "guides/connections/salesforce",
-              "guides/connections/hubspot",
+              {
+                "group": "Salesforce",
+                "pages": [
+                  "guides/connections/salesforce/authentication",
+                  "guides/connections/salesforce/custom-fields"
+                ],
+                "icon": "salesforce"
+              },
+              {
+                "group": "Hubspot",
+                "pages": [
+                  "guides/connections/hubspot/authentication",
+                  "guides/connections/hubspot/custom-fields"
+                ],
+                "icon": "hubspot"
+              },
               "guides/connections/snowflake",
               "guides/connections/bigquery",
               "guides/connections/redshift",
