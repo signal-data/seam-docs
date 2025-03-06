@@ -1,8 +1,33 @@
 ---
-title: Marketo
-description: "Connect your CRM to start ingesting data into Seam."
+title: "Marketo"
+description: "Quick guide to connecting Marketo as a Source and Destination."
 icon: "layer-group"
 ---
 
-![](/assets/images/marketo_asset.png)
-![](/assets/images/marketo_asset2.png)
+We require three values to connect Marketo to Seam.
+
+* Client ID
+
+* Client Secret
+
+* Web Service REST Endpoint
+
+## Step 1: Obtain the Client ID and Secret
+
+The Client ID and Client Secret can be obtained by logging into Marketo and going to **Admin** → **Integration** → **Launchpoint** then selecting a service and clicking **View Details**.
+
+<Frame as="div">
+  ![](/assets/images/marketo_asset.png)
+</Frame>
+
+## Step 2: Obtain the Web Service REST Endpoint
+
+Remaining in Marketo, the Web Service REST Endpoint can be obtained by going to **Admin** → **Integration** → **Web Services**.
+
+<Frame as="div">
+  ![](/assets/images/marketo_asset2.png)
+</Frame>
+
+## Step 3: Configure the connection in Seam
+
+Navigate to Settings → Sources → Add source, then enter the Client ID, Client Secret, and Web Services REST API Endpoint in Seam’s Marketo configuration fields and click **Save**.
