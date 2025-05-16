@@ -72,6 +72,15 @@
         ]
       },
       {
+        "tab": "Developers",
+        "groups": [
+          {
+            "group": "Tracking",
+            "pages": ["developers/website-tag"]
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
         "groups": [
           {
