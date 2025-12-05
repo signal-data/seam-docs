@@ -31,7 +31,7 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "guides/getting-started/overview",
               "guides/getting-started/onboarding"
@@ -84,7 +84,7 @@
             ]
           },
           {
-            "group": "Monitoring and intelligence",
+            "group": "Monitoring and Intelligence",
             "pages": [
               "guides/monitoring-and-intelligence/intent",
               "guides/monitoring-and-intelligence/reach",
