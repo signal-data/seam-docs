@@ -86,10 +86,10 @@
           {
             "group": "Monitoring and Intelligence",
             "pages": [
-              "guides/monitoring-and-intelligence/intent",
-              "guides/monitoring-and-intelligence/reach",
               "guides/monitoring-and-intelligence/fit-score",
+              "guides/monitoring-and-intelligence/intent",
               "guides/monitoring-and-intelligence/signals",
+              "guides/monitoring-and-intelligence/reach",
               "guides/monitoring-and-intelligence/audiences",
               "guides/monitoring-and-intelligence/personas"
             ]
@@ -109,37 +109,6 @@
               "guides/management/authentication",
               "guides/management/credit-system",
               "guides/management/security"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Developers",
-        "groups": [
-          {
-            "group": "Tracking",
-            "pages": [
-              "developers/website-tag"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "api-reference/overview",
-              "api-reference/authentication",
-              "api-reference/credits",
-              "api-reference/rate-limit"
-            ]
-          },
-          {
-            "group": "API - Research Agent (beta)",
-            "pages": [
-              "api-reference/completions/completions-request"
             ]
           }
         ]

@@ -24,7 +24,6 @@ Run the following command at the root of your documentation (where mint.json is)
 mintlify dev
 ```
 
-<img width="2372" alt="Screenshot 2024-04-15 at 10 14 31 AM" src="https://github.com/signal-data/signal-docs/assets/13254616/1fe71cb8-60b6-4980-9619-38963b06d79a">
 
 ## Creating pages
 
