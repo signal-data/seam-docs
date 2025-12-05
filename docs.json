@@ -8,65 +8,107 @@
     "dark": "#4c810a"
   },
   "favicon": "/assets/favicon.png",
+  "logo": {
+    "light": "/assets/logo-light.png",
+    "dark": "/assets/logo-dark.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Book a demo",
+        "href": "https://www.getseam.ai/get-started"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Sign in",
+      "href": "https://app.getseam.ai"
+    }
+  },
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get started",
+            "group": "Getting started",
             "pages": [
-              "guides/welcome",
-              "guides/setup",
-              "guides/use-cases",
-              "guides/faq",
-              "guides/security"
+              "guides/getting-started/overview",
+              "guides/getting-started/onboarding"
             ]
           },
           {
-            "group": "Agents",
-            "pages": ["guides/agents/prospector", "guides/agents/tam-builder"]
-          },
-          {
-            "group": "Data manager",
-            "pages": ["guides/data/personas", "guides/data/datasets"]
-          },
-          {
-            "group": "Connections",
+            "group": "Configuring Seam",
             "pages": [
+              "guides/configuring-seam/unified-data-model",
+              "guides/configuring-seam/web-pixel",
+              "guides/configuring-seam/bombora",
               {
-                "group": "Salesforce",
+                "group": "Connections",
                 "pages": [
-                  "guides/connections/salesforce/authentication",
-                  "guides/connections/salesforce/custom-fields"
-                ],
-                "icon": "salesforce"
-              },
-              {
-                "group": "Hubspot",
-                "pages": [
-                  "guides/connections/hubspot/authentication",
-                  "guides/connections/hubspot/custom-fields"
-                ],
-                "icon": "hubspot"
-              },
-              "guides/connections/snowflake",
-              "guides/connections/bigquery",
-              "guides/connections/redshift",
-              "guides/connections/azure-synapse",
-              "guides/connections/postgres",
-              "guides/connections/csv",
-              "guides/connections/google-sheets",
-              "guides/connections/google-ads",
-              "guides/connections/linkedin-ads",
-              "guides/connections/marketo",
-              "guides/connections/slack",
-              "guides/connections/amplitude",
-              "guides/connections/github",
-              "guides/connections/netsuite",
-              "guides/connections/salesloft",
-              "guides/connections/smartlead",
-              "guides/connections/outreach"
+                  {
+                    "group": "Hubspot",
+                    "pages": [
+                      "guides/connections/hubspot/authentication",
+                      "guides/connections/hubspot/custom-fields"
+                    ],
+                    "icon": "hubspot"
+                  },
+                  {
+                    "group": "Salesforce",
+                    "pages": [
+                      "guides/connections/salesforce/authentication",
+                      "guides/connections/salesforce/custom-fields"
+                    ],
+                    "icon": "salesforce"
+                  },
+                  "guides/connections/amplitude",
+                  "guides/connections/azure-synapse",
+                  "guides/connections/bigquery",
+                  "guides/connections/csv",
+                  "guides/connections/github",
+                  "guides/connections/google-ads",
+                  "guides/connections/google-sheets",
+                  "guides/connections/linkedin-ads",
+                  "guides/connections/marketo",
+                  "guides/connections/netsuite",
+                  "guides/connections/outreach",
+                  "guides/connections/postgres",
+                  "guides/connections/redshift",
+                  "guides/connections/salesloft",
+                  "guides/connections/slack",
+                  "guides/connections/smartlead",
+                  "guides/connections/snowflake"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Monitoring and Intelligence",
+            "pages": [
+              "guides/monitoring-and-intelligence/intent",
+              "guides/monitoring-and-intelligence/reach",
+              "guides/monitoring-and-intelligence/fit-score",
+              "guides/monitoring-and-intelligence/signals",
+              "guides/monitoring-and-intelligence/audiences",
+              "guides/monitoring-and-intelligence/personas"
+            ]
+          },
+          {
+            "group": "Actions",
+            "pages": [
+              "guides/actions/routing",
+              "guides/actions/plays"
+            ]
+          },
+          {
+            "group": "Management",
+            "pages": [
+              "guides/management/users",
+              "guides/management/organization-settings",
+              "guides/management/authentication",
+              "guides/management/credit-system",
+              "guides/management/security"
             ]
           }
         ]
@@ -76,7 +118,9 @@
         "groups": [
           {
             "group": "Tracking",
-            "pages": ["developers/website-tag"]
+            "pages": [
+              "developers/website-tag"
+            ]
           }
         ]
       },
@@ -94,7 +138,9 @@
           },
           {
             "group": "API - Research Agent (beta)",
-            "pages": ["api-reference/completions/completions-request"]
+            "pages": [
+              "api-reference/completions/completions-request"
+            ]
           }
         ]
       }
@@ -112,23 +158,6 @@
           "icon": "message-question"
         }
       ]
-    }
-  },
-  "logo": {
-    "light": "/assets/logo-light.png",
-    "dark": "/assets/logo-dark.png"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Book a demo",
-        "href": "https://www.getseam.ai/get-started"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Sign in",
-      "href": "https://app.getseam.ai"
     }
   },
   "footer": {
