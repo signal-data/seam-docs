@@ -105,8 +105,6 @@
             "group": "Management",
             "pages": [
               "guides/management/users",
-              "guides/management/organization-settings",
-              "guides/management/authentication",
               "guides/management/credit-system",
               "guides/management/security"
             ]
