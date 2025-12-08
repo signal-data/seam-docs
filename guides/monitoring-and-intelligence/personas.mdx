@@ -1,0 +1,387 @@
+---
+title: "Personas"
+description: "Define target roles and automatically find the right contacts within your accounts"
+---
+
+Personas are defined groupings of target roles and titles that represent the buying committees or decision-makers you want to engage. They answer the question: **"WHO should we talk to at each account?"**
+
+## What Are Personas?
+
+Personas help you identify and target the right individuals within accounts by defining:
+
+- **Job titles** - Specific roles you want to reach (e.g., "VP of Sales", "Director of Marketing")
+- **Seniority levels** - Minimum level required (e.g., Director+, VP and above)
+- **Keywords** - Terms that appear in LinkedIn profiles for further refinement
+- **Exclusions** - Titles or keywords to avoid (e.g., exclude "Content Marketing" when targeting "Marketing")
+
+<Info>
+**Example:** A "Revenue Operations" persona might include titles like "VP of RevOps", "Director of Sales Operations", and "Head of Revenue Enablement" while excluding "Marketing Operations" and "IT Operations".
+</Info>
+
+## How Personas Fit Into Seam
+
+Personas work with other intelligence features to complete the targeting picture:
+```
+Fit Scoring → Which ACCOUNTS to target?
+     ↓
+Intent/Signals → WHEN to engage?
+     ↓
+Personas → WHO to engage?
+     ↓
+Plays → HOW to engage?
+```
+
+**Example Flow:**
+1. **Fit Score** identifies Company X as an A-fit account
+2. **Intent Signal** detects they visited pricing page 5 times
+3. **Personas** define which roles to target (CMO, VP Demand Gen, Director Growth)
+4. **Play** automatically finds those people, enriches their data, and adds to sequence
+
+<Card title="Build Plays with Personas" icon="play" href="/guides/actions/plays">
+  Learn how personas power automated workflows
+</Card>
+
+## Configuring Personas
+
+### Title-Based Targeting
+
+Define personas using specific job titles:
+
+**Example: Data Engineering Persona**
+- Include: "VP of Data", "Head of Data Engineering", "Director of Analytics", "Chief Data Officer"
+- Exclude: "Data Analyst", "Junior Data Engineer"
+- Seniority: Director and above
+
+**Example: Growth Marketing Persona**
+- Include: "VP of Growth", "Director of Demand Generation", "Head of Growth Marketing"
+- Exclude: "Product Marketing", "Content Marketing", "Brand Marketing"
+- Seniority: Manager and above
+
+### Keyword Matching
+
+Add keywords that appear in LinkedIn profiles to refine targeting:
+
+**Example: RevOps Persona**
+- Titles: "VP RevOps", "Director Revenue Operations"
+- Keywords: "Salesforce admin", "revenue architecture", "sales operations"
+- Exclude Keywords: "customer success operations", "support operations"
+
+This catches people with non-standard titles who still match your target profile.
+
+### Priority Ordering
+
+Order personas by importance to your business:
+
+1. **Priority 1:** VP of Sales (highest value, hardest to reach)
+2. **Priority 2:** Director of Sales Operations (strong influence)
+3. **Priority 3:** Sales Development Manager (user/champion)
+
+When Seam prospects, it fills contacts in priority order until reaching your specified limit per account.
+
+### Contact Limits
+
+Set how many people to find per account:
+
+- **High-value accounts (Tier 1):** 5-7 contacts across all personas
+- **Mid-tier accounts (Tier 2):** 3-5 contacts
+- **Programmatic accounts (Tier 3):** 1-2 contacts
+
+More contacts = better buying committee coverage but higher costs (credits per contact).
+
+<Tip>
+Start with 3 contacts per account. This ensures you're not single-threaded but keeps costs manageable.
+</Tip>
+
+## Automated Prospecting
+
+When triggers fire, Seam automatically prospects for contacts matching your personas:
+
+<Steps>
+  <Step title="Trigger Occurs">
+    Account visits website, shows intent, or signal fires
+  </Step>
+  
+  <Step title="Persona Matching">
+    Seam searches for people matching persona criteria at that account
+  </Step>
+  
+  <Step title="Multi-Provider Enrichment">
+    Uses 20+ data providers in waterfall approach to find best contact info
+  </Step>
+  
+  <Step title="Data Validation">
+    Validates emails and phone numbers for deliverability
+  </Step>
+  
+  <Step title="Deployment">
+    Pushes contacts to CRM, sales sequences, and ad platforms
+  </Step>
+</Steps>
+
+This happens automatically—no manual list building or contact searching required.
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Website Visitor Outreach" icon="computer">
+    **Scenario:** High-fit company visits your pricing page
+    
+    **Personas Triggered:** CMO, VP Marketing, Director Demand Gen
+    
+    **Actions:**
+    - Seam identifies the company
+    - Automatically finds 3-5 people matching personas
+    - Enriches with emails and phone numbers
+    - Adds to targeted outreach sequence
+    - Pushes to LinkedIn matched audience
+    
+    **Result:** Engage buying committee within hours of website visit
+  </Accordion>
+  
+  <Accordion title="Intent-Based Buying Committee" icon="users">
+    **Scenario:** Account shows high Bombora intent on relevant topics
+    
+    **Personas Triggered:** Multiple personas across buying committee
+    
+    **Actions:**
+    - Find executive sponsor (CRO, VP Sales)
+    - Find economic buyer (CFO, VP Finance)
+    - Find champion (Director RevOps, Sales Manager)
+    - Find technical evaluator (Sales Ops Analyst)
+    
+    **Result:** Multi-threaded engagement across decision-makers
+  </Accordion>
+  
+  <Accordion title="Job Change Triggers" icon="briefcase">
+    **Scenario:** Target persona gets promoted or changes companies
+    
+    **Personas Matched:** Based on their new title
+    
+    **Actions:**
+    - Detect job change signal
+    - Verify new company is A/B fit
+    - Automatically initiate congratulatory outreach
+    - Add to new executive sequence
+    
+    **Result:** Leverage warm relationship at new company
+  </Accordion>
+  
+  <Accordion title="Mid-Tier Account Air Cover" icon="cloud">
+    **Scenario:** B/C-fit accounts showing intent but not worth AE time
+    
+    **Personas Triggered:** Primary decision-maker only (1-2 contacts)
+    
+    **Actions:**
+    - Find highest-priority persona only
+    - Add to automated nurture sequence
+    - No manual sales follow-up required
+    
+    **Result:** Coverage on hundreds of accounts without SDR time
+  </Accordion>
+  
+  <Accordion title="Event Follow-Up" icon="calendar">
+    **Scenario:** Conference attendee list needs follow-up
+    
+    **Personas Triggered:** Based on attendee titles
+    
+    **Actions:**
+    - Match attendees to defined personas
+    - Enrich with additional buying committee members
+    - Route high-priority personas to sales
+    - Route others to nurture
+    
+    **Result:** Systematic, persona-based event follow-up
+  </Accordion>
+  
+  <Accordion title="Expansion into Existing Customers" icon="arrow-up-right-dots">
+    **Scenario:** Customer showing usage patterns indicating upsell potential
+    
+    **Personas Triggered:** Different personas than original sale
+    
+    **Actions:**
+    - Find new stakeholders (e.g., CFO for enterprise deal)
+    - Find additional departments (e.g., Marketing after selling to Sales)
+    - Route to account manager for expansion conversation
+    
+    **Result:** Systematic account expansion motion
+  </Accordion>
+</AccordionGroup>
+
+## Integration Points
+
+Personas integrate throughout the Seam platform:
+
+| Integration | How Personas Are Used |
+|-------------|----------------------|
+| **Onboarding** | Configured during initial setup with CSM guidance |
+| **AI Prospecting** | Automatically finds contacts matching criteria |
+| **Plays** | Triggers target specific personas when conditions met |
+| **Enrichment** | Sources emails and phone numbers for matched personas |
+| **CRM Sync** | Pushes persona-matched contacts to Salesforce/HubSpot |
+| **Ad Platforms** | Deploys personas into LinkedIn matched audiences |
+| **Sales Engagement** | Routes to SalesLoft, Outreach, or other tools |
+
+## Multi-Provider Enrichment
+
+Seam uses a waterfall approach with 20+ data providers to ensure the best contact data:
+
+<Steps>
+  <Step title="Primary Provider">
+    Try highest-accuracy source first (e.g., ZoomInfo)
+  </Step>
+  
+  <Step title="Secondary Providers">
+    If no data found, try next provider (e.g., Apollo)
+  </Step>
+  
+  <Step title="Tertiary Sources">
+    Continue through provider list (Lucia, Cognism, etc.)
+  </Step>
+  
+  <Step title="Best Result">
+    Return highest-confidence email and phone number
+  </Step>
+</Steps>
+
+This ensures comprehensive coverage across:
+- Geographic regions (US, EMEA, APAC, LatAm)
+- Company sizes (SMB to Enterprise)
+- Industries and verticals
+- Public vs. private companies
+
+<Card title="View Data Providers" icon="database" href="/guides/configuring-seam/connections">
+  See all available enrichment sources
+</Card>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with 3-5 core personas" icon="users">
+    Don't try to define every possible role. Focus on the 3-5 most important personas for your sales cycle. You can always add more later.
+  </Accordion>
+  
+  <Accordion title="Use exclusions liberally" icon="ban">
+    Be specific about what to exclude. "Marketing" is too broad if you only want demand gen—exclude "Product Marketing", "Content Marketing", "Brand Marketing", etc.
+  </Accordion>
+  
+  <Accordion title="Align with your sales team" icon="handshake">
+    Ask sales: "Who do you want to talk to?" Base personas on roles that actually convert, not theoretical buying committees.
+  </Accordion>
+  
+  <Accordion title="Match personas to account tier" icon="chart-pyramid">
+    - **A-tier accounts:** All personas (5-7 contacts)
+    - **B-tier accounts:** Primary personas (3-4 contacts)
+    - **C-tier accounts:** Single persona (1-2 contacts)
+  </Accordion>
+  
+  <Accordion title="Set appropriate seniority filters" icon="ranking-star">
+    For enterprise sales, Director+ makes sense. For SMB sales, Manager+ may be appropriate. Match seniority to your deal size.
+  </Accordion>
+  
+  <Accordion title="Review and refine quarterly" icon="calendar">
+    Check which personas are converting. If "VP Marketing" never responds but "Director Demand Gen" does, adjust priorities.
+  </Accordion>
+  
+  <Accordion title="Use keywords for niche roles" icon="magnifying-glass">
+    If you sell to a specific niche (e.g., "revenue operations"), keywords help find people with non-standard titles who still fit the role.
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Tips
+
+### Similar to LinkedIn Sales Navigator
+
+Persona configuration works like LinkedIn Sales Navigator search:
+
+<Tabs>
+  <Tab title="Job Titles">
+    Enter specific titles you want to target, just like in Sales Navigator's title field
+  </Tab>
+  
+  <Tab title="Keywords">
+    Add profile keywords that indicate the right role, similar to keyword search
+  </Tab>
+  
+  <Tab title="Seniority">
+    Filter by level (Entry, Manager, Director, VP, C-Level)
+  </Tab>
+  
+  <Tab title="Exclusions">
+    Remove unwanted roles, just like negative keywords
+  </Tab>
+</Tabs>
+
+If you're comfortable with Sales Navigator, you'll find persona configuration intuitive.
+
+### Common Persona Examples
+
+<AccordionGroup>
+  <Accordion title="Revenue Operations">
+    **Include:** VP RevOps, Director Revenue Operations, Head of Sales Operations, Revenue Enablement Manager
+    
+    **Exclude:** Marketing Operations, Customer Success Operations
+    
+    **Keywords:** Salesforce, revenue architecture, GTM operations
+    
+    **Seniority:** Manager and above
+  </Accordion>
+  
+  <Accordion title="Demand Generation">
+    **Include:** VP Demand Gen, Director Demand Generation, Head of Growth Marketing, Lead Gen Manager
+    
+    **Exclude:** Product Marketing, Content Marketing, Brand Marketing
+    
+    **Keywords:** ABM, pipeline generation, MQL, SQL
+    
+    **Seniority:** Manager and above
+  </Accordion>
+  
+  <Accordion title="Data Engineering">
+    **Include:** VP Data, Head of Data Engineering, Director Analytics, Chief Data Officer
+    
+    **Exclude:** Data Analyst, BI Analyst, Junior Data Engineer
+    
+    **Keywords:** data infrastructure, data platform, ETL, data pipelines
+    
+    **Seniority:** Director and above
+  </Accordion>
+  
+  <Accordion title="Sales Leadership">
+    **Include:** CRO, VP Sales, SVP Revenue, Head of Sales, Director Sales
+    
+    **Exclude:** Sales Engineer, Sales Operations
+    
+    **Keywords:** quota, sales team, revenue growth
+    
+    **Seniority:** Director and above
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How many personas should I create?">
+    Start with 3-5 core personas that represent your typical buying committee. Most customers maintain 5-10 personas total across different segments.
+  </Accordion>
+  
+  <Accordion title="Can I have different personas for different account segments?">
+    Yes. You can define different persona sets for enterprise vs. SMB, different industries, or different product lines. Each play can target specific persona combinations.
+  </Accordion>
+  
+  <Accordion title="What if a persona title doesn't exist at a small company?">
+    Seam will find the closest match based on your criteria. At a 20-person company, you might get "Head of Marketing" instead of "VP Marketing" if that's the most senior marketing role.
+  </Accordion>
+  
+  <Accordion title="Do personas consume credits?">
+    Yes. Each contact found and enriched consumes credits. Setting appropriate contact limits per account helps manage costs.
+  </Accordion>
+  
+  <Accordion title="Can I update personas after configuration?">
+    Absolutely. Personas should be refined over time based on which roles actually convert. Update them in your settings and new plays will use the updated definitions.
+  </Accordion>
+  
+  <Accordion title="How does Seam handle companies with non-standard titles?">
+    Keywords help catch non-standard titles. For example, "Growth Hacker" might not include "Marketing" in the title, but keywords like "demand gen" and "pipeline" help identify them.
+  </Accordion>
+</AccordionGroup>
+

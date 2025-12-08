@@ -1,0 +1,478 @@
+---
+title: "Audiences"
+description: "Create dynamic segments of accounts and contacts based on fit, intent, signals, and engagement"
+---
+
+Audiences are dynamic groups of companies and individuals that update automatically based on criteria you define. Think of them as smart account and contact reports that span across all your connected systems—not just your CRM.
+
+## The Problem Audiences Solve
+
+<CardGroup cols={2}>
+  <Card title="Fragmented Data" icon="database">
+    Customer data scattered across 20+ tools. Audiences consolidate into one unified view.
+  </Card>
+  
+  <Card title="Pre-Form Engagement" icon="eye">
+    Most buyers decide before filling out forms. Audiences identify in-market accounts early.
+  </Card>
+  
+  <Card title="Inefficient Targeting" icon="bullseye">
+    Wasted effort on wrong prospects. Audiences enable precise targeting by fit and intent.
+  </Card>
+  
+  <Card title="Manual Prospecting" icon="user-plus">
+    Finding the right contacts takes hours. Audiences automate contact discovery.
+  </Card>
+</CardGroup>
+
+## How Audiences Work
+
+### Building an Audience
+
+Create segments by filtering across multiple dimensions:
+
+<Tabs>
+  <Tab title="Fit & Scoring">
+    - Fit Score (A, B, C, D)
+    - Intent Score (Low, Medium, High)
+    - Signal Score (New hires, funding, etc.)
+    - Reach Score (Coverage level)
+    - Buying stage (Awareness, Consideration, Purchase)
+  </Tab>
+  
+  <Tab title="Engagement">
+    - Website visits (pages, frequency, recency)
+    - Email engagement (opens, clicks, responses)
+    - Ad interactions (impressions, clicks)
+    - Meeting attendance
+    - Content downloads
+    - Event participation
+  </Tab>
+  
+  <Tab title="Account Attributes">
+    - Industry and vertical
+    - Company size (employees, revenue)
+    - Geographic location
+    - Technologies used
+    - Funding stage
+    - Growth indicators
+  </Tab>
+  
+  <Tab title="CRM Data">
+    - Opportunity stage
+    - Account owner
+    - Account status (customer, prospect, partner)
+    - Open opportunities
+    - Last activity date
+    - Lead source
+  </Tab>
+  
+  <Tab title="Signals">
+    - New hires (specific roles)
+    - Job openings
+    - Funding rounds
+    - Promotions
+    - Champion job changes
+    - Social media mentions
+    - Competitor mentions
+  </Tab>
+</Tabs>
+
+### Cross-System Filtering
+
+Unlike traditional tools, Audiences filter across all connected systems simultaneously:
+
+**Example:**
+> "Companies in Salesforce that engaged with LinkedIn ads AND visited pricing page AND have A/B fit AND are not in an open opportunity AND are not competitors"
+
+This type of complex, cross-system filtering would require custom reporting or data engineering in other platforms.
+
+## Dynamic Updates
+
+Audiences are not static lists—they update automatically as accounts meet or leave your criteria:
+
+- **Account enters audience** → Triggers associated plays
+- **Account exits audience** → Stops automation, moves to new audience
+- **Real-time updates** → Reflects changes across all systems
+
+<Info>
+Audiences are "living" segments that continuously update based on account behavior and attributes, ensuring your targeting stays current.
+</Info>
+
+## Common Audience Examples
+
+<AccordionGroup>
+  <Accordion title="High-Intent Website Visitors" icon="computer">
+    **Criteria:**
+    - Visited website in last 30 days
+    - Viewed pricing or product pages
+    - Fit Score: A or B
+    - Not in open opportunity
+    - Not a competitor
+    
+    **Use:** Immediate prospecting and outreach
+  </Accordion>
+  
+  <Accordion title="Neglected High-Value Accounts" icon="circle-exclamation">
+    **Criteria:**
+    - Fit Score: A
+    - Intent Score: Medium or High
+    - Signals: Recent hiring or funding
+    - Reach Score: Low (fewer than 3 contacts)
+    - Last touch: Over 30 days ago
+    
+    **Use:** Alert sales team, expand coverage
+  </Accordion>
+  
+  <Accordion title="Mid-Tier Air Cover" icon="cloud">
+    **Criteria:**
+    - Fit Score: B or C
+    - Intent Score: Low to Medium
+    - Not assigned to sales rep
+    - Not in active opportunity
+    
+    **Use:** Automated nurture campaigns
+  </Accordion>
+  
+  <Accordion title="Competitor Displacement" icon="trophy">
+    **Criteria:**
+    - Mentioned competitor on social media
+    - Fit Score: A or B
+    - Currently using competitor (from enrichment data)
+    
+    **Use:** Targeted competitive positioning campaigns
+  </Accordion>
+  
+  <Accordion title="New Executive Engagement" icon="user-tie">
+    **Criteria:**
+    - New VP, SVP, or C-level hire detected
+    - Hire is in target persona (e.g., VP Sales, CMO)
+    - Fit Score: A or B
+    - Hired within last 60 days
+    
+    **Use:** New executive welcome sequence
+  </Accordion>
+  
+  <Accordion title="Event Follow-Up" icon="calendar">
+    **Criteria:**
+    - Attended webinar or conference (uploaded list)
+    - Engaged during event (Q&A, booth visit)
+    - Fit Score: B or higher
+    
+    **Use:** Post-event nurture and sales routing
+  </Accordion>
+  
+  <Accordion title="Ad Engagement Retargeting" icon="rectangle-ad">
+    **Criteria:**
+    - Clicked on LinkedIn or Google ad
+    - Fit Score: A or B
+    - Did not fill out form
+    - Not currently in sales sequence
+    
+    **Use:** Add to retargeting campaign, find contacts to engage
+  </Accordion>
+</AccordionGroup>
+
+## Integration with Plays
+
+Audiences power automated plays by serving as triggers and filters:
+
+**Example Workflow:**
+```
+Audience: "High-Intent Accounts Not Being Worked"
+  ↓
+Enters Play: "Auto-Prospecting & Deployment"
+  ↓
+Actions:
+  1. Research buying committee (find 3-5 personas)
+  2. Enrich contact data from 20+ providers
+  3. Add to sales sequences (SalesLoft/Outreach)
+  4. Push to LinkedIn matched audience
+  5. Create tasks in Salesforce for assigned rep
+  6. Send Slack notification to account owner
+```
+
+<Card title="Build Plays" icon="play" href="/guides/actions/plays">
+  Learn how to attach audiences to automated plays
+</Card>
+
+### Always-On vs. One-Off Plays
+
+- **Always-On Plays:** Continuously monitor audience, trigger actions as accounts enter
+- **One-Off Plays:** Run once on current audience members (e.g., event follow-up)
+
+## Tiered Account Strategies
+
+Use audiences to implement tiered ABM strategies:
+
+<Tabs>
+  <Tab title="Tier 1: Strategic ABM">
+    **Audience Criteria:**
+    - Fit Score: A
+    - Revenue potential: High
+    - Strategic importance: Named accounts
+    
+    **Engagement:**
+    - Direct sales ownership
+    - Personalized campaigns
+    - Multi-threaded outreach
+    - Custom content and events
+  </Tab>
+  
+  <Tab title="Tier 2: Scaled ABM">
+    **Audience Criteria:**
+    - Fit Score: A or B
+    - Revenue potential: Medium
+    - Intent Score: Medium or High
+    
+    **Engagement:**
+    - Sales-assisted with marketing automation
+    - Targeted campaigns by segment
+    - Automated multi-touch sequences
+    - Industry-specific content
+  </Tab>
+  
+  <Tab title="Tier 3: Programmatic ABM">
+    **Audience Criteria:**
+    - Fit Score: B or C
+    - Revenue potential: Lower
+    - Volume: Hundreds to thousands
+    
+    **Engagement:**
+    - Fully automated campaigns
+    - Generic but relevant messaging
+    - Nurture until intent increases
+    - Automated lead scoring
+  </Tab>
+</Tabs>
+
+Different tiers receive different levels of human touch and personalization based on their potential value.
+
+## Multi-Channel Deployment
+
+Push audiences to your execution systems:
+
+<CardGroup cols={2}>
+  <Card title="CRM Systems" icon="database">
+    Salesforce, HubSpot - Create records, update fields, assign owners
+  </Card>
+  
+  <Card title="Sales Engagement" icon="envelope">
+    SalesLoft, Outreach - Add to sequences, create tasks
+  </Card>
+  
+  <Card title="Ad Platforms" icon="rectangle-ad">
+    LinkedIn Ads, Google Ads - Build matched audiences
+  </Card>
+  
+  <Card title="Marketing Automation" icon="paper-plane">
+    Marketo, HubSpot - Trigger campaigns, update lists
+  </Card>
+</CardGroup>
+
+This enables coordinated multi-channel engagement from a single audience definition.
+
+## Data Sources
+
+Audiences aggregate data from all connected systems:
+
+| Category | Sources |
+|----------|---------|
+| **CRM** | Salesforce, HubSpot |
+| **Marketing Automation** | Marketo, HubSpot, Pardot |
+| **Sales Engagement** | SalesLoft, Outreach, Apollo |
+| **Ad Platforms** | LinkedIn Ads, Google Ads |
+| **Web Tracking** | Seam web pixel (IP de-anonymization) |
+| **Intent Data** | Bombora (offsite keyword intent) |
+| **Contact Data** | ZoomInfo, Apollo, Lucia, 20+ providers |
+| **Social Listening** | LinkedIn activity monitoring |
+| **Enrichment** | Firmographic and technographic data |
+
+<Card title="Connect Data Sources" icon="plug" href="/guides/configuring-seam/connections">
+  View all available integrations
+</Card>
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Automated Prospecting for High-Intent Accounts" icon="magnifying-glass">
+    **Goal:** Engage accounts showing buying signals before competitors
+    
+    **Audience:** High fit + high intent + not in opportunity
+    
+    **Actions:** Find contacts, enrich data, route to sales, deploy to sequences
+    
+    **Result:** Speed to signal - act on interest within hours, not days
+  </Accordion>
+  
+  <Accordion title="Event Lead Processing" icon="ticket">
+    **Goal:** Efficiently process and route conference/webinar attendees
+    
+    **Audience:** Upload CSV list, enrich with fit and intent data
+    
+    **Actions:** Score for fit, route high-fit to sales, others to nurture
+    
+    **Result:** Automated follow-up for hundreds of leads without manual work
+  </Accordion>
+  
+  <Accordion title="Regional Automation" icon="globe">
+    **Goal:** Cover markets without local sales resources
+    
+    **Audience:** Accounts in LATAM, APAC, or EMEA with medium/high intent
+    
+    **Actions:** Automated localized campaigns, escalate to regional partner when hot
+    
+    **Result:** Global coverage without hiring in every region
+  </Accordion>
+  
+  <Accordion title="Champion Tracking" icon="star">
+    **Goal:** Follow customers when they move to new companies
+    
+    **Audience:** Previous customers who changed jobs + new company is A/B fit
+    
+    **Actions:** Alert sales, trigger congratulatory outreach, fast-track evaluation
+    
+    **Result:** Convert one customer into multiple by following champions
+  </Accordion>
+  
+  <Accordion title="Competitive Displacement" icon="sword">
+    **Goal:** Target accounts using competitors
+    
+    **Audience:** Social mentions of competitors + fit score A/B + not customers
+    
+    **Actions:** Deploy comparison content, trigger SDR outreach with competitive talking points
+    
+    **Result:** Insert yourself into active evaluations
+  </Accordion>
+  
+  <Accordion title="Customer Expansion" icon="arrow-up-right-dots">
+    **Goal:** Identify upsell/cross-sell opportunities
+    
+    **Audience:** Existing customers + product usage signals + account health score high
+    
+    **Actions:** Route to account manager, trigger expansion conversations
+    
+    **Result:** Systematic expansion motion across customer base
+  </Accordion>
+</AccordionGroup>
+
+## ABM Capabilities
+
+Audiences enable comprehensive account-based marketing:
+
+### Account Prioritization
+
+Score and rank accounts based on multiple dimensions, giving sales clear target lists.
+
+### Buying Committee Identification
+
+Define target personas (VP Marketing, Director of Ops), automatically prospect for these roles within target accounts.
+
+### Multi-Threaded Outreach
+
+Engage multiple contacts within an account simultaneously with coordinated messaging.
+
+### Account Lifecycle Management
+
+Deploy different plays based on account stage (awareness → consideration → decision).
+
+### Integrated Campaign Orchestration
+
+Coordinate ads, email, and sales outreach for target accounts across all channels.
+
+<Info>
+Seam competes with legacy ABM platforms like 6sense and Demandbase, but offers faster setup, easier orchestration, and unified data without complex configurations.
+</Info>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with clear use cases" icon="lightbulb">
+    Don't try to build every possible audience at once. Start with 3-5 high-value use cases and prove ROI before expanding.
+  </Accordion>
+  
+  <Accordion title="Layer filters strategically" icon="layer-group">
+    Always include Fit Score as a base filter. Only engage accounts that match your ICP, regardless of intent or signals.
+  </Accordion>
+  
+  <Accordion title="Use exclusions" icon="ban">
+    Exclude competitors, existing customers (unless targeting expansion), and accounts in late-stage opportunities to avoid noise.
+  </Accordion>
+  
+  <Accordion title="Test before scaling" icon="flask">
+    Start with smaller audiences (50-100 accounts) to validate messaging and conversion before scaling to thousands.
+  </Accordion>
+  
+  <Accordion title="Monitor audience size" icon="chart-line">
+    Audiences that are too small (under 20 accounts) may not justify automation. Too large (over 10,000) may lack specificity.
+  </Accordion>
+  
+  <Accordion title="Review and refine monthly" icon="calendar">
+    Check which audiences generate the most pipeline. Refine criteria based on conversion data.
+  </Accordion>
+  
+  <Accordion title="Name audiences clearly" icon="tag">
+    Use descriptive names: "High-Intent_A-Fit_WebVisitors_30d" is better than "Website Audience 1"
+  </Accordion>
+</AccordionGroup>
+
+## Building Your First Audience
+
+<Steps>
+  <Step title="Define Your Goal">
+    What do you want to accomplish? (e.g., "Engage high-intent accounts not being worked")
+  </Step>
+  
+  <Step title="Select Base Criteria">
+    Start with Fit Score to ensure you're targeting the right accounts
+  </Step>
+  
+  <Step title="Add Intent/Signal Filters">
+    Layer on engagement or signal criteria (website visits, new hires, etc.)
+  </Step>
+  
+  <Step title="Add Exclusions">
+    Remove competitors, customers, or accounts already in opportunities
+  </Step>
+  
+  <Step title="Preview Results">
+    Check audience size and review sample accounts to validate criteria
+  </Step>
+  
+  <Step title="Save and Name">
+    Give it a clear, descriptive name for future reference
+  </Step>
+  
+  <Step title="Attach to Play">
+    Connect the audience to an automated play for execution
+  </Step>
+</Steps>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How is this different from a Salesforce report?">
+    Audiences pull data from all connected systems (20+ tools), not just CRM. They also automatically prospect contacts and trigger actions, which reports cannot do.
+  </Accordion>
+  
+  <Accordion title="Can I export audiences?">
+    Yes. Export to CSV or sync to your CRM, data warehouse, or other systems via native integrations.
+  </Accordion>
+  
+  <Accordion title="How often do audiences update?">
+    Real-time for most data sources. Website visits, email engagement, and CRM changes update immediately. Some third-party data (like Bombora) updates weekly.
+  </Accordion>
+  
+  <Accordion title="Can I create audiences of people, not just companies?">
+    Yes. You can filter by person-level attributes (title, seniority, engagement) to create contact-level audiences.
+  </Accordion>
+  
+  <Accordion title="What happens when an account leaves an audience?">
+    Depends on your play configuration. You can stop automation, move them to a different play, or take no action. It's customizable.
+  </Accordion>
+  
+  <Accordion title="How many audiences can I create?">
+    No hard limit. Most customers maintain 10-30 active audiences covering different segments and use cases.
+  </Accordion>
+</AccordionGroup>
+

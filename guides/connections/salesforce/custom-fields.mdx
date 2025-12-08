@@ -3,11 +3,13 @@ title: "Custom fields"
 description: "Below are the custom fields required for Salesforce."
 ---
 
+## Creating Custom Fields in Salesforce
+
 1. **Navigate to Object Manager:**
    - In Setup, use the **Quick Find** box to search for **Object Manager**.
    - Click on **Object Manager** from the results.
 2. **Select the Object:**
-   - From the list of objects, find and click on **your object**.
+   - From the list of objects, find and click on the object (Account, Contact, or Lead).
 3. **Access Fields & Relationships:**
    - Inside the object, click on **Fields & Relationships** in the sidebar.
 4. **Create a New Custom Field:**
@@ -16,37 +18,64 @@ description: "Below are the custom fields required for Salesforce."
 
 ## I. Account
 
-The table below outlines each field’s name, type, and a brief configuration description to ensure all required fields have been added.
+The table below outlines each field's name, type, and configuration for the Account object.
 
-| Field Name              | | Type      | | Configuration                |
-| :---------------------- | :-- | --------- | :-- | ---------------------------- |
-| Seam TAM Id             | | Text      | | Length: 255 ; External Id: ✅ |
-| Seam TAM created at     | | Date/Time | |                              |
-| Linkedin URL            | | URL       | |                              |
-| Linkedin Employee Count | | Number    | | Length: 18 ; Decimal: 0      |
+| Field Name | Type | Configuration |
+| :--------- | :--- | :------------ |
+| Seam Buying Stage | Picklist | Values: Unaware, Awareness, Consideration, Purchase |
+| Seam Company ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Fit Score | Picklist | Values: A, B, C, D |
+| Seam Fit Explanation | Rich Text | Summary of AI fit scoring rationale |
+| Seam Intent Level | Picklist | Values: Hot, Medium, Low, None |
+| Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Reach Level | Picklist | Values: Unengaged, Sales Engaged, Marketing Engaged, Sales AND Marketing Engaged, Opportunity |
+| Seam Reach Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Number of Contacts Reached | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Strength | Picklist | Values: High, Medium, Low, None |
+| Seam Updated at | Date/Time | Timestamp of last Seam sync |
+| LinkedIn URL | URL | Company LinkedIn profile URL |
+| LinkedIn Employee Count | Number | Length: 18 ; Decimal: 0 |
 
 ## II. Contact
 
-The table below outlines each field’s name, type, and a brief configuration description to ensure all required fields have been added.
+The table below outlines each field's name, type, and configuration for the Contact object.
 
-| Field Name                 | | Type      | | Configuration                |
-| -------------------------- | --- | --------- | --- | ---------------------------- |
-| Seam Prospector Id         | | Text      | | Length: 255 ; External Id: ✅ |
-| Seam Prospector created at | | Date/Time | |                              |
-| Linkedin URL               | | URL       | |                              |
-| Seam Play                  | | Text      | | Length: 255                  |
-| Seam Persona               | | Text      | | Length: 255                  |
-| Seam Email Status          | | Text      | | Length: 255                  |
+| Field Name | Type | Configuration |
+| :--------- | :--- | :------------ |
+| Seam Buying Stage | Picklist | Values: Same as Account (Unaware, Awareness, Consideration, Purchase) |
+| Seam People ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Intent Level | Picklist | Values: Same as Account (Hot, Medium, Low, None) |
+| Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Reach Level | Text | Length: 255 |
+| Seam Reach Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Strength | Text | Length: 255 |
+| Seam Persona | Text | Length: 255 ; Persona name assigned during prospecting |
+| Seam Updated at | Date/Time | Timestamp of last Seam sync |
+| Seam Mobile Number | Text | Length: 255 ; Mobile phone number |
+| LinkedIn URL | URL | Contact LinkedIn profile URL |
+| Seam Play | Text | Length: 255 ; Play name that sourced this contact |
+| Seam Play Added | Date/Time | When contact was added to play |
+| Seam Email Status | Text | Length: 255 ; Email verification status |
+| Seam Champion | Checkbox | Indicates if contact is a champion/advocate |
 
 ## III. Lead
 
-The table below outlines each field’s name, type, and a brief configuration description to ensure all required fields have been added.
+The table below outlines each field's name, type, and configuration for the Lead object.
 
-| Field Name                 | | Type      | | Configuration                |
-| -------------------------- | --- | --------- | --- | ---------------------------- |
-| Seam Prospector Id         | | Text      | | Length: 255 ; External Id: ✅ |
-| Seam Prospector created at | | Date/Time | |                              |
-| Linkedin URL               | | URL       | |                              |
-| Seam Play                  | | Text      | | Length: 255                  |
-| Seam Persona               | | Text      | | Length: 255                  |
-| Seam Email Status          | | Text      | | Length: 255                  |
+<Note>
+Lead fields typically mirror Contact fields. If your organization uses Leads, create the same custom fields as Contact above.
+</Note>
+
+| Field Name | Type | Configuration |
+| :--------- | :--- | :------------ |
+| Seam People ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Intent Level | Picklist | Values: Hot, Medium, Low, None |
+| Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Persona | Text | Length: 255 |
+| Seam Play | Text | Length: 255 |
+| Seam Play Added | Date/Time | When lead was added to play |
+| Seam Email Status | Text | Length: 255 |
+| LinkedIn URL | URL | Lead LinkedIn profile URL |
+

@@ -1,0 +1,582 @@
+---
+title: "Plays"
+description: "Automated workflows that prospect, enrich, and deploy contacts based on fit, intent, and signals"
+---
+
+Plays are automated workflows that turn account intelligence into action. When accounts meet specific criteria—like visiting your website, showing intent, or hiring a key role—Plays automatically prospect contacts, enrich their data, and deploy them into your sales and marketing systems.
+
+## What Are Plays?
+
+Plays are the orchestration engine of Seam AI. While Fit, Intent, Signals, and Audiences tell you **who** to target and **when**, Plays handle the **how**—automating the entire process from signal detection to contact deployment.
+
+<Info>
+**Think of Plays as "If This, Then That" for B2B sales:** If an account meets your criteria, then automatically find the right people, get their contact info, and add them to sequences.
+</Info>
+
+## The Plays Workflow
+
+Every play follows a four-step workflow:
+
+<Steps>
+  <Step title="Trigger & Audience">
+    **Define when the play runs and which accounts qualify**
+    
+    - Set trigger conditions (intent spike, website visit, new hire)
+    - Define audience criteria using Fit, Intent, Signals, Reach
+    - Choose always-on (continuous) or one-off (single run)
+  </Step>
+  
+  <Step title="Auto-Prospect">
+    **Automatically find the right contacts within accounts**
+    
+    - Use predefined personas to identify buying committee
+    - Specify how many contacts per account (e.g., 3-5 people)
+    - AI searches for people matching persona criteria
+  </Step>
+  
+  <Step title="Enrichment">
+    **Get verified contact information**
+    
+    - Email addresses with triple verification
+    - Mobile phone numbers with validation
+    - Multi-provider waterfall for best data quality
+    - Duplicate checking against existing CRM records
+  </Step>
+  
+  <Step title="Deployment & Routing">
+    **Push contacts into your systems with proper assignment**
+    
+    - Route to appropriate sales rep (territory, account owner, round robin)
+    - Deploy to CRM (Salesforce, HubSpot)
+    - Add to sales sequences (Outreach, SalesLoft)
+    - Push to ad platforms (LinkedIn, Google Ads)
+  </Step>
+</Steps>
+
+<Card title="Configure Routing" icon="route" href="/guides/actions/routing">
+  Learn how to set up routing rules for plays
+</Card>
+
+## Types of Plays
+
+<Tabs>
+  <Tab title="Always-On Plays">
+    **Continuous automation that runs whenever criteria are met**
+    
+    **When to use:**
+    - High-intent website visitor engagement
+    - New hire tracking and outreach
+    - Competitor mention monitoring
+    - Mid-tier account air cover
+    
+    **How it works:**
+    - Play monitors audience continuously
+    - When account enters audience, actions trigger
+    - Runs indefinitely until you pause it
+    
+    **Example:** "Whenever an A/B fit account visits pricing page 3+ times, find 3 contacts and add to sequence"
+  </Tab>
+  
+  <Tab title="One-Off Plays">
+    **Single-run campaigns for specific initiatives**
+    
+    **When to use:**
+    - Event follow-up campaigns
+    - Product launch targeting
+    - Named account list expansion
+    - Quarterly ABM campaigns
+    
+    **How it works:**
+    - Play runs once on current audience members
+    - Completes after processing all accounts
+    - Can be re-run manually if needed
+    
+    **Example:** "Process list of 500 conference attendees, enrich data, and route to sales"
+  </Tab>
+  
+  <Tab title="Strategic ABM Plays">
+    **Highly targeted campaigns for top-tier accounts**
+    
+    **When to use:**
+    - Named account lists (top 50-100 accounts)
+    - Enterprise deal acceleration
+    - Multi-threaded account expansion
+    - Executive engagement programs
+    
+    **How it works:**
+    - Manually defined account list
+    - Deep prospecting (5-7 contacts per account)
+    - Multi-channel coordination (ads + email + SDR)
+    - Often combined with personalized content
+    
+    **Example:** "Find entire buying committee at 25 target Fortune 500 accounts and coordinate multi-channel outreach"
+  </Tab>
+</Tabs>
+
+## Pre-Built Play Templates
+
+Seam includes 30+ pre-configured plays for common use cases:
+
+<AccordionGroup>
+  <Accordion title="Intent-Based Plays" icon="radar">
+    - **High-Intent Outreach** - Target accounts with strong buying signals
+    - **Website Visitor Engagement** - Automatically engage site visitors
+    - **Pricing Page Visitors** - Fast response to high-intent page views
+    - **Content Download Follow-Up** - Engage based on content engagement
+  </Accordion>
+  
+  <Accordion title="Ad Engagement Plays" icon="rectangle-ad">
+    - **LinkedIn Ad Retargeting** - Re-engage ad clickers who didn't convert
+    - **Google Ads Follow-Up** - Prospect companies from ad campaigns
+    - **Multi-Channel Ad Coordination** - Sync LinkedIn and Google audiences
+  </Accordion>
+  
+  <Accordion title="Job Tracking Plays" icon="briefcase">
+    - **New Executive Outreach** - Welcome new VPs and C-level hires
+    - **Job Opening Intelligence** - Target companies hiring relevant roles
+    - **Champion Tracking** - Follow customers to new companies
+    - **Promotion Triggers** - Engage newly promoted decision-makers
+  </Accordion>
+  
+  <Accordion title="Account Expansion Plays" icon="arrow-up-right-dots">
+    - **Multi-Threading** - Expand single-threaded accounts
+    - **Department Expansion** - Sell to new departments in customer accounts
+    - **Executive Sponsor Plays** - Engage C-level at existing accounts
+  </Accordion>
+  
+  <Accordion title="Competitive Plays" icon="trophy">
+    - **Competitor Mention Targeting** - Engage when competitors mentioned on social
+    - **Competitive Displacement** - Target known competitor customers
+    - **Win-Back Campaigns** - Re-engage churned customers
+  </Accordion>
+  
+  <Accordion title="Regional Plays" icon="globe">
+    - **LATAM Automation** - Coverage for Latin America markets
+    - **EMEA Follow-Up** - European market engagement
+    - **APAC Expansion** - Asia-Pacific territory coverage
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+Start with a pre-built play and customize it to your needs. This is faster than building from scratch and follows proven patterns.
+</Tip>
+
+## Building a Play
+
+### Step-by-Step Configuration
+
+<Steps>
+  <Step title="Choose Play Type">
+    Decide if this is always-on or one-off based on your use case
+  </Step>
+  
+  <Step title="Define Your Audience">
+    Use the Audience Builder to set criteria:
+    
+    - **Fit Score:** A or B (only target good-fit accounts)
+    - **Intent:** Visited website 3+ times in past 7 days
+    - **Signals:** Not in open opportunity
+    - **Exclusions:** Not competitors, not existing customers
+  </Step>
+  
+  <Step title="Configure Prospecting">
+    Set up contact sourcing:
+    
+    - Select personas to target (e.g., VP Marketing, Director Demand Gen)
+    - Set contacts per account (3-5 for most plays)
+    - Enable/disable prospecting if contacts already exist
+  </Step>
+  
+  <Step title="Set Enrichment Options">
+    Configure data quality:
+    
+    - Email verification level (standard or triple-verified)
+    - Mobile number enrichment (optional, costs more credits)
+    - Duplicate checking (recommended to avoid over-contacting)
+  </Step>
+  
+  <Step title="Configure Routing">
+    Assign contacts to the right reps:
+    
+    - Account owner (most common)
+    - Round robin (for fair distribution)
+    - Custom field (for complex territory logic)
+  </Step>
+  
+  <Step title="Set Up Deployment">
+    Choose where contacts should go:
+    
+    - **CRM:** Create/update records in Salesforce or HubSpot
+    - **Sales Sequences:** Add to Outreach, SalesLoft, or Apollo
+    - **Ad Platforms:** Push to LinkedIn or Google matched audiences
+    - **Marketing Automation:** Trigger Marketo campaigns
+  </Step>
+  
+  <Step title="Test and Launch">
+    - Preview the audience size
+    - Test with a small subset first (10-20 accounts)
+    - Monitor results for 1-2 weeks
+    - Scale up once validated
+  </Step>
+</Steps>
+
+## Multi-Channel Deployment
+
+Plays can deploy contacts to multiple systems simultaneously:
+
+<Tabs>
+  <Tab title="CRM Systems">
+    **Salesforce & HubSpot**
+    
+    - Create contact and account records
+    - Update existing records with new data
+    - Set custom fields (fit score, intent signals, play name)
+    - Create tasks for assigned reps
+    - Trigger CRM workflows
+  </Tab>
+  
+  <Tab title="Sales Engagement">
+    **Outreach, SalesLoft, Apollo**
+    
+    - Add to specific sequences/cadences
+    - Route to correct rep's inbox
+    - Set priority or tag for context
+    - Schedule first touch timing
+    - Track engagement back to play
+  </Tab>
+  
+  <Tab title="Ad Platforms">
+    **LinkedIn Ads & Google Ads**
+    
+    - Build matched audiences automatically
+    - Update audiences in real-time as accounts qualify
+    - Remove accounts when they exit criteria
+    - Coordinate timing with sales outreach
+    - Measure ad engagement as intent signal
+  </Tab>
+  
+  <Tab title="Marketing Automation">
+    **Marketo & Other MAPs**
+    
+    - Add to nurture campaigns
+    - Trigger email sends
+    - Update lead scoring
+    - Segment for targeted content
+    - Sync status back to Seam
+  </Tab>
+</Tabs>
+
+**Coordination Example:**
+
+When an account enters a play, Seam can simultaneously:
+1. Create contacts in Salesforce with fit/intent scores
+2. Add contacts to SalesLoft sequence from assigned rep
+3. Push account to LinkedIn matched audience for retargeting
+4. Send Slack notification to account owner
+5. Create high-priority task in CRM
+
+All of this happens automatically within minutes of the trigger firing.
+
+## Common Play Examples
+
+<AccordionGroup>
+  <Accordion title="High-Intent Website Visitor Play" icon="computer">
+    **Goal:** Engage companies showing strong buying intent on your website
+    
+    **Trigger:** Account visits pricing or product pages 3+ times in 7 days
+    
+    **Audience Criteria:**
+    - Fit Score: A or B
+    - Not in open opportunity
+    - Not a competitor
+    - Not existing customer
+    
+    **Actions:**
+    1. Find 3 contacts matching "Marketing Leadership" persona
+    2. Enrich with triple-verified emails
+    3. Route to account owner (or round robin if new)
+    4. Add to "High-Intent Pricing Page" sequence in SalesLoft
+    5. Push to LinkedIn retargeting audience
+    6. Create task for SDR: "High-intent account—visited pricing 5x"
+    
+    **Expected Results:** 15-20% response rate, 48-hour follow-up time
+  </Accordion>
+  
+  <Accordion title="New Executive Welcome Play" icon="user-tie">
+    **Goal:** Engage new decision-makers in their first 90 days
+    
+    **Trigger:** VP or C-level hire detected at A/B fit account
+    
+    **Audience Criteria:**
+    - Fit Score: A or B
+    - New hire in past 60 days
+    - Title: VP, SVP, or C-level
+    - Function: Sales, Marketing, or Revenue Operations
+    
+    **Actions:**
+    1. Enrich new executive's contact info
+    2. Find 2 additional stakeholders (direct reports or peers)
+    3. Route to territory owner
+    4. Add executive to "New Leader Welcome" sequence
+    5. Send personalized Slack alert to AE with context
+    6. Schedule task: "New VP hired—tech stack evaluation likely"
+    
+    **Expected Results:** 30% response rate (warm timing), 60% meeting conversion
+  </Accordion>
+  
+  <Accordion title="Mid-Tier Air Cover Play" icon="cloud">
+    **Goal:** Provide automated coverage for B/C accounts without manual effort
+    
+    **Trigger:** B/C fit account shows medium intent but isn't assigned to rep
+    
+    **Audience Criteria:**
+    - Fit Score: B or C
+    - Intent Score: Medium or High
+    - Not assigned to SDR
+    - Not in active opportunity
+    
+    **Actions:**
+    1. Find 1-2 contacts (primary decision-maker only)
+    2. Enrich with standard email verification
+    3. Add to automated nurture sequence
+    4. Push to programmatic ad audience
+    5. Monitor for intent spike (if high intent, escalate to sales)
+    
+    **Expected Results:** 5-8% conversion to MQL, zero SDR time required
+  </Accordion>
+  
+  <Accordion title="Event Follow-Up Play" icon="calendar">
+    **Goal:** Efficiently process and engage conference attendees
+    
+    **Trigger:** Manual upload of attendee list CSV
+    
+    **Audience Criteria:**
+    - One-off play (run once)
+    - All attendees in uploaded list
+    - Score each for fit
+    
+    **Actions:**
+    1. Enrich attendees with additional data
+    2. Score each account for fit (A/B/C/D)
+    3. Find additional buying committee members at A/B accounts
+    4. Route A/B fit to sales with high priority
+    5. Route C/D fit to marketing nurture
+    6. Add all to "Post-Event Follow-Up" sequence with custom message
+    
+    **Expected Results:** 500 attendees processed in 24 hours, 25% A/B fit rate
+  </Accordion>
+  
+  <Accordion title="Multi-Threading Expansion" icon="sitemap">
+    **Goal:** Expand coverage at single-threaded accounts
+    
+    **Trigger:** Account in active opportunity with only 1 contact engaged
+    
+    **Audience Criteria:**
+    - Opportunity stage: Discovery or later
+    - Number of contacts: 1
+    - Fit Score: A
+    - Deal value: Over $50K
+    
+    **Actions:**
+    1. Find 4-5 additional buying committee members
+    2. Prioritize personas: Economic Buyer, Executive Sponsor, Champion, Technical Evaluator
+    3. Enrich all contacts
+    4. Route to opportunity owner (maintain consistency)
+    5. Add to "Multi-Threading" sequence with context about opportunity
+    6. Create coordinated outreach plan task
+    
+    **Expected Results:** 60% increase in buying committee coverage, 20% faster close rates
+  </Accordion>
+  
+  <Accordion title="Competitor Displacement Play" icon="trophy">
+    **Goal:** Target accounts using competitor products
+    
+    **Trigger:** Social mention of competitor name or account identified as using competitor
+    
+    **Audience Criteria:**
+    - Fit Score: A or B
+    - Mentioned "6sense" or "Demandbase" on LinkedIn
+    - Not existing customer
+    - Not in closed-lost within 6 months
+    
+    **Actions:**
+    1. Find marketing operations and demand gen personas
+    2. Enrich with contact data
+    3. Route to competitive sales specialist
+    4. Add to "Competitive Displacement" sequence with comparison content
+    5. Push to LinkedIn audience with competitive positioning ads
+    6. Alert sales team: "Active competitor evaluation detected"
+    
+    **Expected Results:** 20-25% response rate, 40% win rate against named competitors
+  </Accordion>
+</AccordionGroup>
+
+## Integration with Intelligence Layer
+
+Plays are powered by all the intelligence features you've configured:
+```
+Fit Score ─────┐
+               ├──► Audience ──► Play Trigger ──► Actions
+Intent Score ──┤
+               │
+Signals ───────┤
+               │
+Reach Score ───┘
+
+Personas ──────────────► Auto-Prospect Step
+
+Routing ───────────────► Deployment Step
+```
+
+**Example:** A play that combines everything:
+- **Fit:** Only A/B accounts
+- **Intent:** Website visit + Bombora surge
+- **Signals:** New hire in past 30 days
+- **Reach:** Low (not currently engaged)
+- **Personas:** Find CMO + VP Demand Gen + Director MarOps
+- **Routing:** Assign to territory owner
+- **Deploy:** SalesLoft sequence + LinkedIn ads + Salesforce task
+
+This level of sophistication would require significant manual work without Plays.
+
+<CardGroup cols={2}>
+  <Card title="Configure Fit Scoring" icon="bullseye" href="/guides/monitoring-and-intelligence/fit-score">
+    Set up ICP scoring for play filtering
+  </Card>
+  <Card title="Build Audiences" icon="users" href="/guides/monitoring-and-intelligence/audiences">
+    Create segments that trigger plays
+  </Card>
+  <Card title="Define Personas" icon="user-tie" href="/guides/monitoring-and-intelligence/personas">
+    Set up buying committee targeting
+  </Card>
+  <Card title="Set Up Routing" icon="route" href="/guides/actions/routing">
+    Configure contact assignment rules
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start simple, then layer complexity" icon="layer-group">
+    Your first play should be straightforward: "High-fit accounts that visited website → find 3 contacts → add to sequence." Once that works, add more conditions and channels.
+  </Accordion>
+  
+  <Accordion title="Always include Fit as a filter" icon="filter">
+    Never run plays without filtering by Fit Score. Automating outreach to poor-fit accounts wastes credits and damages brand. Always start with A/B fit minimum.
+  </Accordion>
+  
+  <Accordion title="Set appropriate contact limits" icon="users">
+    - **A-tier accounts:** 5-7 contacts (full buying committee)
+    - **B-tier accounts:** 3-4 contacts (key decision-makers)
+    - **C-tier accounts:** 1-2 contacts (primary only)
+    
+    More contacts = better coverage but higher costs.
+  </Accordion>
+  
+  <Accordion title="Test with small audiences first" icon="flask">
+    Run plays on 20-50 accounts before scaling to thousands. Verify routing works, sequences load correctly, and messaging resonates.
+  </Accordion>
+  
+  <Accordion title="Name plays descriptively" icon="tag">
+    "HighIntent_PricingPage_ABFit_3Contacts" is better than "Website Play 1". You'll have dozens of plays eventually—clear names help you manage them.
+  </Accordion>
+  
+  <Accordion title="Monitor credit consumption" icon="coins">
+    Plays consume credits based on prospecting and enrichment volume. Track credit burn rate and adjust contact limits or audience size if needed.
+  </Accordion>
+  
+  <Accordion title="Coordinate timing across channels" icon="clock">
+    If deploying to both ads and sales sequences, consider timing. You might want ads to run for 2 weeks before sales outreach, warming up accounts first.
+  </Accordion>
+  
+  <Accordion title="Use exclusion criteria liberally" icon="ban">
+    Always exclude:
+    - Competitors
+    - Existing customers (unless expansion play)
+    - Accounts in late-stage opportunities
+    - Recently closed-lost accounts
+  </Accordion>
+  
+  <Accordion title="Review performance monthly" icon="chart-line">
+    Track which plays generate pipeline. Double down on high-performing plays, pause or refine underperformers.
+  </Accordion>
+  
+  <Accordion title="Align plays with sales process" icon="handshake">
+    Work with sales team to ensure plays support their workflow. If SDRs prefer warm intros, don't auto-add to cold sequences. Match automation to human process.
+  </Accordion>
+</AccordionGroup>
+
+## Credits & Pricing
+
+Plays operate on a credit-based model:
+
+| Action | Credit Cost |
+|--------|-------------|
+| **Account Research** | 1 credit per account |
+| **Contact Prospecting** | 1 credit per contact found |
+| **Email Enrichment** | Included in prospecting |
+| **Mobile Enrichment** | Additional 0.5 credits per contact |
+| **Triple Verification** | Additional 0.25 credits per contact |
+| **Deployment** | No credits (pushing to systems is free) |
+
+**Example Play Cost:**
+- Audience: 100 accounts enter play
+- Prospecting: 3 contacts per account = 300 contacts
+- Email enrichment: Included
+- Mobile enrichment: Optional (150 additional credits)
+- **Total:** 400 credits (or 550 with mobile)
+
+## Monitoring Play Performance
+
+### Key Metrics to Track
+
+- **Accounts processed:** How many accounts entered the play
+- **Contacts found:** Prospecting success rate
+- **Contact quality:** Email deliverability and mobile accuracy
+- **Response rates:** Engagement with deployed sequences
+- **Pipeline generated:** Opportunities attributed to the play
+- **Cost per opportunity:** Credits spent divided by opps created
+
+### Play Analytics Dashboard
+
+Seam tracks performance for each play:
+- Trigger frequency (how often play fires)
+- Prospecting success rate (contacts found per account)
+- Enrichment quality (email/mobile validation rates)
+- Deployment success (contacts successfully added to systems)
+- Downstream engagement (opens, clicks, responses)
+- Pipeline attribution (opportunities and revenue)
+
+Use these metrics to optimize plays over time.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How many plays should I have?">
+    Most customers run 5-15 active plays. Start with 2-3 core plays (high-intent, new hire, mid-tier air cover), then expand based on results.
+  </Accordion>
+  
+  <Accordion title="Can one account be in multiple plays?">
+    Yes. An account could trigger a website visitor play AND a new hire play. Seam handles deduplication to avoid over-contacting the same people.
+  </Accordion>
+  
+  <Accordion title="What happens if a play fails?">
+    Seam monitors play execution and alerts you if actions fail (e.g., CRM API error, routing failure). Failed actions can be retried manually.
+  </Accordion>
+  
+  <Accordion title="Can I pause plays?">
+    Yes. You can pause, edit, or archive plays anytime. Paused plays stop processing new accounts but don't affect contacts already deployed.
+  </Accordion>
+  
+  <Accordion title="How quickly do plays execute?">
+    Most plays complete within 5-15 minutes from trigger to deployment. Prospecting and enrichment take 30-60 seconds per account, plus deployment time.
+  </Accordion>
+  
+  <Accordion title="Can I customize pre-built plays?">
+    Absolutely. Pre-built plays are templates. Clone them and modify audience criteria, personas, routing, or deployment channels to fit your needs.
+  </Accordion>
+  
+  <Accordion title="Do plays respect do-not-contact lists?">
+    Yes. Seam checks against CRM do-not-contact fields and unsubscribe lists before deployment. You can also add custom suppression rules.
+  </Accordion>
+</AccordionGroup>

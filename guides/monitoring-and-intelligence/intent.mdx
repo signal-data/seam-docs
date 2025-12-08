@@ -1,0 +1,403 @@
+---
+title: "Intent"
+description: "Identify accounts actively engaging with your brand and researching your space"
+---
+
+Intent tracks whether companies are showing interest in your business by monitoring engagement signals across multiple channels. This helps you identify buyers earlier in the process and engage before competitors.
+
+## What is Intent?
+
+Intent is one of four scoring dimensions Seam uses to evaluate accounts:
+
+| Dimension | What It Measures |
+|-----------|------------------|
+| **Fit** | Does the company match your ICP? |
+| **Intent** | Are they interacting with your brand? |
+| **Signals** | External buying signals (hiring, funding) |
+| **Reach** | Can you engage with them? |
+
+Intent specifically tracks engagement across your digital properties and third-party channels to identify accounts actively researching or evaluating solutions in your space.
+
+## Data Sources
+
+Seam aggregates intent signals from first-party and third-party sources:
+
+<Tabs>
+  <Tab title="First-Party Intent">
+    **Onsite engagement you control:**
+    
+    - Website visits (de-anonymized via web pixel)
+    - Email opens, clicks, and responses
+    - Ad interactions (LinkedIn, Google)
+    - Sales activity (meetings, emails)
+    - Event attendance and engagement
+    - Content downloads and form fills
+  </Tab>
+  
+  <Tab title="Third-Party Intent">
+    **Offsite signals from external sources:**
+    
+    - **Bombora** - Topic research across B2B web
+    - **Social listening** - LinkedIn and Twitter mentions
+    - **IP-to-company** - Multiple providers in waterfall
+    - **Data providers** - ZoomInfo, Apollo, Lucia, 20+ others
+  </Tab>
+</Tabs>
+
+<Card title="Configure Bombora Intent" icon="signal-stream" href="/guides/configuring-seam/bombora">
+  Set up third-party intent tracking with Bombora
+</Card>
+
+## Intent Scoring
+
+Seam aggregates all engagement signals into a unified intent score for each account.
+
+### How Scoring Works
+
+1. **Data Collection** - Web pixel and integrations capture engagement
+2. **Signal Aggregation** - All touchpoints combined per account
+3. **AI Evaluation** - Patterns analyzed to determine intent level
+4. **Score Assignment** - Account receives intent score (Low/Medium/High)
+
+### Transparent Scoring
+
+Unlike black-box solutions, Seam shows exactly which activities contributed to an account's intent score:
+
+<Frame>
+  <img src="/images/intent-score-breakdown.png" alt="Intent score breakdown showing all signals" />
+</Frame>
+
+You can see:
+- Which pages were visited
+- How many times and when
+- Email engagement patterns
+- Ad interactions
+- Social media activity
+
+This transparency helps sales teams trust and act on the data.
+
+## Key Capabilities
+
+<CardGroup cols={2}>
+  <Card title="Website De-anonymization" icon="eye">
+    Identify companies visiting your website before they fill out forms using multiple IP-to-company providers
+  </Card>
+  
+  <Card title="Social Listening" icon="hashtag">
+    Monitor LinkedIn and Twitter for keyword mentions, competitor references, and engagement with your content
+  </Card>
+  
+  <Card title="Offsite Research Tracking" icon="globe">
+    Track topics accounts are researching across the B2B web via Bombora intent data
+  </Card>
+  
+  <Card title="Buying Stage Detection" icon="stairs">
+    Determine where accounts are in the buying journey (awareness, consideration, purchase) using AI
+  </Card>
+  
+  <Card title="Multi-Channel Aggregation" icon="layer-group">
+    Combine engagement from website, email, ads, sales, and events into one unified view
+  </Card>
+  
+  <Card title="Real-Time Updates" icon="bolt">
+    Intent scores update continuously as new engagement occurs
+  </Card>
+</CardGroup>
+
+## Website Visitor Tracking
+
+### How It Works
+
+Install Seam's web pixel on your site to capture anonymous visitors:
+```html
+<script>
+  (function() {
+    // Seam tracking snippet
+  })();
+</script>
+```
+
+Seam uses a waterfall approach with multiple IP-to-company providers to identify which companies are visiting, even if individuals don't fill out forms.
+
+<Card title="Install Web Pixel" icon="code" href="/guides/configuring-seam/web-pixel">
+  Step-by-step guide to implementing website tracking
+</Card>
+
+### What Gets Tracked
+
+- Company identified from IP address
+- Pages visited and time on site
+- High-intent pages (pricing, product, demo)
+- Visit frequency and recency
+- Visitor journey and navigation patterns
+
+<Warning>
+Website tracking identifies companies, not individuals. Use this for account-level intent, not person-level tracking.
+</Warning>
+
+## Intent in ABM Workflows
+
+### Account Prioritization
+
+Intent helps you focus on accounts actively showing interest:
+
+**High Intent + High Fit = Top Priority**
+
+Use intent scores to:
+- ✅ Identify which A/B fit accounts are heating up
+- ✅ Surface engaged accounts not being actively worked
+- ✅ Alert reps when dormant accounts re-engage
+- ✅ Allocate marketing budget to in-market accounts
+
+### Tiered Account Strategies
+
+<Tabs>
+  <Tab title="A/B Tier Accounts">
+    **Strategic ABM**
+    
+    - Manually worked by sales reps
+    - Intent alerts trigger personalized outreach
+    - Multi-threaded engagement with buying committee
+    - High-touch, customized campaigns
+  </Tab>
+  
+  <Tab title="Mid-Tier Accounts">
+    **Automated Air Cover**
+    
+    - Automated plays triggered by intent
+    - Scaled engagement across hundreds of accounts
+    - Generic but relevant messaging
+    - Ensure no high-intent account gets ignored
+  </Tab>
+  
+  <Tab title="Low-Tier Accounts">
+    **Nurture Programs**
+    
+    - Drip campaigns and content marketing
+    - Monitor for intent spikes
+    - Promote when intent increases
+  </Tab>
+</Tabs>
+
+### Buying Committee Targeting
+
+When an account shows intent, Seam helps you engage the full buying committee:
+
+1. **Detect Intent** - Company visits pricing page 5 times
+2. **Research Committee** - AI finds 3-5 relevant personas
+3. **Enrich Contacts** - Get accurate emails and phone numbers
+4. **Multi-Thread** - Engage multiple stakeholders simultaneously
+5. **Route Properly** - Assign to correct rep based on territory
+
+<Card title="Build Multi-Contact Plays" icon="users" href="/guides/actions/plays">
+  Learn how to engage buying committees automatically
+</Card>
+
+## Common Use Cases
+
+<AccordionGroup>
+  <Accordion title="Website Visitor Engagement" icon="computer">
+    **Trigger:** Company visits website 3+ times or views high-intent pages
+    
+    **Action:** Automatically prospect contacts and add to outreach sequence
+    
+    **Benefit:** Engage interested accounts before they contact competitors
+  </Accordion>
+  
+  <Accordion title="Event Follow-Up" icon="calendar">
+    **Trigger:** Account attends webinar or conference
+    
+    **Action:** Monitor for additional intent signals, trigger nurture campaign
+    
+    **Benefit:** Convert event interest into pipeline opportunities
+  </Accordion>
+  
+  <Accordion title="Competitor Monitoring" icon="trophy">
+    **Trigger:** Account mentions competitors on social media
+    
+    **Action:** Alert sales rep, trigger competitive positioning content
+    
+    **Benefit:** Insert yourself into active evaluations
+  </Accordion>
+  
+  <Accordion title="Re-Engagement" icon="rotate">
+    **Trigger:** Previously engaged account returns to website after 90+ days
+    
+    **Action:** Notify assigned rep, add to re-engagement sequence
+    
+    **Benefit:** Revive dormant opportunities when timing improves
+  </Accordion>
+  
+  <Accordion title="International Expansion" icon="globe">
+    **Trigger:** Intent signals from new geographic regions
+    
+    **Action:** Route to regional sales teams, localized messaging
+    
+    **Benefit:** Scale global coverage without hiring locally immediately
+  </Accordion>
+</AccordionGroup>
+
+## Building Intent-Based Audiences
+
+Create dynamic audiences that update automatically as accounts show intent:
+
+**Example Audiences:**
+- "High-intent accounts not currently engaged"
+- "A/B fit accounts visiting pricing page"
+- "Accounts researching competitors on Bombora"
+- "Event attendees showing post-event engagement"
+- "Dormant accounts re-engaging"
+
+These audiences can trigger plays, sync to ad platforms, or route to sales teams.
+
+<Card title="Build Audiences" icon="users" href="/guides/monitoring-and-intelligence/audiences">
+  Learn how to segment accounts by intent
+</Card>
+
+## Integration with Plays
+
+Intent signals trigger automated plays that prospect and engage accounts:
+
+**Example Play: High-Intent Outreach**
+```
+Trigger: Account visits pricing page 3+ times in 7 days
+  ↓
+Filter: Fit Score = A or B
+  ↓
+Actions:
+  1. Research buying committee (find 3-5 contacts)
+  2. Enrich contact data (emails, phones, LinkedIn)
+  3. Add to targeted email sequence
+  4. Push to LinkedIn matched audience
+  5. Notify assigned SDR with context
+```
+
+<Card title="Configure Intent Plays" icon="play" href="/guides/actions/plays">
+  Set up automated workflows triggered by intent
+</Card>
+
+## Multi-Provider Approach
+
+Seam uses a waterfall enrichment strategy with 20+ data providers to ensure the best data quality:
+
+1. **Primary Provider** - Try highest-accuracy source first
+2. **Secondary Providers** - Fall back if primary fails
+3. **Tertiary Providers** - Continue until data found
+4. **Best Result** - Return highest-confidence match
+
+This ensures comprehensive coverage across:
+- Geographic regions (US, EMEA, APAC, LatAm)
+- Company sizes (SMB to Enterprise)
+- Industry verticals
+- Public vs. private companies
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Combine with Fit Score" icon="layer-group">
+    Intent is most powerful when filtered by Fit. Don't chase every website visitor—focus on high-intent accounts that match your ICP.
+  </Accordion>
+  
+  <Accordion title="Set appropriate thresholds" icon="sliders">
+    Adjust intent thresholds based on your sales cycle. Enterprise deals may require lower thresholds (earlier engagement), while SMB might need higher thresholds (closer to purchase).
+  </Accordion>
+  
+  <Accordion title="Track high-intent pages" icon="star">
+    Not all pages indicate equal intent. Pricing, product comparison, and demo pages signal stronger intent than blog posts or careers pages.
+  </Accordion>
+  
+  <Accordion title="Monitor recency and frequency" icon="clock">
+    An account visiting once 6 months ago is different from 5 visits this week. Weight recent, repeated engagement higher.
+  </Accordion>
+  
+  <Accordion title="Use multi-channel signals" icon="chart-network">
+    The strongest intent comes from multiple channels. Website visits + email engagement + social activity = very high intent.
+  </Accordion>
+  
+  <Accordion title="Act quickly on spikes" icon="bolt">
+    Intent is perishable. When an account shows sudden increased activity, engage within 24-48 hours before momentum fades.
+  </Accordion>
+</AccordionGroup>
+
+## Implementation Checklist
+
+<Steps>
+  <Step title="Install Web Pixel">
+    Add Seam's tracking snippet to your website to capture visitor data
+  </Step>
+  
+  <Step title="Connect Marketing Systems">
+    Integrate email platforms, ad platforms, and marketing automation
+  </Step>
+  
+  <Step title="Enable Bombora (Optional)">
+    Add third-party intent data for offsite research tracking
+  </Step>
+  
+  <Step title="Define High-Intent Actions">
+    Identify which pages and activities indicate strong buying intent
+  </Step>
+  
+  <Step title="Set Intent Thresholds">
+    Configure what constitutes low/medium/high intent for your business
+  </Step>
+  
+  <Step title="Create Intent Audiences">
+    Build dynamic segments based on intent signals
+  </Step>
+  
+  <Step title="Launch Intent Plays">
+    Automate engagement when accounts cross intent thresholds
+  </Step>
+</Steps>
+
+## Viewing Intent Data
+
+### In Seam
+
+- **Account records** - See all intent signals per account
+- **Intent dashboard** - View trending accounts and topics
+- **Audience builder** - Filter by intent level
+- **Play triggers** - Configure intent-based automation
+
+### In Your CRM
+
+Intent scores and signals sync to Salesforce/HubSpot:
+- Intent score field on Account object
+- Recent activity summary
+- High-intent page visits
+- Bombora topic surges
+
+Sales reps see intent data where they already work.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How is intent different from signals?">
+    **Intent** = Engagement with your brand (website visits, email opens, ad clicks)
+    
+    **Signals** = External events at the company (new hires, funding, job postings)
+    
+    Both are valuable, but intent shows direct interest while signals indicate timing.
+  </Accordion>
+  
+  <Accordion title="Can I track individual people or just companies?">
+    Seam tracks companies visiting your website. Once a company is identified, you can then prospect and track individuals within that account.
+  </Accordion>
+  
+  <Accordion title="How accurate is IP-to-company identification?">
+    Accuracy varies by provider and company size. Enterprise companies with dedicated IP ranges have 90%+ accuracy. Smaller companies may be harder to identify. Seam's multi-provider waterfall maximizes accuracy.
+  </Accordion>
+  
+  <Accordion title="Does intent replace lead forms?">
+    No. Intent identifies anonymous research activity. Forms still capture specific individuals expressing interest. Use both together for comprehensive coverage.
+  </Accordion>
+  
+  <Accordion title="How often does intent data update?">
+    First-party intent (website, email) updates in real-time. Third-party intent (Bombora) updates weekly. Intent scores recalculate continuously.
+  </Accordion>
+  
+  <Accordion title="Can I export intent data?">
+    Yes. Intent data syncs to your CRM and data warehouse. You can also export via Seam's UI or API.
+  </Accordion>
+</AccordionGroup>

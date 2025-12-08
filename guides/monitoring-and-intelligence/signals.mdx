@@ -1,0 +1,392 @@
+---
+title: "Signals"
+description: "Track external events and triggers that indicate the right time to engage accounts"
+---
+
+Signals are indicators of account activity or change that suggest a company may be receptive to outreach. They represent external triggers—like new hires, funding rounds, or job postings—that create engagement opportunities, even if the account hasn't interacted with your brand yet.
+
+## What Are Signals?
+
+Signals are one of four scoring dimensions Seam uses to prioritize accounts:
+
+| Dimension | What It Measures |
+|-----------|------------------|
+| **Fit** | Does the account match your ICP? |
+| **Intent** | Are they interacting with your brand? |
+| **Signals** | Are there external opportunities happening? |
+| **Reach** | Can you engage with them? |
+
+While intent shows *what* accounts are doing with your brand, signals show *when* to engage based on external events and changes at the company.
+
+<Info>
+**Key Distinction:** Intent = engagement with your content. Signals = external events creating opportunities.
+</Info>
+
+## Types of Signals
+
+<Tabs>
+  <Tab title="Buying Signals">
+    **Organizational changes that create opportunities:**
+    
+    - **New Hires** - Hiring in specific roles relevant to your solution
+    - **Job Openings** - Open positions indicating investment in certain areas
+    - **Promotions** - Internal promotions within the buying committee
+    - **Champion Tracking** - Previous customers moving to new companies
+    - **Funding Rounds** - New funding indicating budget availability
+    - **Acquisitions** - Company acquisitions or mergers
+  </Tab>
+  
+  <Tab title="Social Signals">
+    **Social media activity indicating interest:**
+    
+    - LinkedIn posts mentioning specific keywords
+    - Twitter/X posts about industry topics
+    - Mentions of competitors (e.g., "6sense", "Demandbase")
+    - Conference attendance announcements
+    - Engagement with relevant content (likes, comments)
+    - Industry-specific keyword tracking
+  </Tab>
+  
+  <Tab title="Engagement Signals">
+    **Interaction patterns across channels:**
+    
+    - **Depth** - How many touchpoints per account
+    - **Breadth** - How many people at the account engaging
+    - **Multi-channel** - Activity across website, email, ads, sales
+    - **Frequency** - Rate of engagement over time
+    - **Recency** - How recently activity occurred
+  </Tab>
+</Tabs>
+
+<Note>
+Intent signals (website visits, email engagement) are technically a subset of signals but are tracked separately in Seam's [Intent](/guides/monitoring-and-intelligence/intent) system.
+</Note>
+
+## Common Signal Use Cases
+
+<AccordionGroup>
+  <Accordion title="New Hire Outreach" icon="user-plus">
+    **Signal:** Target account hires a VP of Sales or Head of Revenue Operations
+    
+    **Opportunity:** New leaders often evaluate tech stacks in first 90 days
+    
+    **Action:** Automatically add new hire to welcome sequence with role-specific messaging
+    
+    **Example:** When a company hires a "Director of Clinical Documentation," trigger outreach with relevant use cases for that role
+  </Accordion>
+  
+  <Accordion title="Champion Tracking" icon="star">
+    **Signal:** Previous customer or champion moves to a new company
+    
+    **Opportunity:** Warm relationship can accelerate deal at new organization
+    
+    **Action:** Alert sales team, trigger personalized "congrats on the new role" sequence
+    
+    **Benefit:** Convert one customer into multiple by following champions
+  </Accordion>
+  
+  <Accordion title="Funding-Based Timing" icon="money-bill-trend-up">
+    **Signal:** Series B company raises $20M funding round
+    
+    **Opportunity:** Fresh budget and growth initiatives create buying windows
+    
+    **Action:** Engage with growth-focused messaging about scaling infrastructure
+    
+    **Segmentation:** Track funding signals for companies under 500 employees, hiring signals for 500+ employees
+  </Accordion>
+  
+  <Accordion title="Job Opening Intelligence" icon="briefcase">
+    **Signal:** Company posts 5+ engineering roles
+    
+    **Opportunity:** Rapid hiring indicates growth and potential tech stack expansion
+    
+    **Action:** Target with messaging about developer productivity or infrastructure tools
+    
+    **Example:** "We see you're scaling your eng team—here's how we help companies grow efficiently"
+  </Accordion>
+  
+  <Accordion title="Competitive Displacement" icon="trophy">
+    **Signal:** LinkedIn post mentions "frustrated with [competitor name]"
+    
+    **Opportunity:** Active dissatisfaction with current solution
+    
+    **Action:** Automatically route to competitive sales team with comparison content
+    
+    **Keywords to monitor:** Competitor names, pricing complaints, migration mentions
+  </Accordion>
+  
+  <Accordion title="Conference & Event Signals" icon="calendar">
+    **Signal:** Key contact posts about attending your industry conference
+    
+    **Opportunity:** In-person networking opportunity or increased awareness
+    
+    **Action:** Book meeting at event or trigger post-event follow-up sequence
+    
+    **Benefit:** Convert event awareness into pipeline conversations
+  </Accordion>
+</AccordionGroup>
+
+## How Signals Trigger Automation
+
+Signals power Seam's automated plays by triggering actions when specific events occur:
+
+**Example Play: New VP of Sales Outreach**
+```
+Signal Detected: Company hires VP of Sales
+  ↓
+Filter: Fit Score = A or B
+  ↓
+Actions:
+  1. Research new VP's background (previous companies, challenges)
+  2. Find 2-3 additional buying committee members
+  3. Enrich all contact data (emails, phones, LinkedIn)
+  4. Add VP to "new executive" personalized sequence
+  5. Route to appropriate account executive
+  6. Notify SDR with talking points about tech stack evaluation
+```
+
+<Card title="Build Signal-Based Plays" icon="play" href="/guides/actions/plays">
+  Learn how to automate outreach triggered by signals
+</Card>
+
+## Automated Air Cover
+
+Signals enable "air cover" for mid-tier accounts that don't justify manual SDR time:
+
+<Steps>
+  <Step title="Signal Fires">
+    B-fit account posts job opening for "Data Engineer"
+  </Step>
+  
+  <Step title="Automatic Prospecting">
+    Seam finds 3 relevant contacts (Engineering Lead, VP Engineering, CTO)
+  </Step>
+  
+  <Step title="Enrichment">
+    Validates emails and phone numbers from 20+ data providers
+  </Step>
+  
+  <Step title="Deployment">
+    Adds contacts to automated nurture sequence without SDR involvement
+  </Step>
+  
+  <Step title="Escalation">
+    If contacts engage, escalate to human rep for personalized follow-up
+  </Step>
+</Steps>
+
+This ensures no opportunities slip through while reps focus on A-tier accounts.
+
+## Signal-Based Segmentation
+
+Different signals matter for different account segments:
+
+| Account Segment | Primary Signals | Why |
+|-----------------|----------------|-----|
+| **Enterprise (1000+ employees)** | New hires, promotions | Leadership changes drive evaluation cycles |
+| **Mid-Market (100-1000)** | Funding, rapid hiring | Growth and budget availability |
+| **SMB (under 100)** | Founding team changes | New decision-makers with different preferences |
+| **High-Growth** | Series B+ funding, 50+ job openings | Scaling pain points emerge |
+| **International** | New market expansion posts | Entering regions you serve |
+
+Configure plays with segment-specific signal triggers for maximum relevance.
+
+## Social Listening
+
+Seam monitors LinkedIn and Twitter/X for relevant signals:
+
+### Keywords to Track
+
+<Tabs>
+  <Tab title="Buying Intent Keywords">
+    - "Looking for recommendations for [your category]"
+    - "Evaluating [solution type]"
+    - "Need help with [pain point you solve]"
+    - "Anyone use [your product] or [competitor]?"
+  </Tab>
+  
+  <Tab title="Competitor Mentions">
+    - Competitor product names
+    - "Frustrated with [competitor]"
+    - "Switching from [competitor]"
+    - "Alternative to [competitor]"
+  </Tab>
+  
+  <Tab title="Pain Point Indicators">
+    - Industry-specific challenges
+    - Complaints about current tools
+    - Questions about best practices
+    - Requests for advice
+  </Tab>
+  
+  <Tab title="Timing Signals">
+    - "Starting new role as..."
+    - "Excited to announce..."
+    - "We're hiring for..."
+    - Conference hashtags and mentions
+  </Tab>
+</Tabs>
+
+<Tip>
+Start with 10-15 high-signal keywords. Monitor results for 30 days, then refine based on which keywords correlate with opportunities.
+</Tip>
+
+## Data Sources
+
+Seam aggregates signals from multiple sources:
+
+| Category | Sources |
+|----------|---------|
+| **First-Party** | Website tracking, CRM, marketing automation, sales engagement |
+| **Job Data** | LinkedIn, job boards, company career pages |
+| **Social** | LinkedIn, Twitter/X (posts, likes, comments, shares) |
+| **Enrichment** | ZoomInfo, Apollo, Lucia, 20+ other providers |
+| **Funding** | Crunchbase, PitchBook, press releases |
+| **Intent** | Bombora (offsite keyword surges) |
+
+The multi-provider waterfall approach ensures comprehensive signal coverage across geographies and company sizes.
+
+## Configuring Signal Monitoring
+
+<Steps>
+  <Step title="Select Signal Types">
+    Choose which signals are relevant to your sales cycle (new hires, funding, social mentions, etc.)
+  </Step>
+  
+  <Step title="Define Relevance Criteria">
+    Specify which roles, keywords, or events matter
+    
+    Examples:
+    - Only C-level hires for enterprise segment
+    - Series A+ funding for growth segment
+    - Specific competitor mentions
+  </Step>
+  
+  <Step title="Set Thresholds">
+    Determine signal intensity required to trigger action
+    
+    Examples:
+    - 3+ new hires in 30 days
+    - Funding round >$10M
+    - 2+ social mentions in a week
+  </Step>
+  
+  <Step title="Create Signal-Based Plays">
+    Build automated workflows that execute when signals fire
+  </Step>
+  
+  <Step title="Monitor and Refine">
+    Track which signals lead to pipeline and optimize accordingly
+  </Step>
+</Steps>
+
+## Integration with Scoring
+
+Signals contribute to account prioritization alongside Fit and Intent:
+
+**High-Priority Account Example:**
+- **Fit Score:** A (perfect ICP match)
+- **Intent Score:** High (visited pricing page 5 times)
+- **Signal Score:** High (just raised Series B, hiring VP Sales)
+- **Reach Score:** Low (not currently engaged)
+
+→ **Action:** Top priority for immediate outreach with personalized, timely messaging
+
+This account has the right profile, is showing interest, has a trigger event, and isn't being worked yet—perfect timing.
+
+<CardGroup cols={2}>
+  <Card title="Fit Scoring" icon="bullseye" href="/guides/monitoring-and-intelligence/fit-score">
+    Combine signals with ICP scoring
+  </Card>
+  <Card title="Intent Tracking" icon="radar" href="/guides/monitoring-and-intelligence/intent">
+    Layer signals with engagement data
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Prioritize quality over quantity" icon="star">
+    Don't track every possible signal. Focus on 3-5 signal types that historically correlate with closed deals.
+  </Accordion>
+  
+  <Accordion title="Personalize outreach based on the signal" icon="message">
+    "Saw you just hired a VP of Sales" is much more relevant than generic messaging. Reference the signal in your outreach.
+  </Accordion>
+  
+  <Accordion title="Layer signals with fit" icon="layer-group">
+    A funding signal only matters if the account is a good fit. Filter all signals through fit score to avoid wasted effort.
+  </Accordion>
+  
+  <Accordion title="Set timing windows" icon="clock">
+    Some signals are time-sensitive (new hire has 90-day window), others are durable (funding lasts longer). Adjust urgency accordingly.
+  </Accordion>
+  
+  <Accordion title="Segment by account tier" icon="chart-pyramid">
+    A-tier accounts get manual, personalized outreach on signals. B/C-tier accounts get automated plays. Don't treat all signals the same.
+  </Accordion>
+  
+  <Accordion title="Test messaging by signal type" icon="flask">
+    Funding-based outreach should sound different from new-hire outreach. A/B test messaging for each signal category.
+  </Accordion>
+  
+  <Accordion title="Monitor signal-to-opportunity conversion" icon="chart-line">
+    Track which signals actually lead to pipeline. Double down on high-converting signals, eliminate noise.
+  </Accordion>
+</AccordionGroup>
+
+## Viewing Signal Data
+
+### In Seam
+
+- **Account Timeline** - Chronological view of all signals per account
+- **Signal Dashboard** - Trending signals across your TAM
+- **Play Triggers** - Configure which signals trigger automation
+- **Audience Filters** - Segment by specific signal types
+
+### In Your CRM
+
+Signals sync to Salesforce/HubSpot:
+- Recent signals displayed on Account records
+- Custom fields for signal types (new hire, funding, etc.)
+- Activity timeline showing signal history
+- Alerts when high-priority signals fire
+
+Sales reps see signals in context with other account data.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How are signals different from intent?">
+    **Signals** = External events at the company (new hires, funding, job posts)
+    
+    **Intent** = Engagement with your brand (website, email, ads)
+    
+    Signals indicate timing and opportunity. Intent indicates interest. Both together = high-priority account.
+  </Accordion>
+  
+  <Accordion title="How quickly are signals detected?">
+    Depends on source:
+    - Social signals: Real-time to hourly
+    - Job postings: Daily
+    - Funding: Within 24-48 hours of announcement
+    - New hires: 1-7 days (based on LinkedIn updates)
+  </Accordion>
+  
+  <Accordion title="Can I track custom signals specific to my industry?">
+    Yes. You can configure custom signal definitions based on keywords, role titles, or company attributes specific to your business.
+  </Accordion>
+  
+  <Accordion title="Do signals consume credits?">
+    Monitoring signals does not consume credits. Acting on signals (prospecting contacts, enrichment) consumes credits based on the actions taken.
+  </Accordion>
+  
+  <Accordion title="How do I know which signals matter for my business?">
+    Run a back-test: analyze your last 20 closed-won deals and identify common signals that were present before or during the sales cycle. Focus on those.
+  </Accordion>
+  
+  <Accordion title="Can I get alerted when specific signals fire?">
+    Yes. Set up Slack notifications, email alerts, or CRM task creation when high-priority signals occur on A-tier accounts.
+  </Accordion>
+</AccordionGroup>
+

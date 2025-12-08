@@ -1,0 +1,405 @@
+---
+title: "Routing"
+description: "Automatically assign contacts to the right sales reps based on territory, ownership, or custom rules"
+---
+
+Routing ensures that every contact Seam prospects is automatically assigned to the right sales representative. Instead of manually distributing leads, routing rules handle assignment automatically as part of your plays.
+
+## Why Routing Matters
+
+Without routing, automated prospecting creates problems:
+
+<CardGroup cols={2}>
+  <Card title="Orphan Contacts" icon="user-slash">
+    Contacts created in CRM with no owner, falling through the cracks
+  </Card>
+  
+  <Card title="Wrong Rep Assignment" icon="user-xmark">
+    Leads sent to the wrong territory or inbox, causing confusion
+  </Card>
+  
+  <Card title="Manual Distribution" icon="hand-pointer">
+    Someone has to manually assign leads after prospecting
+  </Card>
+  
+  <Card title="Slow Follow-Up" icon="clock">
+    Delays while waiting for manual assignment before outreach
+  </Card>
+</CardGroup>
+
+Routing solves this by automatically assigning contacts the moment they're prospected, ensuring immediate follow-up from the right person.
+
+## How Routing Works
+
+Routing is configured as part of plays and executes during the workflow:
+```
+Trigger fires (intent signal, website visit, etc.)
+  ↓
+Audience filter determines qualifying accounts
+  ↓
+Prospecting finds personas within accounts
+  ↓
+Routing assigns contacts to appropriate rep ← You are here
+  ↓
+Deployment pushes to CRM and sales sequences
+```
+
+The routing decision happens before deployment, ensuring contacts arrive in systems with proper ownership already set.
+
+<Card title="Build Plays with Routing" icon="play" href="/guides/actions/plays">
+  Learn how routing integrates into automated workflows
+</Card>
+
+## Routing Methods
+
+Seam supports multiple routing methods:
+
+<Tabs>
+  <Tab title="Account Owner">
+    **Routes to whoever owns the account in your CRM**
+    
+    - Most common method for existing accounts
+    - Maintains consistent ownership
+    - Works for multi-threading plays
+    
+    **Example:** All contacts at Acme Corp route to the SDR who owns the Acme account
+  </Tab>
+  
+  <Tab title="Round Robin">
+    **Distributes leads evenly across team members in a queue**
+    
+    - Fair distribution for new inbound leads
+    - Balances workload across team
+    - Can be regional or team-specific
+    
+    **Example:** Website visitors rotate through 5 SDRs in order
+  </Tab>
+  
+  <Tab title="Contact Owner">
+    **Routes based on existing contact ownership**
+    
+    - Useful when contacts already exist
+    - Maintains relationship continuity
+    - Falls back to account owner if no contact owner
+    
+    **Example:** Re-engagement campaigns route to original contact owner
+  </Tab>
+  
+  <Tab title="Custom CRM Field">
+    **Uses specific fields in your CRM for routing logic**
+    
+    - Flexible for complex territory rules
+    - Leverages existing CRM assignments
+    - Can reference any account or contact field
+    
+    **Example:** Route based on "SDR Owner" or "Territory" field
+  </Tab>
+  
+  <Tab title="Geographic/Regional">
+    **Routes based on company location or territory**
+    
+    - Ensures regional expertise
+    - Handles international coverage
+    - Can combine with other methods
+    
+    **Example:** EMEA accounts to EMEA team, US West to West Coast reps
+  </Tab>
+  
+  <Tab title="Majority Rule">
+    **Routes to whoever owns the majority of contacts at an account**
+    
+    - Useful for expanding coverage
+    - Maintains consistency when adding contacts
+    - Falls back if no majority exists
+    
+    **Example:** Adding 3 new contacts to account where Sarah owns 4 existing contacts → routes to Sarah
+  </Tab>
+</Tabs>
+
+## Configuration Options
+
+### Within Play Setup
+
+Routing is configured when building a play:
+
+<Steps>
+  <Step title="Define Trigger and Audience">
+    Set conditions for when the play runs and which accounts qualify
+  </Step>
+  
+  <Step title="Configure Prospecting">
+    Define which personas to find at qualifying accounts
+  </Step>
+  
+  <Step title="Set Routing Rules">
+    Choose routing method (account owner, round robin, custom field, etc.)
+  </Step>
+  
+  <Step title="Configure Deployment">
+    Specify where routed contacts should be sent (CRM, sequences, ads)
+  </Step>
+</Steps>
+
+### Routing Priority
+
+You can set fallback routing:
+
+1. **Primary:** Try account owner first
+2. **Fallback:** If no account owner, use round robin queue
+3. **Default:** If no queue assignment, route to manager
+
+This ensures every contact gets assigned even if primary routing fails.
+
+## Integration with Systems
+
+Routing works across your connected tools:
+
+### CRM Systems
+
+<Tabs>
+  <Tab title="Salesforce">
+    - Routes to account owner field
+    - Creates contacts with proper owner assignment
+    - Uses custom fields for routing logic
+    - Respects existing ownership rules
+  </Tab>
+  
+  <Tab title="HubSpot">
+    - Bi-directional sync of ownership
+    - Routes based on HubSpot properties
+    - Updates owner fields automatically
+    - Works with HubSpot workflows
+  </Tab>
+</Tabs>
+
+### Sales Engagement Platforms
+
+<Tabs>
+  <Tab title="SalesLoft">
+    - Routes to correct rep's SalesLoft inbox
+    - Adds to sequences from proper sender
+    - Maintains rep-specific cadences
+    - Ensures correct email sender
+  </Tab>
+  
+  <Tab title="Outreach">
+    - Deploys to individual rep's Outreach account
+    - Routes to appropriate sequences
+    - Sets proper ownership before sending
+    - Tracks activity back to correct rep
+  </Tab>
+</Tabs>
+
+<Warning>
+**Critical:** Routing must happen before deployment to sales engagement tools. If you deploy first and route later, emails will send from the wrong inbox.
+</Warning>
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Website Visitor Routing" icon="computer">
+    **Scenario:** High-fit company visits pricing page
+    
+    **Routing Method:** Account Owner (if exists) → Round Robin (if new)
+    
+    **Flow:**
+    1. Identify company from website visit
+    2. Check if account exists in CRM
+    3. If yes: Route to account owner
+    4. If no: Create account, assign via round robin
+    5. Deploy to assigned rep's sequence
+    
+    **Result:** Immediate follow-up from correct rep within hours
+  </Accordion>
+  
+  <Accordion title="Regional Lead Distribution" icon="globe">
+    **Scenario:** Leads from different regions need regional expertise
+    
+    **Routing Method:** Geographic/Regional based on country field
+    
+    **Flow:**
+    1. Prospect identifies location
+    2. Route EMEA accounts to EMEA team
+    3. Route APAC accounts to APAC team
+    4. Route Americas to appropriate US/LATAM rep
+    
+    **Result:** Leads handled by reps with regional knowledge
+  </Accordion>
+  
+  <Accordion title="Vertical-Based Routing" icon="building">
+    **Scenario:** SDRs specialize in specific industries
+    
+    **Routing Method:** Custom CRM field based on industry
+    
+    **Flow:**
+    1. Check account industry field
+    2. Route SaaS companies to SaaS specialist
+    3. Route healthcare to healthcare specialist
+    4. Route financial services to finserv specialist
+    
+    **Result:** Prospects talk to reps who understand their industry
+  </Accordion>
+  
+  <Accordion title="Multi-Threading Expansion" icon="sitemap">
+    **Scenario:** Expand coverage at high-value accounts
+    
+    **Routing Method:** Account Owner (maintain consistency)
+    
+    **Flow:**
+    1. Identify single-threaded A-tier account
+    2. Prospect 4 additional buying committee members
+    3. Route all new contacts to existing account owner
+    4. Add to multi-threading sequence
+    
+    **Result:** Coordinated multi-contact outreach from one rep
+  </Accordion>
+  
+  <Accordion title="Inbound Lead Processing" icon="inbox">
+    **Scenario:** Form fills and demo requests need quick response
+    
+    **Routing Method:** Round Robin for fairness
+    
+    **Flow:**
+    1. Lead submits form
+    2. Seam enriches with additional data
+    3. Routes via round robin to available SDR
+    4. Immediately adds to high-priority sequence
+    
+    **Result:** Even distribution and fast follow-up
+  </Accordion>
+  
+  <Accordion title="Conditional Routing Logic" icon="code-branch">
+    **Scenario:** Complex routing based on multiple factors
+    
+    **Routing Method:** Custom logic with conditions
+    
+    **Flow:**
+    1. If opportunity exists → Route to opportunity owner
+    2. Else if account exists → Route to account owner
+    3. Else if enterprise size → Route to enterprise team
+    4. Else → Round robin to general team
+    
+    **Result:** Sophisticated assignment matching your process
+  </Accordion>
+</AccordionGroup>
+
+## Routing vs. Existing Systems
+
+You have two options for how routing works:
+
+### Option 1: Seam Creates, CRM Routes
+
+Seam creates contacts in your CRM, then existing CRM routing rules handle assignment.
+
+**When to use:**
+- You have complex routing logic already built in Salesforce
+- Your CRM routing includes territory management and role hierarchies
+- You want CRM to remain single source of truth for assignments
+
+### Option 2: Seam Routes, Then Deploys
+
+Seam applies routing rules, then creates contacts with ownership already set.
+
+**When to use:**
+- You want to centralize routing logic in Seam
+- CRM routing is limited or difficult to maintain
+- You need routing to work consistently across multiple systems
+
+### Option 3: Hybrid Approach
+
+Use Seam routing for some plays, CRM routing for others.
+
+**When to use:**
+- Different teams have different preferences
+- Some use cases need custom logic, others work with CRM defaults
+- You're transitioning from CRM routing to Seam routing gradually
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Match routing to ownership model" icon="sitemap">
+    If your team uses account-based ownership, route by account owner. If you use round robin for inbound, route that way. Mirror your existing model.
+  </Accordion>
+  
+  <Accordion title="Set fallback rules" icon="shield">
+    Always define what happens if primary routing fails. Don't create orphan contacts—route to a manager or default queue instead.
+  </Accordion>
+  
+  <Accordion title="Test before scaling" icon="flask">
+    Run plays on small audience first to verify routing works correctly. Check that contacts appear with right owners in right systems.
+  </Accordion>
+  
+  <Accordion title="Align routing with sequences" icon="link">
+    If SDRs have personalized sequences, route to the rep whose sequence they should enter. Don't separate routing from sequence assignment.
+  </Accordion>
+  
+  <Accordion title="Monitor distribution metrics" icon="chart-line">
+    For round robin, check that distribution stays balanced. Some reps might be out of office or at capacity—adjust queues accordingly.
+  </Accordion>
+  
+  <Accordion title="Document routing logic" icon="file-lines">
+    As routing gets complex, document rules so team members understand why leads route where they do. This helps with troubleshooting.
+  </Accordion>
+  
+  <Accordion title="Review quarterly" icon="calendar">
+    Territory changes, team changes, and ownership models evolve. Review routing rules quarterly to ensure they still match your structure.
+  </Accordion>
+</AccordionGroup>
+
+## Preventing Common Issues
+
+<AccordionGroup>
+  <Accordion title="Orphan Contacts">
+    **Problem:** Contacts created with no owner
+    
+    **Solution:** Always set fallback routing. If primary method fails, route to default queue or manager
+  </Accordion>
+  
+  <Accordion title="Wrong Inbox Sender">
+    **Problem:** Emails send from wrong rep's email address
+    
+    **Solution:** Route BEFORE deploying to sales engagement tools, not after
+  </Accordion>
+  
+  <Accordion title="Duplicate Ownership">
+    **Problem:** Multiple reps claim same account
+    
+    **Solution:** Use CRM account owner as source of truth, not contact-level routing
+  </Accordion>
+  
+  <Accordion title="Uneven Distribution">
+    **Problem:** Some reps get far more leads than others
+    
+    **Solution:** Use round robin instead of custom logic if fairness matters more than specialization
+  </Accordion>
+  
+  <Accordion title="Lost Context">
+    **Problem:** Rep doesn't know why they got the lead
+    
+    **Solution:** Include routing reason in CRM fields or task description ("Routed: Website Visitor - Pricing Page")
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Can I route to multiple people?">
+    Not directly. Routing assigns one owner per contact. However, you can create tasks or notifications for additional team members while primary ownership goes to one person.
+  </Accordion>
+  
+  <Accordion title="What happens if the assigned rep leaves the company?">
+    Routing uses current CRM data. If the account owner field updates to a new rep, future plays will route to the new owner. Existing contacts remain with original owner unless manually reassigned.
+  </Accordion>
+  
+  <Accordion title="Can routing trigger other automations?">
+    Yes. Many CRMs have workflows that trigger on contact creation or owner change. Seam routing can kick off these downstream automations.
+  </Accordion>
+  
+  <Accordion title="Does routing work for existing contacts?">
+    Yes. You can route based on existing contact owner (maintains continuity) or override and route based on account owner or other rules.
+  </Accordion>
+  
+  <Accordion title="Can I exclude certain reps from round robin?">
+    Yes. Configure your round robin queue to include only active reps. Remove people who are out of office, at capacity, or shouldn't receive certain lead types.
+  </Accordion>
+</AccordionGroup>

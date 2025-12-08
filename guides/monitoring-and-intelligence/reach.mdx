@@ -1,0 +1,359 @@
+---
+title: "Reach"
+description: "Measure outbound engagement and identify coverage gaps across your target accounts"
+---
+
+Reach measures the extent of your team's outbound engagement with an account. While Fit, Intent, and Signals help you identify *who* to target and *when*, Reach answers a different question: **"Are we actually working this account?"**
+
+## The Four Dimensions
+
+Reach is the fourth dimension in Seam's comprehensive account scoring:
+
+| Dimension | Question It Answers |
+|-----------|---------------------|
+| **Fit** | Is this account a good target for us? (ICP match) |
+| **Intent** | Are they interacting with us? (Inbound signals) |
+| **Signals** | Are there external opportunities? (Buying triggers) |
+| **Reach** | Are we reaching out to them? (Outbound coverage) |
+
+<Info>
+**The Power of Four Dimensions:** "High fit, high intent accounts showing signals that no one's reaching out to. That's your list right there."
+</Info>
+
+## Reach vs. Intent: A Critical Distinction
+
+Many people confuse Reach with Intent. Here's the difference:
+
+| Intent (Inbound) | Reach (Outbound) |
+|------------------|------------------|
+| **Are they engaging with you?** | **Are you engaging with them?** |
+| Website visits, email opens, ad clicks | Emails sent, calls made, sequences added |
+| Shows buyer interest | Shows seller coverage |
+| Measures their activity | Measures your activity |
+| Marketing & sales receive engagement | Marketing & sales create engagement |
+
+<Warning>
+Don't mistake high Intent for high Reach! An account visiting your website 10 times (high Intent) but receiving zero outreach (zero Reach) represents a missed opportunity.
+</Warning>
+
+## How Reach Is Measured
+
+Reach evaluates engagement across two dimensions:
+
+<Tabs>
+  <Tab title="Breadth">
+    **How wide is your coverage?**
+    
+    - How many people at the account are you engaging?
+    - Are you reaching multiple contacts across the buying committee?
+    - Is it single-threaded or multi-threaded?
+    
+    **Example:**
+    - **Low Breadth:** Only reaching 1 contact
+    - **High Breadth:** Engaging 5-7 buying committee members
+  </Tab>
+  
+  <Tab title="Depth">
+    **How intensive is your engagement?**
+    
+    - How many touchpoints per contact?
+    - What's the frequency of engagement?
+    - Is engagement consistent or sporadic?
+    
+    **Example:**
+    - **Low Depth:** 1-2 emails sent
+    - **High Depth:** 10+ touchpoints (emails, calls, LinkedIn)
+  </Tab>
+</Tabs>
+
+### Sales vs. Marketing Coverage
+
+Reach also distinguishes between:
+- **Sales engagement** - SDR emails, calls, meetings, sequence touches
+- **Marketing engagement** - Campaigns, ads, nurture sequences, content sends
+
+The best coverage combines both for coordinated multi-channel engagement.
+
+## Data Sources
+
+Reach aggregates outbound activity from your GTM systems:
+
+| Category | Sources |
+|----------|---------|
+| **Sales Engagement** | SalesLoft, Outreach, HubSpot sequences |
+| **CRM** | Salesforce, HubSpot (activities, tasks, emails) |
+| **Marketing Automation** | Marketo, HubSpot (campaign touches) |
+| **Email** | Tracked emails sent to contacts |
+| **Meetings** | Calendar integrations, meeting records |
+| **Ads** | LinkedIn Ads, Google Ads (audience membership) |
+
+<Note>
+If your CRM or sales engagement tool records an email as sent, Seam counts it toward Reach. This ensures comprehensive tracking of all outbound efforts.
+</Note>
+
+## Identifying Coverage Gaps
+
+Reach becomes powerful when combined with the other three dimensions to surface accounts being neglected:
+
+<AccordionGroup>
+  <Accordion title="High-Value Accounts with No Outreach" icon="circle-exclamation">
+    **Scenario:** High Fit + High Intent + Strong Signals + Low Reach
+    
+    **Example:** "Contentful is a high fit account for us. They're engaging with our ads and promoting people in our buying personas. They're in consideration phase and we've only reached out to one person—whose email bounced."
+    
+    **Action:** Immediate priority. Start outreach immediately before competitor does.
+  </Accordion>
+  
+  <Accordion title="Single-Threaded Accounts" icon="link-simple">
+    **Scenario:** Only one contact being engaged at a large account
+    
+    **Risk:** If that contact leaves, goes dark, or isn't a champion, the entire account goes cold
+    
+    **Action:** Multi-threading play to expand coverage across buying committee
+  </Accordion>
+  
+  <Accordion title="Bounced or Invalid Contacts" icon="envelope-open-text">
+    **Scenario:** The only contact you're reaching has a bounced email
+    
+    **Problem:** Account effectively has zero coverage despite appearing "worked"
+    
+    **Action:** Find and engage valid contacts at the account
+  </Accordion>
+  
+  <Accordion title="Sales-Only or Marketing-Only Coverage" icon="user-group">
+    **Scenario:** Account only receiving sales outreach OR only in marketing nurture
+    
+    **Gap:** Missing coordinated multi-channel engagement
+    
+    **Action:** Add complementary channel to increase pressure and awareness
+  </Accordion>
+</AccordionGroup>
+
+## Use Cases
+
+### 1. Multi-Threading Campaigns
+
+When Reach shows you're only engaging one person at an account, automatically expand coverage:
+
+**Workflow:**
+```
+Detection: Account has high Fit + Intent but only 1 contact
+  ↓
+Trigger: Multi-threading play
+  ↓
+Actions:
+  1. Research buying committee (find 4-6 relevant personas)
+  2. Enrich contact data for all personas
+  3. Add to coordinated sequences
+  4. Route to account owner
+  5. Update CRM with expanded coverage
+```
+
+<Card title="Build Multi-Threading Plays" icon="play" href="/guides/actions/plays">
+  Learn how to automate buying committee expansion
+</Card>
+
+### 2. Neglected High-Value Accounts
+
+Surface accounts that deserve attention but aren't getting it:
+
+**Filter Example:**
+- Fit Score: A or B
+- Intent Score: High
+- Signals: New hire or funding in past 30 days
+- Reach: Low (0-2 contacts, low activity)
+
+**Result:** Prioritized list of hot accounts being ignored
+
+### 3. Balancing Sales and Marketing
+
+Ensure coordinated coverage rather than siloed outreach:
+
+| Coverage Type | What It Means | Action |
+|---------------|---------------|--------|
+| **Sales Only** | SDR working account, no marketing support | Add to nurture campaigns and ad audiences |
+| **Marketing Only** | In campaigns but no direct outreach | Assign to SDR for personalized outreach |
+| **Both** | Coordinated multi-channel engagement | Ideal state - monitor and maintain |
+| **Neither** | No coverage at all | Immediate priority if high Fit/Intent |
+
+### 4. Coverage Quality Assessment
+
+Not all Reach is created equal:
+
+<Tabs>
+  <Tab title="Strong Reach">
+    ✅ 5+ buying committee members engaged
+    
+    ✅ Mix of sales and marketing touches
+    
+    ✅ Recent activity (within 14 days)
+    
+    ✅ Multiple channels (email, phone, LinkedIn)
+    
+    ✅ Valid contact data (no bounces)
+  </Tab>
+  
+  <Tab title="Weak Reach">
+    ❌ Only 1 contact engaged
+    
+    ❌ Sales OR marketing, not both
+    
+    ❌ Last touch over 60 days ago
+    
+    ❌ Single channel only (email-only)
+    
+    ❌ Bounced or invalid contacts
+  </Tab>
+</Tabs>
+
+## Reach-Based Prioritization
+
+Use Reach to guide where you focus outbound efforts:
+
+| Scenario | Interpretation | Action |
+|----------|----------------|--------|
+| High Fit + High Intent + Low Reach | Hot account, no coverage | **Top Priority** - Start outreach now |
+| High Fit + Low Intent + Low Reach | Good target, cold | Run awareness plays first |
+| High Fit + High Intent + High Reach | Already being worked | Monitor progress, don't over-engage |
+| Low Fit + Any Intent + Any Reach | Poor target | Deprioritize regardless of coverage |
+| High Fit + High Intent + Medium Reach (Single-thread) | At risk | Expand to buying committee |
+
+<Info>
+The best opportunities are accounts with high Fit and Intent but low Reach. They're showing interest, but nobody's engaging them yet.
+</Info>
+
+## Building Reach-Based Audiences
+
+Create dynamic audiences to identify coverage gaps:
+
+**Example Audiences:**
+
+<AccordionGroup>
+  <Accordion title="Neglected High-Intent Accounts">
+    - Fit Score: A or B
+    - Intent Score: High
+    - Reach: Low (fewer than 3 contacts)
+    - Last touch: Over 30 days ago
+  </Accordion>
+  
+  <Accordion title="Single-Threaded Risk Accounts">
+    - Fit Score: A
+    - Opportunity Stage: Discovery or later
+    - Contacts engaged: 1
+    - Contact status: Active
+  </Accordion>
+  
+  <Accordion title="Marketing-Only Accounts">
+    - Fit Score: A or B
+    - Marketing touches: 5+
+    - Sales touches: 0
+    - Intent Score: Medium or High
+  </Accordion>
+  
+  <Accordion title="Bounced Contact Accounts">
+    - Contacts engaged: 1
+    - Email status: Bounced
+    - Account status: Active target
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Create Audiences" icon="users" href="/guides/monitoring-and-intelligence/audiences">
+  Learn how to build dynamic audience segments
+</Card>
+
+## Automated Reach Expansion
+
+Use low Reach as a trigger for automated plays:
+
+**Example Play: Auto-Expand Coverage**
+```
+Trigger: Account enters "High Value - Low Reach" audience
+  ↓
+Conditions:
+  - Fit Score: A
+  - Intent Score: Medium or High
+  - Contacts in CRM: 1 or fewer
+  ↓
+Actions:
+  1. Research buying committee
+  2. Find 3-5 additional personas
+  3. Enrich contact data
+  4. Add to sales sequences
+  5. Add to LinkedIn matched audience
+  6. Notify account owner
+  7. Create tasks for personalized outreach
+```
+
+This ensures high-value accounts automatically get expanded coverage without manual intervention.
+
+## Viewing Reach Data
+
+### In Seam
+
+- **Account records** - See breadth and depth of coverage
+- **Coverage dashboard** - Identify gaps across your TAM
+- **Audience filters** - Segment by Reach level
+- **Play triggers** - Automate based on low Reach
+
+### In Your CRM
+
+Reach metrics sync to Salesforce/HubSpot:
+- Number of contacts engaged
+- Last touch date
+- Sales vs. marketing coverage split
+- Coverage quality indicators
+
+Sales managers can report on coverage without logging into Seam.
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Don't confuse activity with effectiveness" icon="gauge">
+    10 emails to the wrong person is worse than 2 emails to the right person. Quality of coverage matters more than quantity.
+  </Accordion>
+  
+  <Accordion title="Multi-thread early" icon="sitemap">
+    Don't wait until late-stage to expand coverage. Engage multiple stakeholders from the start to build consensus.
+  </Accordion>
+  
+  <Accordion title="Combine sales and marketing" icon="handshake">
+    Coordinated multi-channel engagement is more effective than either channel alone. Use both.
+  </Accordion>
+  
+  <Accordion title="Monitor for coverage decay" icon="chart-line-down">
+    Accounts can go from high Reach to low Reach if engagement stops. Set alerts for accounts with declining coverage.
+  </Accordion>
+  
+  <Accordion title="Validate contact quality" icon="circle-check">
+    Bounced emails, wrong titles, or departed employees make your Reach score meaningless. Keep contact data fresh.
+  </Accordion>
+  
+  <Accordion title="Use Reach to prevent churn" icon="shield">
+    For existing customers, low Reach indicates at-risk accounts. Expand coverage to protect renewals.
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="If I'm running marketing campaigns, why is Reach still low?">
+    Reach measures active, targeted outbound—not passive campaign inclusion. An account in a broad nurture campaign may not register as "reached" if they're not receiving personalized attention.
+  </Accordion>
+  
+  <Accordion title="Does adding someone to a LinkedIn ad audience count as Reach?">
+    Yes, if they're in a targeted account-based audience. Broad retargeting audiences don't count—Reach focuses on intentional, account-specific engagement.
+  </Accordion>
+  
+  <Accordion title="How often should I expand Reach at an account?">
+    When you first engage (multi-thread early), when deals progress to new stages (involve new personas), and when coverage becomes single-threaded again (someone leaves).
+  </Accordion>
+  
+  <Accordion title="Can Reach be too high?">
+    Yes. Over-engagement burns out accounts. If you're reaching 15+ people at a 100-person company with daily touches, you're likely doing more harm than good.
+  </Accordion>
+  
+  <Accordion title="How does Reach help with existing customers?">
+    Low Reach on existing customers indicates at-risk accounts. If you're not engaging your customer base, they're vulnerable to churn and competitive displacement.
+  </Accordion>
+</AccordionGroup>
+
