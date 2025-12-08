@@ -5,16 +5,16 @@ description: "AI-powered account scoring that identifies which companies match y
 
 Fit Score evaluates how well accounts align with your Ideal Customer Profile (ICP). Unlike traditional scoring that relies on static firmographics, Fit Score uses AI agents to research accounts and answer custom questions that aren't stored in your CRM.
 
-## How It Works
+## How it works
 
 Seam uses a two-agent system to score accounts:
 
-1. **Research Agent** - Investigates the account across multiple data sources (CRM, LinkedIn, company websites, public data)
-2. **Evaluation Agent** - Reviews findings against your criteria and assigns a grade with explanation
+1. **Research agent** - Investigates the account across multiple data sources (CRM, LinkedIn, company websites, public data)
+2. **Evaluation agent** - Reviews findings against your criteria and assigns a grade with explanation
 
 This process takes 30-60 seconds per account and produces a letter grade (A, B, C, or D) with a detailed explanation.
 
-## The Grading System
+## Grading system
 
 | Grade | Meaning | Action |
 |-------|---------|--------|
@@ -27,12 +27,12 @@ This process takes 30-60 seconds per account and produces a letter grade (A, B, 
 **Why letters instead of numbers?** Sales teams don't need to debate whether a 92 is better than an 88. Simple A/B/C/D grades make prioritization clear and actionable.
 </Info>
 
-## Defining Your Fit Criteria
+## Defining your fit criteria
 
 Configure custom criteria using natural language prompts. Fit Score can answer questions that traditional data providers can't:
 
 <AccordionGroup>
-  <Accordion title="Firmographic Criteria" icon="building">
+  <Accordion title="Firmographic criteria" icon="building">
     - Employee count ranges
     - Revenue or funding stage
     - Geographic location
@@ -40,34 +40,34 @@ Configure custom criteria using natural language prompts. Fit Score can answer q
     - Growth rate
   </Accordion>
   
-  <Accordion title="Technographic Criteria" icon="microchip">
+  <Accordion title="Technographic criteria" icon="microchip">
     - "Does this company use Snowflake or Databricks?"
     - "Do they have internal and external APIs?"
     - "What is their IT environment?"
     - "Do they use a specific tech stack?"
   </Accordion>
   
-  <Accordion title="Business Model Criteria" icon="diagram-project">
+  <Accordion title="Business model criteria" icon="diagram-project">
     - "How big is their Total Addressable Market?"
     - "Do they serve B2B or B2C customers?"
     - "Are they a marketplace or direct seller?"
     - "Do they underwrite merchants?" (fintech)
   </Accordion>
   
-  <Accordion title="Compliance & Security" icon="shield-check">
+  <Accordion title="Compliance & security" icon="shield-check">
     - "Do they have SOC 2 compliance?"
     - "Are they in a highly regulated industry?"
     - "Do they handle sensitive data?"
   </Accordion>
   
-  <Accordion title="Use Case Indicators" icon="magnifying-glass">
+  <Accordion title="Use case indicators" icon="magnifying-glass">
     - "How many languages do they need for localization?"
     - "Do they have distributed teams?"
     - "What's their content production volume?"
     - "Do they process high-volume transactions?"
   </Accordion>
   
-  <Accordion title="Disqualification Criteria" icon="ban">
+  <Accordion title="Disqualification criteria" icon="ban">
     - "Is this company a direct competitor?"
     - "Are they too small for our product?"
     - "Do they serve industries we don't support?"
@@ -78,41 +78,41 @@ Configure custom criteria using natural language prompts. Fit Score can answer q
 Start with 5-10 clear criteria that reflect your closed-won customer patterns. You can refine and expand after back-testing.
 </Tip>
 
-## Multiple Fit Models
+## Multiple fit models
 
 Create different fit models for different segments or use cases:
 
-- **SaaS Fit Score** - Criteria for software companies
-- **Manufacturing Fit Score** - Criteria for industrial businesses  
-- **Enterprise Fit Score** - Criteria for large accounts
-- **SMB Fit Score** - Criteria for small/mid-market
-- **Product Line A** - Criteria for specific product vertical
+- **SaaS fit score** - Criteria for software companies
+- **Manufacturing fit score** - Criteria for industrial businesses  
+- **Enterprise fit score** - Criteria for large accounts
+- **SMB fit score** - Criteria for small/mid-market
+- **Product line A** - Criteria for specific product vertical
 
 Each model can have completely different criteria and grading logic.
 
-## Back-Testing Your Fit Model
+## Back-testing your fit model
 
 Before deploying, Seam validates your criteria with a 45-account test:
 
 <Steps>
-  <Step title="Select Test Accounts">
+  <Step title="Select test accounts">
     - 15 known good accounts (closed-won customers)
     - 15 known bad accounts (lost deals, poor fits)
     - 15 random accounts from your TAM
   </Step>
   
-  <Step title="Run Fit Score">
+  <Step title="Run fit score">
     Seam scores all 45 accounts using your criteria
   </Step>
   
-  <Step title="Validate Results">
+  <Step title="Validate results">
     Verify that:
     - Good accounts score A or B
     - Bad accounts score C or D
     - Random accounts distribute appropriately
   </Step>
   
-  <Step title="Refine Criteria">
+  <Step title="Refine criteria">
     Adjust criteria if results don't align with expectations, then retest
   </Step>
 </Steps>
@@ -121,15 +121,15 @@ Before deploying, Seam validates your criteria with a 45-account test:
 **Don't skip back-testing!** This ensures your criteria accurately identify the right accounts before you spend credits scoring your entire TAM.
 </Warning>
 
-## How Scores Are Displayed
+## How scores are displayed
 
-### Detailed Explanations
+### Detailed explanations
 
 Every Fit Score includes a detailed explanation:
 
 > "This account scored a **B** because it is headquartered in the US, operates in a target industry, has 500-2,000 employees, and serves a TAM larger than 75,000 accounts. However, it lacks SOC 2 compliance, which is preferred for enterprise deals."
 
-### CRM Integration
+### CRM integration
 
 Fit Scores sync directly to your CRM:
 - Displayed as fields on Account records
@@ -141,11 +141,11 @@ Fit Scores sync directly to your CRM:
   <img src="/images/fit-score-salesforce.png" alt="Fit Score in Salesforce" />
 </Frame>
 
-## Using Fit Score in Plays
+## Using fit score in plays
 
 Fit Score acts as a filter in automated plays to ensure you only engage good-fit accounts.
 
-**Example Play: New Funding Outreach**
+**Example play: New Funding Outreach**
 ```
 Trigger: Account raises Series B funding
   ↓
@@ -171,11 +171,11 @@ This prevents wasting:
   Learn how to configure plays using Fit Score
 </Card>
 
-## Multi-Dimensional Scoring
+## Multi-dimensional scoring
 
 Fit Score is one dimension in Seam's comprehensive scoring model:
 
-| Score Type | What It Measures | Timeframe |
+| Score type | What it measures | Timeframe |
 |------------|------------------|-----------|
 | **Fit** | ICP alignment (foundational) | Static/Stable |
 | **Intent** | Buying signals, topic research | Dynamic/Momentary |
@@ -193,7 +193,7 @@ Fit Score is one dimension in Seam's comprehensive scoring model:
   </Card>
 </CardGroup>
 
-## Best Practices
+## Best practices
 
 <AccordionGroup>
   <Accordion title="Start with closed-won patterns" icon="trophy">
@@ -221,7 +221,7 @@ Fit Score is one dimension in Seam's comprehensive scoring model:
   </Accordion>
 </AccordionGroup>
 
-## Credits & Pricing
+## Credits & pricing
 
 Fit Score operates on a credit-based model:
 
@@ -231,31 +231,31 @@ Fit Score operates on a credit-based model:
 - Data orchestration (syncing scores to CRM) does not consume credits
 
 
-## Limitations & Considerations
+## Limitations & considerations
 
 <AccordionGroup>
-  <Accordion title="Processing Time" icon="clock">
+  <Accordion title="Processing time" icon="clock">
     Scoring takes 30-60 seconds per account. Not suitable for real-time scoring during inbound form submissions.
   </Accordion>
   
-  <Accordion title="Requires CRM Presence" icon="database">
+  <Accordion title="Requires CRM presence" icon="database">
     Accounts must exist in your CRM (Salesforce/HubSpot) to be scored. Seam doesn't discover net-new accounts via Fit Score.
   </Accordion>
   
-  <Accordion title="Data Provider Limitations" icon="triangle-exclamation">
+  <Accordion title="Data provider limitations" icon="triangle-exclamation">
     Research quality depends on publicly available data. Highly private companies or niche industries may have limited information.
   </Accordion>
   
-  <Accordion title="Best for Larger TAMs" icon="expand">
+  <Accordion title="Best for larger TAMs" icon="expand">
     Most valuable for companies with 1,000+ potential accounts. Less critical if you have 50 well-known target accounts.
   </Accordion>
   
-  <Accordion title="Not for Custom Enrichment" icon="info">
+  <Accordion title="Not for customer enrichment" icon="info">
     Fit Score produces a grade + explanation. If you need specific data points (e.g., "number of retail locations") stored as fields, use enrichment plays instead.
   </Accordion>
 </AccordionGroup>
 
-## Common Questions
+## Common questions
 
 <AccordionGroup>
   <Accordion title="How often should I re-score accounts?">

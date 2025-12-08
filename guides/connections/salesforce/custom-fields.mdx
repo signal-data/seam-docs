@@ -12,7 +12,7 @@ description: "Below are the custom fields required for Salesforce."
    - From the list of objects, find and click on the object (Account, Contact, or Lead).
 3. **Access Fields & Relationships:**
    - Inside the object, click on **Fields & Relationships** in the sidebar.
-4. **Create a New Custom Field:**
+4. **Create a new Custom Field:**
    - Click the **New** button.
    - Choose the type of field you need and click **Next**.
 
@@ -33,6 +33,8 @@ The table below outlines each field's name, type, and configuration for the Acco
 | Seam Number of Contacts Reached | Number | Length: 18 ; Decimal: 0 |
 | Seam Signal Score | Number | Length: 18 ; Decimal: 0 |
 | Seam Signal Strength | Picklist | Values: High, Medium, Low, None |
+| Seam Tracking ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Created at | Date/Time | Timestamp of last Seam sync |
 | Seam Updated at | Date/Time | Timestamp of last Seam sync |
 | LinkedIn URL | URL | Company LinkedIn profile URL |
 | LinkedIn Employee Count | Number | Length: 18 ; Decimal: 0 |
@@ -51,6 +53,8 @@ The table below outlines each field's name, type, and configuration for the Cont
 | Seam Reach Score | Number | Length: 18 ; Decimal: 0 |
 | Seam Signal Score | Number | Length: 18 ; Decimal: 0 |
 | Seam Signal Strength | Text | Length: 255 |
+| Seam Tracking ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Created at | Date/Time | Timestamp of last Seam sync |
 | Seam Persona | Text | Length: 255 ; Persona name assigned during prospecting |
 | Seam Updated at | Date/Time | Timestamp of last Seam sync |
 | Seam Mobile Number | Text | Length: 255 ; Mobile phone number |
