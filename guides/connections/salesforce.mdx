@@ -1,7 +1,74 @@
 ---
-title: "Custom fields"
-description: "Below are the custom fields required for Salesforce."
+title: "Salesforce"
+description: "Quick guide to connecting Salesforce as a Source and Destination."
+icon: "Salesforce"
 ---
+
+## Prerequisites
+
+We require two prerequisites to connect Salesforce to Seam
+
+1. [Salesforce Account](https://login.salesforce.com/) with Enterprise access or API quota purchased
+
+2. Dedicated Salesforce [user](https://help.salesforce.com/s/articleView?id=adding_new_users.htm&type=5&language=en_US) (optional)
+
+## ⭐️ (Optional) Create dedicated a read/write Salesforce user
+
+While you can set up the Salesforce connector using any Salesforce user with read and write permissions. You also have the option to created a dedicated user.
+
+To create a dedicated read/write Salesforce user:
+
+1. [Log into Salesforce](https://login.salesforce.com/) with an admin account.
+
+2. On the top right of the screen, click the gear icon and then click **Setup**.
+
+3. In the left navigation bar, under Administration, click **Users** > **Profiles**. The Profiles page is displayed. Click **New profile**.
+
+4. For Profile Name, enter **Seam Integration User**.
+
+5. Click **Save**. The Profiles page is displayed. Click **Edit**.
+
+6. Scroll down to the **Standard Object Permissions** and **Custom Object Permissions** and enable the **Read and write** checkbox for objects that you want to replicate via Seam.
+
+7. Scroll to the top and click **Save**.
+
+8. On the left side, under Administration, click **Users** > **Users**. The All Users page is displayed. Click **New User**.
+
+9. Fill out the required fields:
+
+   1. For License, select **Salesforce**.
+
+   2. For Profile, select **Seam Integration User**.
+
+   3. For Email, make sure to use an email address that you can access.
+
+10. Click **Save**.
+
+11. Copy the Username and keep it accessible.
+
+12. Log into the email you used above and verify your new Salesforce account user. You'll need to set a password as part of this process. Keep this password accessible.
+
+## Step 2: Connect Salesforce to Seam.
+
+1. [Log in to your Seam](https://app.getseam.ai/) account.
+
+2. In the left navigation bar, click **Settings**. Navigate to the **Sources** tab, under the connections section. In the top-right corner, click **+ Add source**.
+
+3. Find and select **Salesforce** from the list of available sources.
+
+4. To authenticate: Click **Login with Salesforce** to authorize your Salesforce account. Seam will authenticate the Salesforce account you are already logged in to. Please make sure you are logged into the right account.
+
+5. Toggle whether your Salesforce account is a [Sandbox account](https://help.salesforce.com/s/articleView?id=sf.deploy_sandboxes_parent.htm&type=5) or a production account.
+
+6. Select the Objects you want Seam to have access to.
+
+7. Enter a **Source name** of your choosing to help you identify this source.
+
+8. Click Finish to finalize and Seam will start to connect to your data.
+
+9. Repeat steps 2 - 8, on the destination tab.
+
+
 
 ## Creating Custom Fields in Salesforce
 
