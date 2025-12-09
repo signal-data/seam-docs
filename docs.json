@@ -28,13 +28,13 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Tutorial",
+        "tab": "Tutorials",
         "groups": [
           {
             "group": "Getting Started",
             "pages": [
-              "guides/getting-started/overview",
-              "guides/getting-started/onboarding"
+              "tutorials/getting-started/overview",
+              "tutorials/getting-started/onboarding"
             ]
           }
         ]
@@ -84,55 +84,55 @@
           {
             "group": "CRM Systems",
             "pages": [
-              "guides/connections/salesforce",
-              "guides/connections/hubspot"
+              "/connections/salesforce",
+              "/connections/hubspot"
             ]
           },
           {
             "group": "Sales Engagement Platforms",
             "pages": [
-              "guides/connections/outreach",
-              "guides/connections/salesloft",
-              "guides/connections/smartlead"
+              "/connections/outreach",
+              "/connections/salesloft",
+              "/connections/smartlead"
             ]
           },
           {
             "group": "Marketing Platforms",
             "pages": [
-              "guides/connections/marketo",
-              "guides/connections/google-ads",
-              "guides/connections/linkedin-ads"
+              "/connections/marketo",
+              "/connections/google-ads",
+              "/connections/linkedin-ads"
             ]
           },
           {
             "group": "Data Warehouses & Databases",
             "pages": [
-              "guides/connections/snowflake",
-              "guides/connections/bigquery",
-              "guides/connections/redshift",
-              "guides/connections/azure-synapse",
-              "guides/connections/postgres"
+              "/connections/snowflake",
+              "/connections/bigquery",
+              "/connections/redshift",
+              "/connections/azure-synapse",
+              "/connections/postgres"
             ]
           },
           {
             "group": "Analytics & Product Intelligence",
             "pages": [
-              "guides/connections/amplitude"
+              "/connections/amplitude"
             ]
           },
           {
             "group": "Business Systems",
             "pages": [
-              "guides/connections/netsuite",
-              "guides/connections/slack",
-              "guides/connections/github"
+              "/connections/netsuite",
+              "/connections/slack",
+              "/connections/github"
             ]
           },
           {
             "group": "Data Sources",
             "pages": [
-              "guides/connections/csv",
-              "guides/connections/google-sheets"
+              "/connections/csv",
+              "/connections/google-sheets"
             ]
           }
         ]
