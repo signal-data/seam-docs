@@ -28,7 +28,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Tutorial",
         "groups": [
           {
             "group": "Getting Started",
@@ -36,7 +36,12 @@
               "guides/getting-started/overview",
               "guides/getting-started/onboarding"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Guides",
+        "groups": [
           {
             "group": "Configuring Seam",
             "pages": [
