@@ -56,12 +56,12 @@ While you can connect Salesforce using any user with read and write permissions,
 ### Step 2: Connect Salesforce to Seam
 
 <Steps>
-  <Step title="Navigate to Sources">
-    [Log in to Seam](https://app.getseam.ai/) and click **Settings** in the left navigation bar. Go to the **Sources** tab under the Connections section.
+  <Step title="Navigate to Connections">
+    [Log in to Seam](https://app.getseam.ai/) and click **Settings** in the left navigation bar. Go to the **Connections** tab.
   </Step>
   
   <Step title="Add Salesforce Source">
-    Click **+ Add source** in the top-right corner and select **Salesforce** from the list.
+    Click **+ New connection** in the top-right corner and select **Salesforce** from the list.
   </Step>
   
   <Step title="Authenticate">
@@ -72,7 +72,7 @@ While you can connect Salesforce using any user with read and write permissions,
     </Warning>
   </Step>
   
-  <Step title="Configure Source">
+  <Step title="Configure Connection">
     - Toggle whether your account is a [Sandbox](https://help.salesforce.com/s/articleView?id=sf.deploy_sandboxes_parent.htm&type=5) or Production account
     - Select the **Objects** you want Seam to access
     - Enter a **Source name** to identify this connection
@@ -80,10 +80,6 @@ While you can connect Salesforce using any user with read and write permissions,
   
   <Step title="Complete Setup">
     Click **Finish** to complete the connection. Seam will begin syncing your Salesforce data.
-  </Step>
-  
-  <Step title="Add Destination">
-    Repeat steps 1-5 on the **Destinations** tab to enable Seam to write data back to Salesforce.
   </Step>
 </Steps>
 
@@ -120,7 +116,7 @@ To enable full functionality with Seam, you'll need to create custom fields in S
 | Seam Buying Stage | Picklist | Values: Unaware, Awareness, Consideration, Purchase |
 | Seam Company ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
 | Seam Fit Score | Picklist | Values: A, B, C, D |
-| Seam Fit Explanation | Rich Text | Summary of AI fit scoring rationale |
+| Seam Fit Explanation | Long Text Area (32768) | Summary of AI fit scoring rationale |
 | Seam Intent Level | Picklist | Values: Hot, Medium, Low, None |
 | Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
 | Seam Reach Level | Picklist | Values: Unengaged, Sales Engaged, Marketing Engaged, Sales AND Marketing Engaged, Opportunity |

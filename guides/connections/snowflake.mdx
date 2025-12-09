@@ -4,6 +4,20 @@ description: "Connect your Snowflake warehouse."
 icon: "snowflake"
 ---
 
+## Prerequisites
+<Warning>
+**Firewall Configuration Required**
+
+If your database is behind a firewall, you must allow connections from the following Seam IP addresses:
+- 34.171.4.17
+- 54.190.82.25
+- 44.232.40.21
+- 35.155.106.54
+- 54.200.67.134
+- 44.224.213.129
+- 54.149.95.139
+</Warning>
+
 We need the following details for Snowflake:
 
 * Account ID with the region that your snowflake cluster is running on e.g. `xxxxxxxx.us-east-2.aws`. Some regions don't have this suffix.
@@ -18,7 +32,7 @@ We need the following details for Snowflake:
 
 * Role (if you want to override the default user’s role)
 
-## ❄️ Snowflake Permissions for Seam
+## Permissions
 
 Permission requirements for Seam vary depending on whether you use Snowflake as a **data source** or a **data destination**. At a minimum, we recommend creating a dedicated **User** and **Role** for Seam. Optionally, you may set up a dedicated **database** and **warehouse** for Seam, particularly if you plan to sync data into Snowflake.
 
@@ -122,8 +136,3 @@ By following these steps, you can ensure Seam has the necessary access to integr
 
 ## VI. Firewall and security
 
-<Warning>
-  If your database is behind a firewall, please allow connections from our IP address:
-
-  **34.171.4.17, 54.190.82.25, 44.232.40.21, 35.155.106.54, 54.200.67.134, 44.224.213.129, 54.149.95.139**
-</Warning>
