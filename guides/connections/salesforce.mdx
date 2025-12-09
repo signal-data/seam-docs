@@ -1,91 +1,119 @@
 ---
 title: "Salesforce"
-description: "Quick guide to connecting Salesforce as a Source and Destination."
-icon: "Salesforce"
+description: "Connect Salesforce as both a source and destination in Seam"
+icon: "salesforce"
 ---
 
 ## Prerequisites
 
-We require two prerequisites to connect Salesforce to Seam
+Before connecting Salesforce to Seam, ensure you have:
 
-1. [Salesforce Account](https://login.salesforce.com/) with Enterprise access or API quota purchased
+1. A [Salesforce Account](https://login.salesforce.com/) with Enterprise access or API quota purchased
+2. (Optional) A dedicated Salesforce [user](https://help.salesforce.com/s/articleView?id=adding_new_users.htm&type=5&language=en_US) for Seam integration
 
-2. Dedicated Salesforce [user](https://help.salesforce.com/s/articleView?id=adding_new_users.htm&type=5&language=en_US) (optional)
+---
 
-## ⭐️ (Optional) Create dedicated a read/write Salesforce user
+## Configuration Steps
 
-While you can set up the Salesforce connector using any Salesforce user with read and write permissions. You also have the option to created a dedicated user.
+### Step 1: Create a Dedicated Salesforce User (Optional)
 
-To create a dedicated read/write Salesforce user:
+While you can connect Salesforce using any user with read and write permissions, we recommend creating a dedicated integration user for better security and tracking.
 
-1. [Log into Salesforce](https://login.salesforce.com/) with an admin account.
+<Steps>
+  <Step title="Access Setup">
+    [Log into Salesforce](https://login.salesforce.com/) with an admin account. Click the gear icon in the top right, then click **Setup**.
+  </Step>
+  
+  <Step title="Create New Profile">
+    In the left navigation bar, go to **Administration** > **Users** > **Profiles**. Click **New Profile**.
+    
+    - **Profile Name**: Enter `Seam Integration User`
+    - Click **Save**, then click **Edit**
+  </Step>
+  
+  <Step title="Configure Object Permissions">
+    Scroll down to **Standard Object Permissions** and **Custom Object Permissions**. Enable the **Read and Write** checkbox for all objects you want to replicate via Seam.
+    
+    Click **Save** when finished.
+  </Step>
+  
+  <Step title="Create New User">
+    In the left navigation, go to **Administration** > **Users** > **Users**. Click **New User**.
+    
+    Fill out the required fields:
+    - **License**: Select `Salesforce`
+    - **Profile**: Select `Seam Integration User`
+    - **Email**: Use an email address you can access
+    
+    Click **Save** and copy the **Username** for later use.
+  </Step>
+  
+  <Step title="Verify and Set Password">
+    Check the email you provided and verify your new Salesforce user account. Set a password during the verification process and save it for the next step.
+  </Step>
+</Steps>
 
-2. On the top right of the screen, click the gear icon and then click **Setup**.
+### Step 2: Connect Salesforce to Seam
 
-3. In the left navigation bar, under Administration, click **Users** > **Profiles**. The Profiles page is displayed. Click **New profile**.
+<Steps>
+  <Step title="Navigate to Sources">
+    [Log in to Seam](https://app.getseam.ai/) and click **Settings** in the left navigation bar. Go to the **Sources** tab under the Connections section.
+  </Step>
+  
+  <Step title="Add Salesforce Source">
+    Click **+ Add source** in the top-right corner and select **Salesforce** from the list.
+  </Step>
+  
+  <Step title="Authenticate">
+    Click **Login with Salesforce** to authorize your account. Seam will authenticate the Salesforce account you're currently logged into.
+    
+    <Warning>
+    Ensure you're logged into the correct Salesforce account before authenticating.
+    </Warning>
+  </Step>
+  
+  <Step title="Configure Source">
+    - Toggle whether your account is a [Sandbox](https://help.salesforce.com/s/articleView?id=sf.deploy_sandboxes_parent.htm&type=5) or Production account
+    - Select the **Objects** you want Seam to access
+    - Enter a **Source name** to identify this connection
+  </Step>
+  
+  <Step title="Complete Setup">
+    Click **Finish** to complete the connection. Seam will begin syncing your Salesforce data.
+  </Step>
+  
+  <Step title="Add Destination">
+    Repeat steps 1-5 on the **Destinations** tab to enable Seam to write data back to Salesforce.
+  </Step>
+</Steps>
 
-4. For Profile Name, enter **Seam Integration User**.
+---
 
-5. Click **Save**. The Profiles page is displayed. Click **Edit**.
+## Custom Fields Reference
 
-6. Scroll down to the **Standard Object Permissions** and **Custom Object Permissions** and enable the **Read and write** checkbox for objects that you want to replicate via Seam.
+To enable full functionality with Seam, you'll need to create custom fields in Salesforce for the Account, Contact, and Lead objects.
 
-7. Scroll to the top and click **Save**.
+### Creating Custom Fields
 
-8. On the left side, under Administration, click **Users** > **Users**. The All Users page is displayed. Click **New User**.
+<Steps>
+  <Step title="Navigate to Object Manager">
+    In Setup, use the **Quick Find** box to search for **Object Manager** and select it.
+  </Step>
+  
+  <Step title="Select the Object">
+    Choose the object you want to add fields to (Account, Contact, or Lead).
+  </Step>
+  
+  <Step title="Access Fields & Relationships">
+    Click **Fields & Relationships** in the sidebar.
+  </Step>
+  
+  <Step title="Create New Field">
+    Click **New**, select the field type from the tables below, and follow the prompts to configure it.
+  </Step>
+</Steps>
 
-9. Fill out the required fields:
-
-   1. For License, select **Salesforce**.
-
-   2. For Profile, select **Seam Integration User**.
-
-   3. For Email, make sure to use an email address that you can access.
-
-10. Click **Save**.
-
-11. Copy the Username and keep it accessible.
-
-12. Log into the email you used above and verify your new Salesforce account user. You'll need to set a password as part of this process. Keep this password accessible.
-
-## Step 2: Connect Salesforce to Seam.
-
-1. [Log in to your Seam](https://app.getseam.ai/) account.
-
-2. In the left navigation bar, click **Settings**. Navigate to the **Sources** tab, under the connections section. In the top-right corner, click **+ Add source**.
-
-3. Find and select **Salesforce** from the list of available sources.
-
-4. To authenticate: Click **Login with Salesforce** to authorize your Salesforce account. Seam will authenticate the Salesforce account you are already logged in to. Please make sure you are logged into the right account.
-
-5. Toggle whether your Salesforce account is a [Sandbox account](https://help.salesforce.com/s/articleView?id=sf.deploy_sandboxes_parent.htm&type=5) or a production account.
-
-6. Select the Objects you want Seam to have access to.
-
-7. Enter a **Source name** of your choosing to help you identify this source.
-
-8. Click Finish to finalize and Seam will start to connect to your data.
-
-9. Repeat steps 2 - 8, on the destination tab.
-
-
-
-## Creating Custom Fields in Salesforce
-
-1. **Navigate to Object Manager:**
-   - In Setup, use the **Quick Find** box to search for **Object Manager**.
-   - Click on **Object Manager** from the results.
-2. **Select the Object:**
-   - From the list of objects, find and click on the object (Account, Contact, or Lead).
-3. **Access Fields & Relationships:**
-   - Inside the object, click on **Fields & Relationships** in the sidebar.
-4. **Create a new Custom Field:**
-   - Click the **New** button.
-   - Choose the type of field you need and click **Next**.
-
-## I. Account
-
-The table below outlines each field's name, type, and configuration for the Account object.
+### Account Fields
 
 | Field Name | Type | Configuration |
 | :--------- | :--- | :------------ |
@@ -106,15 +134,13 @@ The table below outlines each field's name, type, and configuration for the Acco
 | LinkedIn URL | URL | Company LinkedIn profile URL |
 | LinkedIn Employee Count | Number | Length: 18 ; Decimal: 0 |
 
-## II. Contact
-
-The table below outlines each field's name, type, and configuration for the Contact object.
+### Contact Fields
 
 | Field Name | Type | Configuration |
 | :--------- | :--- | :------------ |
-| Seam Buying Stage | Picklist | Values: Same as Account (Unaware, Awareness, Consideration, Purchase) |
+| Seam Buying Stage | Picklist | Values: Unaware, Awareness, Consideration, Purchase |
 | Seam People ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
-| Seam Intent Level | Picklist | Values: Same as Account (Hot, Medium, Low, None) |
+| Seam Intent Level | Picklist | Values: Hot, Medium, Low, None |
 | Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
 | Seam Reach Level | Text | Length: 255 |
 | Seam Reach Score | Number | Length: 18 ; Decimal: 0 |
@@ -131,12 +157,10 @@ The table below outlines each field's name, type, and configuration for the Cont
 | Seam Email Status | Text | Length: 255 ; Email verification status |
 | Seam Champion | Checkbox | Indicates if contact is a champion/advocate |
 
-## III. Lead
-
-The table below outlines each field's name, type, and configuration for the Lead object.
+### Lead Fields
 
 <Note>
-Lead fields typically mirror Contact fields. If your organization uses Leads, create the same custom fields as Contact above.
+Lead fields typically mirror Contact fields. If your organization uses Leads, create the same custom fields as shown in the Contact section above.
 </Note>
 
 | Field Name | Type | Configuration |
@@ -149,4 +173,3 @@ Lead fields typically mirror Contact fields. If your organization uses Leads, cr
 | Seam Play Added | Date/Time | When lead was added to play |
 | Seam Email Status | Text | Length: 255 |
 | LinkedIn URL | URL | Lead LinkedIn profile URL |
-

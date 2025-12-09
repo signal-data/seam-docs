@@ -1,5 +1,66 @@
 ---
-title: Postgres
-description: "Connect your datawarehouse."
+title: 'PostgreSQL'
+description: 'Connect your PostgreSQL database to Seam'
 icon: "database"
 ---
+
+
+## Configuration Steps
+
+### 1. Create a Seam User in PostgreSQL
+
+You'll need to create a dedicated read-only user for Seam to access your PostgreSQL database. Connect to your PostgreSQL database using a SQL client with admin credentials to run these commands.
+
+#### SQL Commands
+
+Replace the following placeholders in the commands below:
+- `<schema>` - The name of your PostgreSQL schema
+- `<table>` - The name of your PostgreSQL table (if using Option 2)
+- `<password>` - A randomly generated password (save this for later)
+```sql
+-- Create a new user for Seam
+CREATE USER seam_postgres_integration_user WITH PASSWORD '<password>';
+
+-- Grant access to the schema (always required)
+GRANT USAGE ON SCHEMA <schema> TO seam_postgres_integration_user;
+
+-- Option 1: Grant read-access to all tables in the schema
+GRANT SELECT ON ALL TABLES IN SCHEMA <schema> TO seam_postgres_integration_user;
+
+-- Option 2: Grant access to specific tables (repeat as necessary)
+GRANT SELECT ON TABLE <schema>.<table> TO seam_postgres_integration_user;
+```
+
+<Note>
+You can modify the `GRANT` statements to limit the scope of Seam's permissions. Choose Option 1 to grant access to all tables in a schema, or Option 2 to grant access only to specific tables.
+</Note>
+
+### 2. Gather Connection Details
+
+You'll need the following information to complete the Seam connection:
+
+<ParamField path="username" type="string" required>
+  The username you created (e.g., `seam_postgres_integration_user`)
+</ParamField>
+
+<ParamField path="password" type="string" required>
+  The password you set for the Seam user
+</ParamField>
+
+<ParamField path="host" type="string" required>
+  Your database's host address (e.g., `123.456.789.012` or `subdomain.example.com`)
+</ParamField>
+
+<ParamField path="database" type="string" required>
+  Database name
+</ParamField>
+
+<ParamField path="port" type="number" default="5432">
+  Port (default: 5432)
+</ParamField>
+
+---
+
+## Next Steps
+
+Once you've created the Seam user and gathered your connection details, you can complete the connection setup in the Seam platform.

@@ -1,5 +1,34 @@
 ---
-title: CSV
-description: "Connect your datawarehouse."
+title: 'CSV'
+description: 'Connect CSV files as a data source in Seam'
 icon: "file-csv"
 ---
+
+## Overview
+
+The CSV connector allows you to import data from CSV files directly into Seam. This is useful for one-time imports or periodic updates of data that exists in spreadsheet format.
+
+---
+
+## Configuration Steps
+
+### Set Up the CSV Source
+
+<Steps>
+  <Step title="Navigate to Sources">
+    From the Seam UI, click the **Settings** tab, then click **Sources**.
+  </Step>
+  
+  <Step title="Add New Source">
+    Click the **+ Add source** button in the top right corner and select **CSV** from the list of available sources.
+  </Step>
+  
+  <Step title="Configure Source Details">
+    - **Source Name**: Enter a descriptive name for this CSV source
+    - **Dataset Name**: Enter the name of the final table where this file will be replicated
+  </Step>
+  
+  <Step title="Save Configuration">
+    Click **Save** to complete the setup.
+  </Step>
+</Steps>

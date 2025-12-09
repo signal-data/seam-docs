@@ -1,5 +1,75 @@
 ---
-title: BigQuery
-description: "Connect your datawarehouse."
+title: 'BigQuery'
+description: 'Connect your BigQuery data warehouse to Seam'
 icon: "magnifying-glass-chart"
 ---
+
+## Prerequisites
+
+<Warning>
+**Firewall Configuration Required**
+
+If your database is behind a firewall, you must allow connections from the following Seam IP addresses:
+- 34.171.4.17
+- 54.190.82.25
+- 44.232.40.21
+- 35.155.106.54
+- 54.200.67.134
+- 44.224.213.129
+- 54.149.95.139
+</Warning>
+
+## Required Information
+
+To connect your BigQuery warehouse to Seam, you'll need to provide:
+
+1. **BigQuery Project ID** (required)
+2. **Service Account JSON** (required)
+3. **Dataset ID** (optional)
+
+---
+
+## Configuration Steps
+
+### 1. Locate Your BigQuery Project ID
+
+Your Project ID can be found in the BigQuery console as shown below. Copy this value to use when configuring your Seam connection.
+
+<Frame>
+  <img src="/assets/images/bigquery/project-id.png" alt="BigQuery Project ID location" />
+</Frame>
+
+### 2. Create a Service Account
+
+You'll need to create a service account that Seam will use to access your BigQuery project and datasets.
+
+**Step 1:** Create a new service account in your BigQuery project by following [Google's service account creation guide](https://cloud.google.com/iam/docs/service-accounts-create).
+
+<Note>
+Ensure you create the service account in the same project where your dataset is located.
+</Note>
+
+**Step 2:** Assign the following roles to the service account:
+- `BigQuery Job User`
+- `BigQuery Data Viewer`
+- `BigQuery Metadata Viewer`
+
+<Frame>
+  <img src="/assets/images/bigquery/service-account-roles.png" alt="Service account role configuration" />
+</Frame>
+
+**Step 3:** Generate a JSON key file for the service account by following [Google's credential creation instructions](https://cloud.google.com/iam/docs/keys-create-delete). You'll upload this JSON file to Seam.
+
+### 3. Specify a Dataset ID (Optional)
+
+If you want to limit Seam's access to a specific dataset, provide the Dataset ID. You can find this in the BigQuery console as shown below.
+
+<Frame>
+  <img src="/assets/images/bigquery/dataset-id.png" alt="BigQuery Dataset ID location" />
+</Frame>
+
+<Note>
+**Important:** The Dataset ID is different from your Project ID or table name.
+
+If you don't specify a Dataset ID, Seam will connect to all datasets the service account has access to.
+</Note>

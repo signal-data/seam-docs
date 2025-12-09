@@ -1,5 +1,70 @@
 ---
-title: Redshift
-description: "Connect your datawarehouse."
-icon: "server"
+title: 'Redshift'
+description: 'Connect your Redshift data warehouse to Seam'
+icon: 'server'
 ---
+
+
+## Configuration Steps
+
+### 1. Create a Seam User in Redshift
+
+You'll need to create a dedicated read-only user for Seam to access your Redshift cluster. You can run these commands using:
+- A SQL client connected to Redshift with admin credentials
+- The AWS console's Redshift query editor
+
+#### SQL Commands
+
+Replace the following placeholders in the commands below:
+- `<schema>` - The name of your Redshift schema
+- `<table>` - The name of your Redshift table (if using Option 2)
+- `<password>` - A randomly generated password (save this for later)
+```sql
+-- Create a new user for Seam
+CREATE USER seam_integration_user WITH PASSWORD '<password>';
+
+-- Grant access to the schema (always required)
+GRANT USAGE ON SCHEMA <schema> TO seam_integration_user;
+
+-- Option 1: Grant read-access to all tables in the schema
+GRANT SELECT ON ALL TABLES IN SCHEMA <schema> TO seam_integration_user;
+
+-- Option 2: Grant access to specific tables (repeat as necessary)
+GRANT SELECT ON TABLE <schema>.<table> TO seam_integration_user;
+```
+
+<Note>
+You can modify the `GRANT` statements to limit the scope of Seam's permissions. Choose Option 1 to grant access to all tables in a schema, or Option 2 to grant access only to specific tables.
+</Note>
+
+### 2. Gather Connection Details
+
+Navigate to the AWS console and locate your Redshift cluster information:
+
+**AWS Console Path:** Redshift → Clusters → `[your-cluster-name]` → Properties
+
+<Frame>
+  <img src="/assets/images/redshift.png" alt="BigQuery Project ID location" />
+</Frame>
+
+You'll need the following information to complete the Seam connection:
+
+<ParamField path="endpoint" type="string" required>
+  Redshift Cluster Endpoint
+</ParamField>
+
+<ParamField path="username" type="string" required>
+  The username you created (e.g., `seam_integration_user`)
+</ParamField>
+
+<ParamField path="password" type="string" required>
+  The password you set for the Seam user
+</ParamField>
+
+<ParamField path="database" type="string" required>
+  Database name
+</ParamField>
+
+<ParamField path="port" type="number" default="5439">
+  Port (default: 5439)
+</ParamField>
