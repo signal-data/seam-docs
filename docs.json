@@ -49,9 +49,9 @@
             "group": "Configure",
             "pages": [
               "tutorials/configure/configuring-icp-fit",
-              "tutorials/configure/creating-audiences",
               "tutorials/configure/creating-personas",
-              "tutorials/configure/configuring-signals"
+              "tutorials/configure/configuring-signals",
+              "tutorials/configure/creating-audiences"
             ]
           },
           {
