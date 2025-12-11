@@ -28,37 +28,37 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Tutorials",
+        "tab": "Onboarding",
         "groups": [
           {
             "group": "Getting Started",
             "pages": [
-              "tutorials/getting-started/overview",
-              "tutorials/getting-started/onboarding"
+              "onboarding/getting-started/overview",
+              "onboarding/getting-started/checklist"
             ]
           },
           {
             "group": "Setup",
             "pages": [
-              "tutorials/setup/connecting-data-sources",
-              "tutorials/setup/installing-web-pixel",
-              "tutorials/setup/setting-intent-keywords"
+              "onboarding/setup/connecting-data-sources",
+              "onboarding/setup/installing-web-pixel",
+              "onboarding/setup/setting-intent-keywords"
             ]
           },
           {
             "group": "Configure",
             "pages": [
-              "tutorials/configure/configuring-icp-fit",
-              "tutorials/configure/creating-personas",
-              "tutorials/configure/configuring-signals",
-              "tutorials/configure/creating-audiences"
+              "onboarding/configure/configuring-icp-fit",
+              "onboarding/configure/creating-personas",
+              "onboarding/configure/configuring-signals",
+              "onboarding/configure/creating-audiences"
             ]
           },
           {
             "group": "Orchestrate",
             "pages": [
-              "tutorials/orchestrate/routing-queue",
-              "tutorials/orchestrate/plays"
+              "onboarding/orchestrate/routing-queue",
+              "onboarding/orchestrate/plays"
             ]
           }
         ]
