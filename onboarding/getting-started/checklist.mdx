@@ -1,55 +1,204 @@
 ---
 title: "Checklist"
-description: "Get started with Seam AI in three simple steps"
+description: "Complete guide to getting Seam up and running in 2-3 weeks"
 ---
 
-Complete these steps to start generating pipeline with Seam AI. Most teams finish onboarding in 1-2 weeks.
+This checklist walks you through everything needed to get Seam fully operational. Most teams complete onboarding in 2-3 weeks.
+
+<Tip>
+**Work with your onboarding team:** We'll guide you through each step and help troubleshoot any issues.
+</Tip>
+
+## Onboarding Timeline
+
+Here's what a typical onboarding looks like:
+
+| Week | Focus | Deliverables |
+| :--- | :---- | :----------- |
+| **Weeks 1-2** | Data & Setup | CRM connected, web pixel live, sales tools integrated, intent keywords configured |
+| **Weeks 2-3** | Intelligence & Launch | Fit scoring calibrated, personas created, audiences built, first play launched |
+
+
+
+## Phase 1: Setup
+
+Connect your data sources and start capturing intent signals.
 
 <Steps>
-  <Step title="Connect your data sources" titleSize="h2">
-    Connect your CRM and any sales engagement platforms, marketing automation tools, or data warehouses you use.
-
-    <CardGroup cols={3}>
-      <Card title="Unify your data" icon="plug" href="/guides/configuring-seam/connections">
-        Browse available integrations
-      </Card>
-      <Card title="Website tag" icon="code" href="/guides/configuring-seam/web-pixel">
-        Track first-party intent through your website
-      </Card>
-      <Card title="Bombora" icon="signal-stream" href="/guides/configuring-seam/bombora">
-        Add 3rd-party intent data
-      </Card>
-    </CardGroup>
+  <Step title="Connect your CRM">
+    Link Salesforce or HubSpot to sync accounts, contacts, and opportunities.
+    
+    [Connect data sources →](/onboarding/setup/connecting-data-sources)
+    
+    **Time estimate:** 30 minutes
   </Step>
-
-  <Step title="Build your intelligence layer" titleSize="h2">
-    Define what makes an account a good fit, track buying signals, segment your audience, and configure buyer personas.
-
-    <CardGroup cols={2}>
-      <Card title="Configure fit score" icon="bullseye" href="/guides/monitoring-and-intelligence/fit-score">
-        Grade accounts based on ICP
-      </Card>
-      <Card title="Configure signals" icon="radar" href="/guides/monitoring-and-intelligence/signals">
-        Monitor key account activities
-      </Card>
-      <Card title="Build audiences" icon="users" href="/guides/monitoring-and-intelligence/audiences">
-        Segment accounts for targeting
-      </Card>
-      <Card title="Build personas" icon="user-tie" href="/guides/monitoring-and-intelligence/personas">
-        Define buyer personas
-      </Card>
-    </CardGroup>
+  
+  <Step title="Connect sales & marketing tools">
+    Integrate sales engagement platforms (Outreach, SalesLoft) and marketing automation (Marketo, LinkedIn Ads, Google Ads).
+    
+    [Connect data sources →](/onboarding/setup/connecting-data-sources)
+    
+    **Time estimate:** 1-2 hours
   </Step>
-
-  <Step title="Launch your first play" titleSize="h2">
-    Create an automated play that triggers campaigns when accounts show intent. Start with a simple high-intent play targeting A/B fit accounts that visit key pages.
-
-    <Card title="Create your first play" icon="play" href="/guides/actions/plays">
-      Step-by-step guide to building plays
-    </Card>
+  
+  <Step title="Install web pixel">
+    Add Seam's tracking pixel to your website to capture first-party intent data from anonymous visitors.
+    
+    [Install web pixel →](/onboarding/setup/installing-web-pixel)
+    
+    **Time estimate:** 15 minutes
+  </Step>
+  
+  <Step title="Set intent keywords">
+    Configure which pages and topics indicate buying intent (pricing page, competitor comparison pages, high-value content).
+    
+    [Set intent keywords →](/onboarding/setup/setting-intent-keywords)
+    
+    **Time estimate:** 30 minutes
   </Step>
 </Steps>
 
-## Need help?
+<Info>
+**What happens next:** Seam begins building your unified data model and capturing intent signals. Data typically syncs within 24 hours.
+</Info>
 
-Contact us over Slack or email support@getseam.ai
+## Phase 2: Configure
+
+Build your intelligence layer by defining your ICP, personas, and automation triggers.
+
+<Steps>
+  <Step title="Configure ICP fit scoring">
+    Define your ideal customer profile criteria and run a backtest on 45 accounts (15 good customers, 15 bad fits, 15 random) to calibrate the AI.
+    
+    [Configure ICP fit →](/onboarding/configure/configuring-icp-fit)
+    
+    **Time estimate:** 2-3 hours (includes backtest)
+  </Step>
+  
+  <Step title="Create personas">
+    Define the job titles and roles you want to target at each account (e.g., VP Marketing, Director Demand Gen, RevOps Manager).
+    
+    [Create personas →](/onboarding/configure/creating-personas)
+    
+    **Time estimate:** 1 hour
+  </Step>
+  
+  <Step title="Configure signals">
+    Set up external buying signals like new hires, funding announcements, job openings, and social mentions.
+    
+    [Configure signals →](/onboarding/configure/configuring-signals)
+    
+    **Time estimate:** 1 hour
+  </Step>
+  
+  <Step title="Create audiences">
+    Build dynamic segments that combine fit scoring, intent, signals, and account attributes (e.g., "High-fit accounts showing intent").
+    
+    [Create audiences →](/onboarding/configure/creating-audiences)
+    
+    **Time estimate:** 1-2 hours
+  </Step>
+</Steps>
+
+<Info>
+**What happens next:** Seam begins scoring your account universe and identifying high-priority targets based on your configuration.
+</Info>
+
+## Phase 3: Orchestrate
+
+Launch your first automated play to start engaging prospects.
+
+<Steps>
+  <Step title="Set up routing queues">
+    Configure the list of sales reps and internal users to route actions to.
+    
+    [Configure routing queue →](/onboarding/orchestrate/routing-queue)
+    
+    **Time estimate:** 30 minutes
+  </Step>
+  
+  <Step title="Launch your first play">
+    Start with a simple always-on play like "High-intent website visitors" or "New executive outreach" to see immediate results.
+    
+    [Create your first play →](/onboarding/orchestrate/plays)
+    
+    **Time estimate:** 1-2 hours
+  </Step>
+  
+  <Step title="Monitor and optimize">
+    Review play performance, credit usage, and contact quality. Adjust audience criteria and contact limits as needed.
+    
+    **Time estimate:** Ongoing
+  </Step>
+</Steps>
+
+## Success Metrics
+
+Track these metrics in your first 30 days:
+
+<AccordionGroup>
+  <Accordion title="Data Quality" icon="database">
+    - All data sources syncing successfully
+    - Fit scores applied to 80%+ of target accounts
+    - Intent signals captured from website traffic
+  </Accordion>
+  
+  <Accordion title="Intelligence Layer" icon="brain">
+    - Fit scoring accuracy validated through backtest
+    - At least 3-5 personas defined
+    - 2-3 high-priority audiences created
+    - Key buying signals configured
+  </Accordion>
+  
+  <Accordion title="Automation" icon="robot">
+    - First play launched and running
+    - Contacts routing correctly to reps
+    - 50-100 new contacts deployed in first week
+    - Play performance meeting expectations
+  </Accordion>
+</AccordionGroup>
+
+## Common Blockers
+
+Watch out for these issues that can slow onboarding:
+
+<Warning>
+**CRM permissions:** Ensure Seam's integration user has full read/write access to all required objects and fields.
+</Warning>
+
+<Warning>
+**Stakeholder alignment:** Get buy-in from sales, marketing, and ops teams early on persona definitions and routing rules.
+</Warning>
+
+## Getting Help
+
+<CardGroup cols={3}>
+  <Card title="Talk to us" icon="user-headset">
+    Schedule regular check-ins during onboarding to stay on track.
+  </Card>
+  
+  <Card title="Email support" icon="envelope">
+    Reach out to [support@getseam.ai](mailto:support@getseam.ai) for technical issues.
+  </Card>
+  
+  
+  <Card title="Browse guides" icon="book">
+    [Detailed guides](/guides/configuring-seam/unified-data-model) for in-depth explanations of every feature.
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+<Steps>
+  <Step title="Start Phase 1">
+    Begin by [connecting your data sources →](/onboarding/setup/connecting-data-sources)
+  </Step>
+  
+  <Step title="Book a check-in">
+    Schedule your first onboarding call with us to review progress.
+  </Step>
+  
+  <Step title="Review the guides">
+    Familiarize yourself with [key concepts](/guides/configuring-seam/unified-data-model) while setup is in progress.
+  </Step>
+</Steps>

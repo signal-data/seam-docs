@@ -67,15 +67,14 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Configuring Seam",
+            "group": "Data",
             "pages": [
               "guides/configuring-seam/unified-data-model",
-              "guides/configuring-seam/web-pixel",
               "guides/configuring-seam/bombora"
             ]
           },
           {
-            "group": "Monitoring and Intelligence",
+            "group": "Intelligence",
             "pages": [
               "guides/monitoring-and-intelligence/fit-score",
               "guides/monitoring-and-intelligence/intent",
@@ -86,7 +85,7 @@
             ]
           },
           {
-            "group": "Actions",
+            "group": "Agents",
             "pages": [
               "guides/actions/routing",
               "guides/actions/plays"
