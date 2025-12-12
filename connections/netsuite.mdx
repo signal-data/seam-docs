@@ -1,5 +1,53 @@
 ---
-title: NetSuite
-description: "Connect your datawarehouse."
-icon: "receipt"
+title: "NetSuite"
+description: "Quick guide to connecting NetSuite as a Source and Destination."
+icon: "money-bill"
 ---
+
+Seam connects to NetSuite using token-based authentication with an Integration record and API-only role.
+
+## Step 1: Enable required features in NetSuite
+
+Navigate to **Setup → Company → Enable Features → SuiteCloud** tab and enable:
+- SOAP Web Services
+- REST Web Services  
+- Token-based Authentication
+
+## Step 2: Create an Integration
+
+1. Go to **Setup → Integrations → Manage Integrations → New**.
+2. Name it "Seam" and enable "Token-based authentication".
+3. Save and note the **Consumer Key** and **Consumer Secret**.
+
+## Step 3: Create a Role
+
+1. Go to **Setup → Users/Roles → Manage Roles → New**.
+2. Name it "Seam" and check "Web Services Only Role".
+3. Add required permissions (Lists, Transactions, Reports, Setup tabs).
+
+## Step 4: Create an Access Token
+
+1. Go to **Setup → Users/Roles → Access Tokens → New**.
+2. Select your Seam Integration, User, and Role.
+3. Save and note the **Token ID** and **Token Secret**.
+
+## Step 5: Configure the connection in Seam
+
+1. In Seam, go to **Settings → Connections**.
+2. Find **NetSuite** and click **Connect**.
+3. Enter your NetSuite Account ID (found in **Setup → Company → Company Information**).
+4. Enter the Consumer Key, Consumer Secret, Token ID, and Token Secret.
+5. Click **Save**.
+
+## What Gets Synced
+
+**From NetSuite (Source):**
+- Customers, Invoices, Sales Orders, Transactions, Accounts
+- Financial data, billing records, payment information
+
+**To NetSuite (Destination):**
+- Customer and account updates from Seam
+
+<Info>
+NetSuite syncs four objects at a time due to concurrency limits. Additional objects are automatically queued.
+</Info>

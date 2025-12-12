@@ -1,5 +1,35 @@
 ---
-title: Smartlead
-description: "Connect your datawarehouse."
+title: "Smartlead"
+description: "Quick guide to connecting Smartlead as a Source and Destination."
 icon: "bullhorn"
 ---
+
+Seam connects to Smartlead using an API key.
+
+## Step 1: Obtain your API key
+
+Log into Smartlead and navigate to your [Settings page](https://app.smartlead.ai/app/settings/profile) to copy your API key.
+
+## Step 2: Configure the connection in Seam
+
+1. In Seam, go to **Settings → Connections**.
+2. Find **Smartlead** in the connections list and click **Connect**.
+3. Enter your Smartlead API key and click **Save**.
+
+## What Gets Synced
+
+**From Smartlead (Source):**
+- Campaigns, Campaign statistics, Clients, Leads, Message History
+- Used for Reach scoring and engagement tracking
+
+**To Smartlead (Destination):**
+- Deploy contacts to campaigns from Seam plays
+- Create or update Lead records
+
+## Using Smartlead in Plays
+
+When configuring a play, select Smartlead as the deployment destination to automatically add contacts to campaigns. You can map Seam fields (Play, Persona, Fit Score) to Smartlead custom fields.
+
+<Info>
+If a contact doesn't exist in Smartlead, Seam automatically creates the lead record before adding them to your campaign.
+</Info>

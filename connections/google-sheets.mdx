@@ -1,5 +1,82 @@
 ---
-title: Google Sheets
-description: "Connect your datawarehouse."
+title: "Google Sheets"
+description: "Quick guide to connecting Google Sheets as a Source and Destination."
 icon: "sheet-plastic"
 ---
+
+Seam connects to Google Sheets using either OAuth (personal Google Account) or a Google Service Account (credential not tied to a person).
+
+## Method 1: OAuth Connection
+
+### Step 1: Navigate to Connections
+
+In Seam, go to **Settings → Connections**.
+
+### Step 2: Connect with Google OAuth
+
+1. Find **Google Sheets** in the connections list and click **Connect**.
+2. Click **Continue with Google** to complete the OAuth flow.
+3. Choose your spreadsheet in the popup window.
+4. Click **Save**.
+
+<Info>
+You can re-authenticate with a different Google account by clicking **Force reconnect** in the connection settings.
+</Info>
+
+## Method 2: Service Account Connection
+
+Use this method for connections not tied to a specific person's account.
+
+### Step 1: Create a Service Account
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/iam-admin/serviceaccounts/create) to create a new service account.
+2. Create a new JSON key by going to **KEYS** tab → **ADD KEY** → **Create new key**.
+3. Choose **JSON** and click **Create**. The key will download automatically.
+
+### Step 2: Enable Google Sheets API
+
+Visit the [API Enablement Wizard](https://console.developers.google.com/apis/api/sheets.googleapis.com/overview) and enable the Google Sheets API for your project.
+
+### Step 3: Grant Sheet Access
+
+In your Google Sheet, add the Service Account email address (found in the JSON key) as an **Editor**.
+
+### Step 4: Configure in Seam
+
+1. In Seam, go to **Settings → Connections**.
+2. Find **Google Sheets** and click **Connect**.
+3. Select **Service Account** from the **Authentication method** dropdown.
+4. Upload the JSON service account key.
+5. Choose your spreadsheet and click **Save**.
+
+<Tip>
+When rotating keys, maintain the same service account to avoid re-inviting it to all sheets.
+</Tip>
+
+## Configuration Options
+
+### Header Row
+
+Check the **Columns have headers** box if your sheet's first row contains column headers. This ensures Seam treats it as a header rather than data.
+
+### Column Types
+
+By default, Google Sheets columns are treated as strings. To enable richer type inference, set [data validation rules](https://support.google.com/appsheet/answer/10107325?hl=en) in Google Sheets for numeric, date, or boolean columns.
+
+## What Gets Synced
+
+**From Google Sheets (Source):**
+- Sheet data for use in audiences, personas, or custom lists
+- Common use: maintaining target account lists, persona definitions, or exclusion lists
+
+**To Google Sheets (Destination):**
+- Export Seam audiences, fit scores, or intent data for analysis
+- Common use: sharing ABM metrics with stakeholders or feeding other tools
+
+## Using Google Sheets in Seam
+
+Google Sheets is useful for:
+- **Custom account lists:** Maintain dynamic target lists outside your CRM
+- **Persona configuration:** Define and manage persona criteria in sheets
+- **Exclusion lists:** Track do-not-contact or customer accounts
+- **Data sharing:** Export Seam intelligence for external analysis or reporting

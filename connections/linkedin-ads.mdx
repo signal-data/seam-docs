@@ -1,5 +1,36 @@
 ---
-title: LinkedIn Ads
-description: "Connect your datawarehouse."
+title: "LinkedIn Ads"
+description: "Quick guide to connecting LinkedIn Ads as a Source and Destination."
 icon: "linkedin"
 ---
+
+Seam connects to LinkedIn Ads using OAuth.
+
+## Step 1: Navigate to Connections
+
+In Seam, go to **Settings → Connections**.
+
+## Step 2: Connect to LinkedIn Ads
+
+1. Find **LinkedIn Ads** in the connections list and click **Connect**.
+2. Complete the OAuth flow by logging into your LinkedIn account.
+3. Select which LinkedIn Ads accounts you'd like to connect to Seam.
+4. Click **Save**.
+
+## What Gets Synced
+
+**From LinkedIn Ads (Source):**
+- Ad and campaign performance reports
+- Used for tracking ad engagement and conversions by account
+
+**To LinkedIn Ads (Destination):**
+- Deploy Seam audiences as company or user audiences
+- Sync conversion events
+
+## Using LinkedIn Ads in Plays
+
+When configuring a play, you can deploy Seam audiences to LinkedIn Ads for targeted ABM campaigns. Audiences automatically sync to keep your ad targeting up-to-date based on fit, intent, and signals.
+
+<Info>
+When syncing audiences, use two-letter country codes (e.g., "US", "GB") rather than full country names.
+</Info>

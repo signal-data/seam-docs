@@ -1,5 +1,37 @@
 ---
-title: Google Ads
-description: "Connect your datawarehouse."
+title: "Google Ads"
+description: "Quick guide to connecting Google Ads as a Source and Destination."
 icon: "google"
 ---
+
+Seam connects to Google Ads using OAuth. Your Google user account must have access to at least one Google Ads account.
+
+## Step 1: Navigate to Connections
+
+In Seam, go to **Settings → Connections**.
+
+## Step 2: Connect to Google Ads
+
+1. Find **Google Ads** in the connections list and click **Connect**.
+2. Complete the OAuth flow by logging into your Google account.
+3. Select which Google Ads accounts (parent and/or child accounts) to give Seam access to.
+4. Check the box to certify permission for syncing audiences to Google Ads.
+5. Click **Save**.
+
+## What Gets Synced
+
+**From Google Ads (Source):**
+- Ad and campaign performance reports
+- Used for tracking ad engagement and conversions by account
+
+**To Google Ads (Destination):**
+- Deploy Seam audiences as customer match lists
+- Sync conversion events
+
+## Using Google Ads in Plays
+
+When configuring a play, you can deploy Seam audiences to Google Ads as customer match lists for targeted advertising campaigns. Audiences automatically sync to keep your ad targeting up-to-date.
+
+<Info>
+User lists can take 5-48 hours to process in Google Ads after Seam syncs the data.
+</Info>

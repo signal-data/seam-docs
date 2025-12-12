@@ -1,5 +1,35 @@
 ---
-title: Salesloft
-description: "Connect your datawarehouse."
+title: "Salesloft"
+description: "Quick guide to connecting Salesloft as a Source and Destination."
 icon: "s"
 ---
+
+Seam connects to Salesloft using OAuth. Ensure the connecting user has **read-write** permissions in Salesloft.
+
+## Step 1: Navigate to Connections
+
+In Seam, go to **Settings → Connections**.
+
+## Step 2: Connect to Salesloft
+
+1. Find **Salesloft** in the connections list and click **Connect**.
+2. Complete the OAuth flow by logging into Salesloft and authorizing Seam.
+3. Once authorized, Seam will begin syncing your cadences, people, and accounts.
+
+## What Gets Synced
+
+**From Salesloft (Source):**
+- People, Accounts, Cadences, Teams, Users, Activities
+- Used for Reach scoring and engagement tracking
+
+**To Salesloft (Destination):**
+- Deploy contacts to cadences from Seam plays
+- Create or update People and Account records
+
+## Using Salesloft in Plays
+
+When configuring a play, select Salesloft as the deployment destination to automatically add contacts to cadences. You can map Seam fields (Play, Persona, Fit Score) to Salesloft custom fields for rep visibility.
+
+<Info>
+If a contact doesn't exist in Salesloft, Seam automatically creates the person record before adding them to your cadence.
+</Info>

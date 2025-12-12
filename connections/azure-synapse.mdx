@@ -1,8 +1,9 @@
 ---
-title: Azure Synapse
-description: "Connect your datawarehouse."
+title: "Azure Synapse"
+description: "Connect your Azure Synapse warehouse."
 icon: "microsoft"
 ---
+
 ## Prerequisites
 <Warning>
 **Firewall Configuration Required**
@@ -16,3 +17,95 @@ If your database is behind a firewall, you must allow connections from the follo
 - 44.224.213.129
 - 54.149.95.139
 </Warning>
+
+We need the following details for Azure Synapse:
+
+* Server (SQL endpoint from your Synapse workspace)
+
+* Database
+
+* Username
+
+* Password
+
+* Port (default: 1433)
+
+## Permissions
+
+We recommend creating a dedicated user for Seam to ensure audit logs clearly distinguish Seam activity from other operations. At a minimum, the Seam user needs:
+
+* **`SELECT`** permission on tables you want to read from
+
+* **`INSERT`** and **`UPDATE`** permissions on tables you want to write to
+
+* **`CREATE TABLE`** permission if you want Seam to create new tables
+
+## I. Obtaining Your Server Credentials
+
+1. In Azure Portal, navigate to **Synapse workspaces**.
+2. Select the workspace you want to connect to.
+3. Go to **Overview**.
+4. Locate the **SQL endpoint** - this is your Server value.
+
+## II. Setting Up a User
+
+Create a dedicated user for Seam in your Azure Synapse Portal:
+
+```sql
+CREATE LOGIN seam_user WITH PASSWORD = 'your-own-super-secure-password';
+
+CREATE USER seam_user FOR LOGIN seam_user;
+```
+
+Grant the necessary permissions based on your use case:
+
+```sql
+-- For reading data (Source)
+GRANT SELECT ON SCHEMA::dbo TO seam_user;
+
+-- For writing data (Destination)
+GRANT INSERT, UPDATE ON SCHEMA::dbo TO seam_user;
+
+-- For creating tables
+GRANT CREATE TABLE TO seam_user;
+```
+
+Adjust schema names (`dbo`) and permissions as needed for your specific setup.
+
+## III. Connecting to Seam
+
+1. In Seam, go to **Settings → Connections**.
+2. Find **Azure Synapse** and click **Connect**.
+3. Enter your connection details:
+   - **Server:** Your SQL endpoint (from Step I)
+   - **Database:** The database name
+   - **Username:** `seam_user` (or your chosen username)
+   - **Password:** The password you set
+   - **Port:** 1433 (default)
+4. Click **Save**.
+
+## IV. Troubleshooting
+
+### Connection Failed
+
+If the connection fails, verify:
+
+1. **Firewall rules:** Ensure Seam's IP addresses are whitelisted in your Azure Synapse firewall settings.
+2. **Credentials:** Double-check the server endpoint, database name, username, and password.
+3. **Network policies:** Check if your workspace has additional network restrictions.
+
+### Tables Do Not Appear in Seam
+
+If tables or schemas are not visible, ensure:
+
+1. The Seam user has `SELECT` permission on the relevant schemas and tables.
+2. The database name in your connection matches the database containing your tables.
+3. Tables exist in the schema you're querying.
+
+### Permission Denied Errors
+
+If you encounter permission errors during sync:
+
+1. Verify the Seam user has appropriate permissions (`SELECT`, `INSERT`, `UPDATE`, `CREATE TABLE`).
+2. Check that permissions are granted at both the schema and table level.
+3. Ensure the user can connect to the specific database.

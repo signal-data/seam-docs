@@ -1,5 +1,42 @@
 ---
-title: Slack
-description: "Connect your datawarehouse."
+title: "Slack"
+description: "Quick guide to connecting Slack as a Source."
 icon: "slack"
 ---
+
+Seam connects to Slack using a Bot User OAuth Access Token.
+
+## Step 1: Create a Slack App
+
+1. Go to [Slack App site](https://api.slack.com/apps) and click **Create an App**.
+2. Name it "Seam" and select your workspace.
+
+## Step 2: Add OAuth Scopes
+
+Add the following Bot Token Scopes:
+- `channels:read`, `channels:history`, `channels:join`
+- `users:read`, `users:read.email`, `users.profile:read`
+- `team:read`, `usergroups:read`
+- `files:read`, `reactions:read`, `links:read`
+
+## Step 3: Install App to Workspace
+
+1. Install the app to your workspace.
+2. Copy the **Bot User OAuth Access Token**.
+
+## Step 4: Configure the connection in Seam
+
+1. In Seam, go to **Settings → Connections**.
+2. Find **Slack** and click **Connect**.
+3. Paste the Bot User OAuth Access Token in the **Bot API key** field.
+4. Click **Save**.
+
+## What Gets Synced
+
+**From Slack (Source):**
+- Messages, threads, channels, users, reactions
+- Team activity and engagement data
+
+## Using Slack in Seam
+
+Slack data can be used for signals tracking (team mentions, channel activity) and notifications about high-priority account activity or play triggers.

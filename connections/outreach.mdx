@@ -4,14 +4,32 @@ description: "Quick guide to connecting Outreach as a Source and Destination."
 icon: "o"
 ---
 
-We would suggest connecting to Outreach using an account that has admin privileges.
+Seam connects to Outreach using OAuth. Ensure the connecting user has **Admin** permissions in Outreach.
 
-## ⭐️ Authenticate
+## Step 1: Navigate to Connections
 
-1. Go to **Settings** -> **Sources** -> **Outreach**
+In Seam, go to **Settings → Connections**.
 
-2. Set `Env Name`. This can be something like `Prod` or `Sandbox` .&#x20;
+## Step 2: Connect to Outreach
 
-3. Click "Sign in with Outreach" - You will be redirected to Outreach to authenticate and authorize our application.
+1. Find **Outreach** in the connections list and click **Connect**.
+2. Complete the OAuth flow by logging into Outreach and authorizing Seam.
+3. Once authorized, Seam will begin syncing your sequences, prospects, and accounts.
 
-4. Repeat steps 1 - 3 for **Destinations.**
+## What Gets Synced
+
+**From Outreach (Source):**
+- Prospects, Accounts, Sequences, Activities, Mailings
+- Used for Reach scoring and engagement tracking
+
+**To Outreach (Destination):**
+- Deploy contacts to sequences from Seam plays
+- Create or update Prospect and Account records
+
+## Using Outreach in Plays
+
+When configuring a play, select Outreach as the deployment destination to automatically add contacts to sequences. You can map Seam fields (Play, Persona, Fit Score) to Outreach custom fields for rep visibility.
+
+<Info>
+If a contact doesn't exist in Outreach, Seam automatically creates the prospect record before adding them to your sequence.
+</Info>

@@ -1,5 +1,32 @@
 ---
-title: Amplitude
-description: "Connect your datawarehouse."
-icon: "wave-square"
+title: "Amplitude"
+description: "Quick guide to connecting Amplitude as a Source and Destination."
+icon: "chart-mixed"
 ---
+
+Seam connects to Amplitude using an API Key and Secret Key.
+
+## Step 1: Obtain your API credentials
+
+In your Amplitude portal, navigate to **Settings → Projects → General** to find your API Key and Secret Key. [View Amplitude's instructions](https://www.docs.developers.amplitude.com/analytics/find-api-credentials/).
+
+## Step 2: Configure the connection in Seam
+
+1. In Seam, go to **Settings → Connections**.
+2. Find **Amplitude** in the connections list and click **Connect**.
+3. Enter your Amplitude API Key and Secret Key.
+4. Click **Save**.
+
+## What Gets Synced
+
+**From Amplitude (Source):**
+- User events, behavioral cohorts, session data, conversion funnels
+- Account-level usage metrics aggregated across the buying committee
+
+**To Amplitude (Destination):**
+- Events from Seam (fit score changes, intent signals, play enrollment)
+- User properties for enrichment
+
+## Using Amplitude in Seam
+
+Amplitude data enriches your unified data model with product usage and engagement metrics, enabling you to build audiences based on product behavior and usage intensity.
