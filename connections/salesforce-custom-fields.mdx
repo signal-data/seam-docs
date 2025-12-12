@@ -1,0 +1,88 @@
+---
+title: "Custom fields"
+description: "Connect Salesforce as both a source and destination in Seam"
+---
+## Custom Fields Reference
+
+To enable full functionality with Seam, you'll need to create custom fields in Salesforce for the Account, Contact, and Lead objects.
+
+### Creating Custom Fields
+
+<Steps>
+  <Step title="Navigate to Object Manager">
+    In Setup, use the **Quick Find** box to search for **Object Manager** and select it.
+  </Step>
+  
+  <Step title="Select the Object">
+    Choose the object you want to add fields to (Account, Contact, or Lead).
+  </Step>
+  
+  <Step title="Access Fields & Relationships">
+    Click **Fields & Relationships** in the sidebar.
+  </Step>
+  
+  <Step title="Create New Field">
+    Click **New**, select the field type from the tables below, and follow the prompts to configure it.
+  </Step>
+</Steps>
+
+### Account Fields
+
+| Field Name | Type | Configuration |
+| :--------- | :--- | :------------ |
+| Seam Buying Stage | Picklist | Values: Unaware, Awareness, Consideration, Purchase |
+| Seam Company ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Fit Score | Picklist | Values: A, B, C, D |
+| Seam Fit Explanation | Long Text Area (32768) | Summary of AI fit scoring rationale |
+| Seam Intent Level | Picklist | Values: Hot, Medium, Low, None |
+| Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Reach Level | Picklist | Values: Unengaged, Sales Engaged, Marketing Engaged, Sales AND Marketing Engaged, Opportunity |
+| Seam Reach Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Number of Contacts Reached | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Strength | Picklist | Values: High, Medium, Low, None |
+| Seam Tracking ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Created at | Date/Time | Timestamp of last Seam sync |
+| Seam Updated at | Date/Time | Timestamp of last Seam sync |
+| LinkedIn URL | URL | Company LinkedIn profile URL |
+| LinkedIn Employee Count | Number | Length: 18 ; Decimal: 0 |
+
+### Contact Fields
+
+| Field Name | Type | Configuration |
+| :--------- | :--- | :------------ |
+| Seam Buying Stage | Picklist | Values: Unaware, Awareness, Consideration, Purchase |
+| Seam People ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Intent Level | Picklist | Values: Hot, Medium, Low, None |
+| Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Reach Level | Text | Length: 255 |
+| Seam Reach Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Signal Strength | Text | Length: 255 |
+| Seam Tracking ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Created at | Date/Time | Timestamp of last Seam sync |
+| Seam Persona | Text | Length: 255 ; Persona name assigned during prospecting |
+| Seam Updated at | Date/Time | Timestamp of last Seam sync |
+| Seam Mobile Number | Text | Length: 255 ; Mobile phone number |
+| LinkedIn URL | URL | Contact LinkedIn profile URL |
+| Seam Play | Text | Length: 255 ; Play name that sourced this contact |
+| Seam Play Added | Date/Time | When contact was added to play |
+| Seam Email Status | Text | Length: 255 ; Email verification status |
+| Seam Champion | Checkbox | Indicates if contact is a champion/advocate |
+
+### Lead Fields
+
+<Note>
+Lead fields typically mirror Contact fields. If your organization uses Leads, create the same custom fields as shown in the Contact section above.
+</Note>
+
+| Field Name | Type | Configuration |
+| :--------- | :--- | :------------ |
+| Seam People ID | Text | Length: 255 ; External Id: ✅ ; Unique Case Insensitive: ✅ |
+| Seam Intent Level | Picklist | Values: Hot, Medium, Low, None |
+| Seam Intent Score | Number | Length: 18 ; Decimal: 0 |
+| Seam Persona | Text | Length: 255 |
+| Seam Play | Text | Length: 255 |
+| Seam Play Added | Date/Time | When lead was added to play |
+| Seam Email Status | Text | Length: 255 |
+| LinkedIn URL | URL | Lead LinkedIn profile URL |

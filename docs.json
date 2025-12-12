@@ -107,8 +107,22 @@
           {
             "group": "CRM Systems",
             "pages": [
-              "/connections/salesforce",
-              "/connections/hubspot"
+              {
+                "group": "Salesforce",
+                "icon": "salesforce",
+                "pages": [
+                  "/connections/salesforce-auth",
+                  "/connections/salesforce-custom-fields"
+                ]
+              },
+              {
+                "group": "HubSpot",
+                "icon": "hubspot",
+                "pages": [
+                  "/connections/hubspot-auth",
+                  "/connections/hubspot-custom-fields"
+                ]
+              }
             ]
           },
           {
