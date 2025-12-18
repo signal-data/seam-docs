@@ -36,6 +36,23 @@ While you can connect Salesforce using any user with read and write permissions,
     Click **Save** when finished.
   </Step>
   
+  <Step title="Set Required Permissions">
+    While still editing the profile, ensure the following permissions are enabled:
+    
+    - **API Enabled**: This permission is typically granted automatically based on the user's profile being API-enabled
+    - **Approve Uninstalled Connected Apps**: This is the critical permission required for the integration to work
+    
+    <Info>
+    When you authenticate from Seam, a connected app is created in the background in your Salesforce instance. Due to recent Salesforce permission changes, the user logging in must have permission to install and approve these integrations. Without the "Approve Uninstalled Connected Apps" permission, the authentication will fail.
+    </Info>
+    
+    To enable these permissions:
+    1. Scroll to **Administrative Permissions**
+    2. Check the box for **API Enabled**
+    3. Check the box for **Approve Uninstalled Connected Apps**
+    4. Click **Save**
+  </Step>
+  
   <Step title="Create New User">
     In the left navigation, go to **Administration** > **Users** > **Users**. Click **New User**.
     
@@ -81,4 +98,3 @@ While you can connect Salesforce using any user with read and write permissions,
     Click **Finish** to complete the connection. Seam will begin syncing your Salesforce data.
   </Step>
 </Steps>
-
