@@ -1,10 +1,10 @@
 ---
 title: "Apollo.io"
-description: "Quick guide to connecting Apollo.io as a Source and Destination."
+description: "Quick guide to connecting Apollo.io as a destination."
 icon: "satellite-dish"
 ---
 
-Seam connects to Apollo.io using an Apollo API key. This connection enables you to enrich account and contact data, as well as sync audiences to Apollo sequences for outbound campaigns.
+Seam connects to Apollo.io using an Apollo API key. This connection enables you to sync Seam audiences to Apollo sequences for automated outbound campaigns.
 
 We require one value to connect Apollo.io to Seam:
 
@@ -44,10 +44,6 @@ Master key access is required for Seam to write data to Apollo, including syncin
 
 ## What Gets Synced
 
-**From Apollo (Source):**
-- Account and contact data for enrichment
-- Used to enhance your ABM fit scoring with firmographic and contact data
-
 **To Apollo (Destination):**
 - Seam audiences can be synced as contacts in Apollo
 - Deploy contacts to Apollo sequences for automated outreach
@@ -63,33 +59,20 @@ When configuring a play, you can deploy Seam audiences to Apollo sequences for a
 
 Contacts will be automatically created in Apollo if they don't already exist before being added to sequences.
 
-## Enrichment with Apollo
-
-Seam can enrich your account and contact data using Apollo's database. You can enhance records from any connected system (CRM, data warehouse, spreadsheets) with:
-
-- Company firmographics
-- Contact information
-- Technographics
-- Employee count and department data
-
-<Warning>
-Apollo's default API rate limit is 1,000 enrichments per hour. If you need higher limits for large-scale enrichment, contact your Apollo representative to request an increase.
-</Warning>
-
 ## Advanced Configuration
 
 ### Sequence Management Settings
 
 When syncing contacts to Apollo sequences, you have several options to control behavior:
 
-**Multiple Sequence Enrollment**
+**Multiple Sequence Enrollment.**
 By default, Seam will not add contacts to a sequence if they are:
 - Already part of another active sequence
 - Were previously part of the target sequence
 
 To allow contacts to be added to multiple sequences simultaneously, enable the **Allow multiple sequence enrollment** option in your sync's advanced settings.
 
-**Contact Volume Limits**
+**Contact Volume Limits.**
 You can limit the number of contacts Seam adds to a sequence per sync run or per day. This helps manage outreach volume and stay within your Apollo sending limits. Configure this in the sync's advanced settings.
 
 ### Sender Email Configuration
@@ -105,12 +88,12 @@ You can use Seam's custom field mapping to assign sender emails based on account
 
 ## Troubleshooting
 
-**Sync Warnings**
+**Sync Warnings.**
 Contacts that cannot be added to a sequence will appear in the Warnings section of your sync history. Common reasons include:
 - Contact is already in an active sequence (if multiple sequence enrollment is disabled)
 - Contact was previously in the target sequence
 - Invalid or missing required fields
 - API rate limits exceeded
 
-**Rate Limit Considerations**
+**Rate Limit Considerations.**
 If your Apollo syncs are running slowly or timing out, you may be hitting API rate limits. Contact Apollo support to request an increase, or adjust your sync schedule to spread operations throughout the day.
