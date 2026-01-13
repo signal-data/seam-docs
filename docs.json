@@ -138,7 +138,8 @@
             "pages": [
               "/connections/marketo",
               "/connections/google-ads",
-              "/connections/linkedin-ads"
+              "/connections/linkedin-ads",
+              "/connections/apollo"
             ]
           },
           {
