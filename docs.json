@@ -130,7 +130,8 @@
             "pages": [
               "/connections/outreach",
               "/connections/salesloft",
-              "/connections/smartlead"
+              "/connections/smartlead",
+              "/connections/apollo"
             ]
           },
           {
@@ -138,8 +139,7 @@
             "pages": [
               "/connections/marketo",
               "/connections/google-ads",
-              "/connections/linkedin-ads",
-              "/connections/apollo"
+              "/connections/linkedin-ads"
             ]
           },
           {
