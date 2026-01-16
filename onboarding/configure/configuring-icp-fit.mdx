@@ -5,7 +5,9 @@ description: "AI-powered account scoring that identifies which companies match y
 
 ## Defining your fit criteria
 
-Configure custom criteria using natural language prompts. Fit Score can answer questions that traditional data providers can't:
+Navigate to **Fit Score → Add fit**. Configure the list of companies to include in the fit based using conditions.
+
+Build the list of custom criteria using natural language prompts. Fit Score can answer questions that traditional data providers can't:
 
 <AccordionGroup>
   <Accordion title="Firmographic criteria" icon="building">
@@ -66,14 +68,14 @@ Create different fit models for different segments or use cases:
 
 Each model can have completely different criteria and grading logic.
 
-## Back-testing your fit model
+## Backtesting your fit model
 
-Before deploying, Seam validates your criteria with a 45-account test:
+Before deploying, Seam validates your criteria with a 45-account test. Navigate to **Fit Score → Click on your fit score → Backtest**.
 
 <Steps>
   <Step title="Select test accounts">
-    - 15 known good accounts (closed-won customers)
-    - 15 known bad accounts (lost deals, poor fits)
+    - 15 known good-fit accounts
+    - 15 known bad-fit accounts
     - 15 random accounts from your TAM
   </Step>
   
@@ -107,8 +109,7 @@ Every Fit Score includes a detailed explanation:
 
 ### CRM integration
 
-Fit Scores sync directly to your CRM:
-- Displayed as fields on Account records
-- Explanation text stored in custom fields
+Fit Scores and explanations sync directly to your CRM:
+- Displayed as fields in a custom object
 - Available for reporting, filtering, and workflows
 - Visible to sales reps without logging into Seam
