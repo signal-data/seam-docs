@@ -1,0 +1,111 @@
+---
+title: "ABM stages"
+description: "Track where every account stands in the buying journey with Seam's 12-stage ABM framework"
+---
+
+ABM stages tell you exactly where each account sits in the buying journey — from completely unaware of your brand all the way through to an embedded customer. Seam calculates stages automatically by aggregating weighted signals across all connected systems, so your team always knows which accounts to prioritize and what action to take next.
+
+## The 12 ABM stages
+
+| # | Stage | Definition |
+|---|-------|-----------|
+| 1 | **Unaware** | No interaction with you or your space |
+| 2 | **Aware** | Indirect engagement only — ad impressions, Bombora surges, social posts about your category — but no direct contact with you |
+| 3 | **Engaged** | Directly engaging with you: clicking ads, visiting your website, downloading content |
+| 4 | **Considering** | High-intent engagement: pricing pages, deep site sessions, form fills |
+| 5 | **Interested** | A meeting has been booked |
+| 6 | **Opportunity** | One contact associated with an open deal |
+| 7 | **Multi-threaded** | More than one contact associated with the opportunity |
+| 8 | **Customer** | Deal closed/won |
+| 9 | **Activated** | Customer is actively using the product |
+| 10 | **Embedded** | Deeply embedded in the customer's workflow |
+| 11 | **Lost** | Opportunity closed-lost |
+| 12 | **Disqualified** | Account does not meet ICP criteria |
+
+<Info>
+Seam tracks both **current stage** and **peak stage** — the highest stage an account has ever reached. This means a temporarily quiet account isn't mistaken for a cold one.
+</Info>
+
+## How stages are calculated
+
+Stages are not manually assigned. Seam determines them algorithmically by aggregating signals from every connected system:
+
+1. **Activity mapping** — Each activity type (page visit, email click, ad impression, meeting booked, deal created, etc.) is mapped to a stage
+2. **Weighted scoring** — Activities are weighted by strength. A single ad impression isn't enough to reach Aware — you need volume (e.g., 30–100+ impressions depending on account tier)
+3. **Stage assignment** — The account's stage reflects the weighted sum of trailing activity
+4. **Continuous recalculation** — Stages update in real time as new signals come in
+5. **Regression** — Accounts can move backward if engagement drops off (e.g., Aware → Unaware)
+
+This means the right stage-appropriate action fires automatically without reps having to manually update records.
+
+## Stage-based play logic
+
+ABM stages let you match your response to where the account actually is, rather than treating every account the same.
+
+| Stage | What's happening | Recommended action |
+|-------|-----------------|-------------------|
+| **Unaware** | No awareness at all | LinkedIn matched audience ads only — don't burn prospecting credits |
+| **Aware** | Seeing you in their feed | Light nurture email + ads |
+| **Engaged** | Actively visiting your site | SDR outreach + air cover ads |
+| **Considering** | On pricing pages, deep in the site | Immediate SDR call + personalized email |
+| **Interested** | Meeting booked | AE takes over |
+| **Opportunity** | Deal open, single contact | Multi-threading play — find more contacts |
+| **Multi-threaded** | Multiple contacts engaged | Continue deal execution |
+
+<Card title="Configure stage-triggered plays" icon="play" href="/guides/actions/plays">
+  Automate stage-appropriate actions across your account base
+</Card>
+
+## CBM stages: contact-level extension
+
+CBM (Contact-Based Marketing) stages apply the same 12-stage framework to individual contacts within an account. This enables:
+
+- Tracking buying committee penetration at the person level
+- Identifying which specific contacts are engaged vs. unaware
+- Triggering multi-threading plays when an opportunity has only one active contact
+
+ABM stage reflects the account as a whole; CBM stage reflects where each individual sits within that account's journey.
+
+## ABM stages vs. other scoring dimensions
+
+ABM stages work alongside — not instead of — Seam's other scoring dimensions:
+
+| Dimension | What it measures | Updates |
+|-----------|-----------------|---------|
+| **Fit score** | How well the account matches your ICP | Periodic (stable) |
+| **Intent** | How actively they're engaging with you or your space | Real-time |
+| **Signals** | External trigger events (funding, hiring, job changes) | Real-time |
+| **ABM stage** | Where they are in the buying journey | Real-time |
+
+The most actionable combination is **fit + stage**: a high-fit account at the Considering stage is your hottest opportunity and should receive immediate, personalized attention.
+
+<CardGroup cols={2}>
+  <Card title="Fit score" icon="star" href="/guides/monitoring-and-intelligence/fit-score">
+    Understand ICP alignment scoring
+  </Card>
+  <Card title="Intent" icon="radar" href="/guides/monitoring-and-intelligence/intent">
+    Track first- and third-party buying signals
+  </Card>
+  <Card title="Signals" icon="signal" href="/guides/monitoring-and-intelligence/signals">
+    Monitor trigger events like hiring and funding
+  </Card>
+  <Card title="Audiences" icon="users" href="/guides/monitoring-and-intelligence/audiences">
+    Segment accounts by stage for campaigns
+  </Card>
+</CardGroup>
+
+## Common stage-based audiences
+
+ABM stages are a powerful filter in the audience builder:
+
+| Audience | Criteria |
+|---------|---------|
+| Unaware A-fit accounts | Fit = A + Stage = Unaware → push to LinkedIn ads |
+| Engaged with no sales activity | Stage = Engaged + no sales activity in 90 days |
+| In-market accounts | Fit = A or B + Stage = Aware, Engaged, or Considering |
+| Multi-thread opportunities | Stage = Opportunity + single contact on deal |
+| Re-engagement | Previously at Engaged or higher, now regressed to Aware |
+
+<Card title="Build stage-based audiences" icon="filter" href="/guides/monitoring-and-intelligence/audiences">
+  Create dynamic segments by ABM stage
+</Card>
